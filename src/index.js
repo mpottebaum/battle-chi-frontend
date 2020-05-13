@@ -3,10 +3,29 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware, compose } from 'redux'
+import thunk from 'redux-thunk'
+import { ActionCableProvider } from 'react-actioncable-provider'
+import { API_WS_ROOT } from './constants/index'
+import rootReducer from './reducers/index'
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(
+    applyMiddleware(thunk)
+  )
+)
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ActionCableProvider url={API_WS_ROOT}>
+        <App />
+      </ActionCableProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
