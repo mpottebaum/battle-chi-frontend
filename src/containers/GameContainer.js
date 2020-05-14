@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
+import DashboardContainer from './DashboardContainer'
+import Lobby from '../components/Lobby'
 import { updateGame } from '../actions/games'
 import { playersUrl, HEADERS } from '../constants/index'
 
@@ -20,18 +22,18 @@ class GameContainer extends React.Component {
     }
 
     render() {
-        return <div>
+        return <React.Fragment>
             <ActionCableConsumer
                 channel={{channel: 'PlayersChannel', game: this.props.game.id}}
                 onReceived={this.handleReceived}
             >
                 {this.props.game.players.length === this.props.game.num_players ?
-                <button onClick={this.handleClick}>Push</button>
+                <DashboardContainer />
                 :
-                'Waiting for other players'
+                <Lobby />
                 }
             </ActionCableConsumer>
-        </div>
+        </React.Fragment>
     }
 }
 
