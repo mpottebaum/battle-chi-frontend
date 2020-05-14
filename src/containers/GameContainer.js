@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
-import { addPlayer } from '../actions/players'
+import { updateGame } from '../actions/games'
 import { playersUrl, HEADERS } from '../constants/index'
 
 class GameContainer extends React.Component {
 
     handleReceived = resp => {
-        console.log(resp)
+        this.props.updateGame(resp.game)
     }
 
     handleClick = e => {
@@ -25,7 +25,11 @@ class GameContainer extends React.Component {
                 channel={{channel: 'PlayersChannel', game: this.props.game.id}}
                 onReceived={this.handleReceived}
             >
+                {this.props.game.players.length === this.props.game.num_players ?
                 <button onClick={this.handleClick}>Push</button>
+                :
+                'Waiting for other players'
+                }
             </ActionCableConsumer>
         </div>
     }
@@ -40,7 +44,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addPlayer: player => dispatch(addPlayer(player))
+        updateGame: game => dispatch(updateGame(game))
     }
 }
 

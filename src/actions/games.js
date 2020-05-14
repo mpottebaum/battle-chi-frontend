@@ -26,3 +26,9 @@ export const joinGame = id => {
         })
     }
 }
+
+export const updateGame = game => {
+    return dispatch => {
+        dispatch({type: 'UPDATE_GAME', game: game})
+    }
+}
