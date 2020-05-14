@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { startCreateGame, startJoinGame } from '../actions/games'
+import { createGame, joinGame } from '../actions/games'
 
 class MainMenu extends React.Component {
     constructor() {
@@ -11,7 +11,7 @@ class MainMenu extends React.Component {
     }
 
     handleCreateClick = () => {
-        this.props.startCreateGame()
+        this.props.createGame()
     }
 
     handleChange = e => {
@@ -22,7 +22,7 @@ class MainMenu extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault()
-        this.props.startJoinGame(this.state.gameId)
+        this.props.joinGame(this.state.gameId)
     }
 
     render() {
@@ -38,8 +38,8 @@ class MainMenu extends React.Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        startCreateGame: () => dispatch(startCreateGame()),
-        startJoinGame: id => dispatch(startJoinGame(id))
+        createGame: () => dispatch(createGame()),
+        joinGame: id => dispatch(joinGame(id))
     }
 }
 

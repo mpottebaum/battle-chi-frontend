@@ -1,23 +1,31 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
-import NewPlayerForm from '../components/NewPlayerForm'
 import { addPlayer } from '../actions/players'
+import { playersUrl, HEADERS } from '../constants/index'
 
-class LobbyContainer extends React.Component {
+class GameContainer extends React.Component {
 
-    handleReceived = player => {
-        this.props.addPlayer(player)
+    handleReceived = resp => {
+        console.log(resp)
+    }
+
+    handleClick = e => {
+        const url = playersUrl + `/${this.props.currentPlayer.id}`
+        const configObj = {
+            method: 'PATCH',
+            headers: HEADERS
+        }
+        fetch(url, configObj)
     }
 
     render() {
         return <div>
             <ActionCableConsumer
-                channel={{ channel: 'PlayersChannel', game: this.props.game.id }}
+                channel={{channel: 'PlayersChannel', game: this.props.game.id}}
                 onReceived={this.handleReceived}
             >
-                {this.props.gameLoader ? 'Loading game ID' : `ID: ${this.props.game.id}`}
-                {this.props.currentPlayer ? 'Waiting for other players' : <NewPlayerForm />}
+                <button onClick={this.handleClick}>Push</button>
             </ActionCableConsumer>
         </div>
     }
@@ -27,7 +35,6 @@ const mapStateToProps = state => {
     return {
         currentPlayer: state.currentPlayer,
         game: state.game,
-        gameLoader: state.gameLoader
     }
 }
 
@@ -37,4 +44,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(LobbyContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(GameContainer)

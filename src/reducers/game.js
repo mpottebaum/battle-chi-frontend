@@ -3,7 +3,9 @@ const gameReducer = (
     action
 ) => {
     switch(action.type) {
-        case 'ADD_GAME':
+        case 'CREATE_GAME':
+            return action.game
+        case 'JOIN_GAME':
             return action.game
         default:
             return state

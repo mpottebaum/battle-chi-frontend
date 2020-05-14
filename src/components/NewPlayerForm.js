@@ -1,7 +1,7 @@
 import React from 'react'
 // import { ActionCableConsumer } from 'react-actioncable-provider'
 import { connect } from 'react-redux'
-import { startCreatePlayer } from '../actions/players'
+import { createPlayer } from '../actions/players'
 
 class NewPlayerForm extends React.Component {
     constructor() {
@@ -17,7 +17,8 @@ class NewPlayerForm extends React.Component {
             name: this.state.name,
             game_id: this.props.game.id
         }
-        this.props.startCreatePlayer(playerData)
+        this.props.createPlayer(playerData)
+        this.props.history.push(`/game/${this.props.game.id}`)
     }
 
     handleChange = e => {
@@ -27,27 +28,31 @@ class NewPlayerForm extends React.Component {
     }
 
     render() {
-        return <form onSubmit={this.handleSubmit}>
-            <input
-                onChange={this.handleChange}
-                type='text' name='name'
-                value={this.state.name}
-                placeholder='Enter your name'
-            />
-            <input type='submit' value='Create Player' />
-        </form>
+        return <div>
+            {this.props.gameLoader ? 'Loading game ID' : `ID: ${this.props.game.id}`}
+            <form onSubmit={this.handleSubmit}>
+                <input
+                    onChange={this.handleChange}
+                    type='text' name='name'
+                    value={this.state.name}
+                    placeholder='Enter your name'
+                />
+                <input type='submit' value='Create Player' />
+            </form>
+        </div>
     } 
 }
 
 const mapStateToProps = state => {
     return {
-        game: state.game
+        game: state.game,
+        gameLoader: state.gameLoader
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        startCreatePlayer: playerData => dispatch(startCreatePlayer(playerData))
+        createPlayer: playerData => dispatch(createPlayer(playerData))
     }
 }
 
