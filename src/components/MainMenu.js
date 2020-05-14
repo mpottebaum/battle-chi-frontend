@@ -1,25 +1,45 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createGame } from '../actions/games'
+import { startCreateGame, startJoinGame } from '../actions/games'
 
 class MainMenu extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            gameId: ''
+        }
+    }
 
     handleCreateClick = () => {
-        this.props.createGame()
+        this.props.startCreateGame()
+    }
+
+    handleChange = e => {
+        this.setState({
+            gameId: e.target.value
+        })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.startJoinGame(this.state.gameId)
     }
 
     render() {
         return <div>
-            <h1>Battle For Chicago</h1>
             <button onClick={this.handleCreateClick}>Create Game</button>
-            <button>Join Game</button>
+            <form onSubmit={this.handleSubmit}>
+                <input onChange={this.handleChange} type='text' name='gameId' value={this.state.gameId} />
+                <input type='submit' value='Join Game' />
+            </form>
         </div>
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        createGame: () => dispatch(createGame())
+        startCreateGame: () => dispatch(startCreateGame()),
+        startJoinGame: id => dispatch(startJoinGame(id))
     }
 }
 

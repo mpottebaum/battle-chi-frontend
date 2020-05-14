@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
-import gamesReducer from './games'
+import gameReducer from './game'
 import gameLoaderReducer from './gameLoader'
+import currentPlayerReducer from './currentPlayer'
 
 const rootReducer = combineReducers({
-    game: gamesReducer,
-    gameLoader: gameLoaderReducer
+    game: gameReducer,
+    gameLoader: gameLoaderReducer,
+    currentPlayer: currentPlayerReducer
 })
 
 export default rootReducer

@@ -4,9 +4,7 @@ const gameLoaderReducer = (state=true, action) => {
             return true
         case 'START_JOIN_GAME':
             return true
-        case 'CREATE_GAME':
-            return false
-        case 'JOIN_GAME':
+        case 'ADD_GAME':
             return false
         default:
             return state

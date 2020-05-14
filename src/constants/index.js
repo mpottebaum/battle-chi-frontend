@@ -6,3 +6,4 @@ export const HEADERS = {
 }
 
 export const gamesUrl = `${API_ROOT}/games`
+export const playersUrl = `${API_ROOT}/players`
