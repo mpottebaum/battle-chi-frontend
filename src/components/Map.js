@@ -7,7 +7,9 @@ import { selectNeighborhood } from '../actions/neighborhoods'
 class Map extends React.Component {
 
     handleClick = e => {
-        this.props.selectNeighborhood(e.target.dataset.name)
+        if(e.target.dataset.name) {
+            this.props.selectNeighborhood(e.target.dataset.name)
+        }
     }
 
     render() {
