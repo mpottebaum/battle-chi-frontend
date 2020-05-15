@@ -1,12 +1,13 @@
 import React from 'react'
-import { SVGMap } from 'react-svg-map'
+import { connect } from 'react-redux'
 import NeighborhoodMap from '../svg/NeighborhoodMap'
+import { selectNeighborhood } from '../actions/neighborhoods'
 
 
 class Map extends React.Component {
 
     handleClick = e => {
-        console.log(e.target)
+        this.props.selectNeighborhood(e.target.dataset.name)
     }
 
     render() {
@@ -16,4 +17,10 @@ class Map extends React.Component {
     }
 }
 
-export default Map
+const mapDispatchToProps = dispatch => {
+    return {
+        selectNeighborhood: name => dispatch(selectNeighborhood(name))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Map)
