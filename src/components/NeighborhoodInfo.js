@@ -3,14 +3,23 @@ import { connect } from 'react-redux'
 import Neighborhood from './Neighborhood'
 
 class NeighborhoodInfo extends React.Component {
+
+    findNeighborhoods = () => {
+        return this.props.neighborhoods.filter(neighborhood => {
+            return this.props.selectedNeighborhoods.includes(neighborhood.name)
+        })
+    }
+
     renderNeighborhoods = () => {
-        return this.props.selectedNeighborhoods.map(neighborhood => {
-            return <Neighborhood neighborhood={neighborhood} />
+        const neighborhoods = this.findNeighborhoods()
+        return neighborhoods.map(neighborhood => {
+            return <Neighborhood key={neighborhood.id} neighborhood={neighborhood} />
         })
     }
 
     render() {
         return <div>
+            <h3>Neighborhoods</h3>
             <ul>
                 {this.renderNeighborhoods()}
             </ul>
@@ -20,7 +29,8 @@ class NeighborhoodInfo extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        selectedNeighborhoods: state.selectedNeighborhoods
+        selectedNeighborhoods: state.selectedNeighborhoods,
+        neighborhoods: state.neighborhoods
     }
 }
 

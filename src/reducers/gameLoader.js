@@ -1,4 +1,4 @@
-const gameLoaderReducer = (state=true, action) => {
+const gameLoaderReducer = (state=false, action) => {
     switch(action.type) {
         case 'START_CREATE_GAME':
             return true

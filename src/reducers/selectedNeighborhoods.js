@@ -5,6 +5,8 @@ const selectedNeighborhoodsReducer = (state=[], action) => {
                 ...state,
                 action.neighborhoodName
             ]
+        case 'UNSELECT_NEIGHBORHOOD':
+            return state.filter(neighborhoodName => neighborhoodName !== action.neighborhoodName)
         default:
             return state
     }

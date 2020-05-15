@@ -6,6 +6,12 @@ export const selectNeighborhood = name => {
     }
 }
 
+export const unselectNeighborhood = name => {
+    return dispatch => {
+        dispatch({type: 'UNSELECT_NEIGHBORHOOD', neighborhoodName: name})
+    }
+}
+
 export const addNeighborhoods = () => {
     return dispatch => {
         dispatch({type: 'START_ADD_NEIGHBORHOODS'})
