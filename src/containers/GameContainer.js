@@ -1,51 +1,56 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
-import DashboardContainer from './DashboardContainer'
-import Lobby from '../components/Lobby'
+import Map from '../components/Map'
+import GameLog from '../components/GameLog'
+import CurrentAction from '../components/CurrentAction'
+import GameInfo from '../components/GameInfo'
+import NeighborhoodInfo from '../components/NeighborhoodInfo'
+import { addNeighborhoods } from '../actions/neighborhoods'
 import { updateGame } from '../actions/games'
-import { playersUrl, HEADERS } from '../constants/index'
+
 
 class GameContainer extends React.Component {
+
+    componentDidMount() {
+        this.props.addNeighborhoods()
+    }
 
     handleReceived = resp => {
         this.props.updateGame(resp.game)
     }
 
-    handleClick = e => {
-        const url = playersUrl + `/${this.props.currentPlayer.id}`
-        const configObj = {
-            method: 'PATCH',
-            headers: HEADERS
-        }
-        fetch(url, configObj)
-    }
-
     render() {
-        return <React.Fragment>
+        return <div>
             <ActionCableConsumer
-                channel={{channel: 'PlayersChannel', game: this.props.game.id}}
+                channel={{channel: 'PlayersChannel', game: this.props.match.params.id}}
                 onReceived={this.handleReceived}
             >
-                {this.props.game.players.length === this.props.game.num_players ?
-                <DashboardContainer />
-                :
-                <Lobby />
+                {this.props.neighborhoodsLoader ?
+                    'Loading...'
+                    :
+                    <React.Fragment>
+                        <Map />
+                        <GameLog />
+                        <CurrentAction />
+                        <GameInfo />
+                        <NeighborhoodInfo />
+                    </React.Fragment>
                 }
             </ActionCableConsumer>
-        </React.Fragment>
+        </div>
     }
 }
 
 const mapStateToProps = state => {
     return {
-        currentPlayer: state.currentPlayer,
-        game: state.game,
+        neighborhoodsLoader: state.neighborhoodsLoader
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
+        addNeighborhoods: () => dispatch(addNeighborhoods()),
         updateGame: game => dispatch(updateGame(game))
     }
 }

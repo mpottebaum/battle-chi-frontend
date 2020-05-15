@@ -18,7 +18,7 @@ class NewPlayerForm extends React.Component {
             game_id: this.props.game.id
         }
         this.props.createPlayer(playerData)
-        this.props.history.push(`/game/${this.props.game.id}`)
+        this.props.history.push(`/lobby/${this.props.game.id}`)
     }
 
     handleChange = e => {
