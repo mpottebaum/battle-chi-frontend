@@ -49,7 +49,7 @@ class Neighborhood extends React.Component {
     }
 
     isCurrentPlayersTurn = () => {
-        return this.props.currentPlayer.order_num === this.props.game.order_num
+        return this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num
     }
 
     render() {
