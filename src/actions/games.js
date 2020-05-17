@@ -27,8 +27,11 @@ export const joinGame = id => {
     }
 }
 
-export const updateGame = game => {
+export const updateGame = (game, currentPlayer) => {
     return dispatch => {
         dispatch({type: 'UPDATE_GAME', game: game})
+        if(game.turn_stage === 1) {
+            dispatch({type: 'RESET_MILITIA_PLACED'})
+        }
     }
 }

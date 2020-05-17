@@ -2124,7 +2124,7 @@ const NeighborhoodMap = props => {
           </tspan>
         </text>
       </g>
-      <g id='layer2' display='inline' transform='translate(-645.972 -.28)'>
+      {/* <g id='layer2' display='inline' transform='translate(-645.972 -.28)'>
         <path
           id='rect4015'
           style={{ marker: "none" }}
@@ -2146,7 +2146,7 @@ const NeighborhoodMap = props => {
           overflow='visible'
           visibility='visible'
         ></path>
-      </g>
+      </g> */}
     </svg>
   );
 }

@@ -48,6 +48,10 @@ class Neighborhood extends React.Component {
         return player.id === this.props.currentPlayer.id
     }
 
+    isCurrentPlayersTurn = () => {
+        return this.props.currentPlayer.order_num === this.props.game.order_num
+    }
+
     render() {
         const militia = this.findMilitia()
         const player = this.findPlayer(militia[0])
@@ -57,7 +61,12 @@ class Neighborhood extends React.Component {
             <p>Militias: {militia.length}</p>
             <p>Zone: {this.props.neighborhood.zone.name}</p>
             <button onClick={this.handleCloseClick}>Close</button>
-            {this.isControlled(player) ? this.renderPlayerAction() : this.renderOpponentAction()}
+            {
+                this.isCurrentPlayersTurn() && this.isControlled(player) ?
+                this.renderPlayerAction()
+                :
+                this.renderOpponentAction()
+            }
         </li>
     }
 }

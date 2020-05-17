@@ -6,7 +6,13 @@ class PlaceMilitia extends React.Component {
     
     handleClick = () => {
         const { neighborhood, player } = this.props
-        this.props.placeMilitia(player.id, neighborhood.id)
+        let endStage
+        if((this.props.placeMilitiaCount - this.props.militiaPlaced) === 1) {
+            endStage = true
+        } else {
+            endStage = false
+        }
+        this.props.placeMilitia(player.id, neighborhood.id, endStage)
     }
 
     render() {
@@ -14,10 +20,19 @@ class PlaceMilitia extends React.Component {
     }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
     return {
-        placeMilitia: (playerId, neighborhoodId) => dispatch(placeMilitia(playerId, neighborhoodId))
+        placeMilitiaCount: state.placeMilitiaCount,
+        militiaPlaced: state.militiaPlaced
     }
 }
 
-export default connect(null, mapDispatchToProps)(PlaceMilitia)
+const mapDispatchToProps = dispatch => {
+    return {
+        placeMilitia: (playerId, neighborhoodId, endStage) => {
+            return dispatch(placeMilitia(playerId, neighborhoodId, endStage))
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlaceMilitia)
