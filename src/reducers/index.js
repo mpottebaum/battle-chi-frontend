@@ -8,6 +8,8 @@ import neighborhoodsReducer from './neighborhoods'
 import zonesReducer from './zones'
 import placeMilitiaCountReducer from './placeMilitiaCount'
 import militiaPlacedReducer from './militiaPlaced'
+import battlingReducer from './battling'
+import battleLoaderReducer from './battleLoader'
 
 const rootReducer = combineReducers({
     game: gameReducer,
@@ -18,7 +20,9 @@ const rootReducer = combineReducers({
     neighborhoods: neighborhoodsReducer,
     zones: zonesReducer,
     placeMilitiaCount: placeMilitiaCountReducer,
-    militiaPlaced: militiaPlacedReducer
+    militiaPlaced: militiaPlacedReducer,
+    battling: battlingReducer,
+    battleLoader: battleLoaderReducer
 })
 
 export default rootReducer

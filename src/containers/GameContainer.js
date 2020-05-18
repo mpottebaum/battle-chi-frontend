@@ -6,6 +6,7 @@ import GameLog from '../components/GameLog'
 import CurrentAction from '../components/CurrentAction'
 import GameInfo from '../components/GameInfo'
 import NeighborhoodInfo from '../components/NeighborhoodInfo'
+import DashboardContainer from './DashboardContainer'
 import { addNeighborhoods } from '../actions/neighborhoods'
 import { updateGame } from '../actions/games'
 
@@ -34,7 +35,7 @@ class GameContainer extends React.Component {
                         <GameLog />
                         <CurrentAction />
                         <GameInfo />
-                        <NeighborhoodInfo />
+                        <DashboardContainer />
                     </React.Fragment>
                 }
             </ActionCableConsumer>

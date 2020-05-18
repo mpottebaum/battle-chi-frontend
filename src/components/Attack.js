@@ -54,7 +54,13 @@ class Attack extends React.Component {
         if(this.state.neighborhoodId === '') {
             alert('Select A Neighborhood To Attack From')
         } else {
-            this.props.createBattle(this.state, this.props.currentPlayer.id)
+            const battle = {
+                attack_neighborhood_id: this.state.neighborhoodId,
+                attack_militia: this.state.numMilitia,
+                defense_neighborhood_id: this.props.neighborhood.id,
+                defense_player_id: this.props.player.id
+            }
+            this.props.createBattle(battle, this.props.currentPlayer.id)
         }
     }
 
