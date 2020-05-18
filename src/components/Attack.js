@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { createBattle } from '../actions/battles'
 
 class Attack extends React.Component {
     constructor() {
@@ -53,7 +54,7 @@ class Attack extends React.Component {
         if(this.state.neighborhoodId === '') {
             alert('Select A Neighborhood To Attack From')
         } else {
-
+            this.props.createBattle(this.state, this.props.currentPlayer.id)
         }
     }
 
@@ -89,7 +90,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-
+        createBattle: (attackData, currentPlayerId) => dispatch(createBattle(attackData, currentPlayerId))
     }
 }
 
