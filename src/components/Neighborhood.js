@@ -24,8 +24,13 @@ class Neighborhood extends React.Component {
     }
 
     renderOpponentAction = () => {
+        const militia = this.findMilitia()
+        const player = this.findPlayer(militia[0])
         if(this.props.game.turn_stage === 1) {
-            return <Attack />
+            return <Attack
+                player={player}
+                neighborhood={this.props.neighborhood}
+                />
         } else {
             return null
         }
@@ -62,10 +67,15 @@ class Neighborhood extends React.Component {
             <p>Zone: {this.props.neighborhood.zone.name}</p>
             <button onClick={this.handleCloseClick}>Close</button>
             {
-                this.isCurrentPlayersTurn() && this.isControlled(player) ?
-                this.renderPlayerAction()
+                this.isCurrentPlayersTurn() ?
+                (
+                    this.isControlled(player) ?
+                    this.renderPlayerAction()
+                    :
+                    this.renderOpponentAction()
+                )
                 :
-                this.renderOpponentAction()
+                null
             }
         </li>
     }

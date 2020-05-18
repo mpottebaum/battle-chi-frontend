@@ -7,7 +7,6 @@ class CurrentAction extends React.Component {
     componentDidMount() {
         if(this.props.currentPlayer) {
             const placeMilitiaCount = this.calcPlaceMilitiaCount()
-            console.log(placeMilitiaCount)
             this.props.setPlaceMilitiaCount(placeMilitiaCount)
         }
     }
