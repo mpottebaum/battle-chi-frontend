@@ -1,12 +1,12 @@
-const battlingReducer = (state=false, action) => {
+const defendingReducer = (state=false, action) => {
     switch(action.type) {
         case 'START_BATTLE':
             return true
-        case 'END_BATTLE':
+        case 'END_DEFENSE':
             return false
         default:
             return state
     }
 }
 
-export default battlingReducer
+export default defendingReducer

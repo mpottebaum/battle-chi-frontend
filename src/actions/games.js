@@ -33,8 +33,13 @@ export const updateGame = (game, currentPlayer) => {
         if(game.turn_stage === 1) {
             dispatch({type: 'RESET_MILITIA_PLACED'})
         }
-        if(game.battles.some(battle => battle.defense_militia === null)) {
-            dispatch({type: 'START_BATTLE'})
+        const startedBattle = game.battles.find(battle => battle.defense_militia === null)
+        if(startedBattle) {
+            dispatch({type: 'START_BATTLE', battleId: startedBattle.id})
+        } else if(game.battles.some(battle => battle.active === true)) {
+            dispatch({type: 'END_DEFENSE'})
+        } else {
+            dispatch({type: 'END_BATTLE'})
         }
     }
 }

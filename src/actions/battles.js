@@ -30,3 +30,14 @@ export const setBattleDefense = (numMilitia, playerId, battleId) => {
         fetch(url, configObj)
     }
 }
+
+export const endBattle = (battleId, playerId) => {
+    const configObj = {
+        method: 'PATCH',
+        headers: HEADERS
+    }
+    const url = playersUrl + `/${playerId}/battles/${battleId}/complete`
+    return dispatch => {
+        fetch(url, configObj)
+    }
+}
