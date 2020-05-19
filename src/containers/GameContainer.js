@@ -1,12 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
-import Map from '../components/Map'
-import GameLog from '../components/GameLog'
-import CurrentAction from '../components/CurrentAction'
-import GameInfo from '../components/GameInfo'
-import NeighborhoodInfo from '../components/NeighborhoodInfo'
-import DashboardContainer from './DashboardContainer'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import MapGameLogContainer from './MapGameLogContainer'
+import ActionInfoDashboardContainer from './ActionInfoDashboardContainer'
 import { addNeighborhoods } from '../actions/neighborhoods'
 import { updateGame } from '../actions/games'
 
@@ -22,7 +21,7 @@ class GameContainer extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className={'game-container'}>
             <ActionCableConsumer
                 channel={{channel: 'PlayersChannel', game: this.props.match.params.id}}
                 onReceived={this.handleReceived}
@@ -31,11 +30,8 @@ class GameContainer extends React.Component {
                     'Loading...'
                     :
                     <React.Fragment>
-                        <Map />
-                        <GameLog />
-                        <CurrentAction />
-                        <GameInfo />
-                        <DashboardContainer />
+                        <MapGameLogContainer />
+                        <ActionInfoDashboardContainer />
                     </React.Fragment>
                 }
             </ActionCableConsumer>

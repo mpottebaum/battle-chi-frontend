@@ -4,10 +4,14 @@ const NeighborhoodMap = props => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      id='svg1848'
-      width='854.774'
-      height='1199.309'
+      id='map'
       version='1'
+      x="0"
+      y="0"
+      width="100%"
+      height="100%"
+      viewBox="0 0 854.774 1199.309"
+      preserveAspectRatio="xMinYMin meet"
       onClick={props.handleClick}
     >
       <g id='layer1' display='inline' transform='translate(-645.972 4.657)'>

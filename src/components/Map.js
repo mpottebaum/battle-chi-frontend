@@ -13,7 +13,7 @@ class Map extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className='map'>
             <NeighborhoodMap handleClick={this.handleClick}/>
         </div>
     }
