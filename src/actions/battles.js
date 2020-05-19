@@ -41,3 +41,15 @@ export const endBattle = (battleId, playerId) => {
         fetch(url, configObj)
     }
 }
+
+export const conquer = (numMilitia, battleId, playerId) => {
+    const configObj = {
+        method: 'PATCH',
+        headers: HEADERS,
+        body: JSON.stringify({num_militia: numMilitia})
+    }
+    const url = playersUrl + `/${playerId}/battles/${battleId}/conquer`
+    return dispatch => {
+        fetch(url, configObj)
+    }
+}

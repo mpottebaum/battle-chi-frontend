@@ -43,7 +43,7 @@ class Neighborhood extends React.Component {
             case 0:
                 return <PlaceMilitia player={player} neighborhood={this.props.neighborhood}/>
             case 2:
-                return <Fortify />
+                return <Fortify player={player} neighborhood={this.props.neighborhood}/>
             default:
                 return null
         }

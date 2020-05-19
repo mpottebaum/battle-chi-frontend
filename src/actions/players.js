@@ -23,3 +23,21 @@ export const addPlayer = player => {
         // fetch(url)
     }
 }
+
+export const fortify = (playerId, toNeighborhoodId, fromNeighborhoodId, numMilitia) => {
+    const configObj = {
+        method: 'PATCH',
+        headers: HEADERS,
+        body: JSON.stringify({
+            player: {
+                to_neighborhood_id: toNeighborhoodId,
+                from_neighborhood_id: fromNeighborhoodId,
+                num_militia: numMilitia
+            }
+        })
+    }
+    const url = playersUrl + `/${playerId}/fortify`
+    return dispatch => {
+        fetch(url, configObj)
+    }
+}

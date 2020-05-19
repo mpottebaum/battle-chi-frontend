@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import EndAttack from './EndAttack'
 import { setPlaceMilitiaCount } from '../actions/militia'
 
 class CurrentAction extends React.Component {
@@ -44,8 +45,15 @@ class CurrentAction extends React.Component {
 
     findPlayer = () => {
         return this.props.game.players.find(player => {
-            return player.order_num === this.props.game.order_num
+            return player.turn_order_num === this.props.game.turn_order_num
         })
+    }
+
+    renderEndAttack = () => {
+        return this.props.game.turn_stage === 1 && this.props.game.turn_order_num === this.props.currentPlayer.turn_order_num ?
+            <EndAttack gameId={this.props.game.id}/>
+            :
+            null
     }
     
     render() {
@@ -61,6 +69,7 @@ class CurrentAction extends React.Component {
                 :
                 null
             }
+            {this.renderEndAttack()}
         </div>
     }
 }

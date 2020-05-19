@@ -43,3 +43,14 @@ export const updateGame = (game, currentPlayer) => {
         }
     }
 }
+
+export const endAttack = id => {
+    const configObj = {
+        method: 'PATCH',
+        headers: HEADERS
+    }
+    const url = gamesUrl + `/${id}/fortify`
+    return dispatch => {
+        fetch(url, configObj)
+    }
+}

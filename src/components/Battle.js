@@ -44,7 +44,11 @@ class Battle extends React.Component {
     renderButton = () => {
         const defenseNeighborhood = this.findDefenseNeighborhood()
         const defenseNeighborhoodMilitia = this.findDefenseNeighborhoodMilitia(defenseNeighborhood)
-        return defenseNeighborhoodMilitia.length === 0 ? <Conquer /> : <ContinueAttack battle={this.props.battle} playerId={this.props.currentPlayer.id}/>
+        const attackNeighborhood = this.findAttackNeighborhood()
+        return defenseNeighborhoodMilitia.length === 0 ?
+            <Conquer battle={this.props.battle} defenseNeighborhood={defenseNeighborhood} attackNeighborhood={attackNeighborhood}/>
+            :
+            <ContinueAttack battle={this.props.battle} playerId={this.props.currentPlayer.id}/>
     }
 
     render() {
@@ -52,7 +56,6 @@ class Battle extends React.Component {
         const attackNeighborhood = this.findAttackNeighborhood()
         const defensePlayer = this.findDefensePlayer()
         const defenseNeighborhood = this.findDefenseNeighborhood()
-        const defenseNeighborhoodMilitia = this.findDefenseNeighborhoodMilitia(defenseNeighborhood)
         return <div>
             <h1>Battle Results:</h1>
             <table>
