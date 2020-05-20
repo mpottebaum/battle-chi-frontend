@@ -20,9 +20,9 @@ class NeighborhoodInfo extends React.Component {
     render() {
         return <div>
             <h3>Neighborhoods</h3>
-            <ul>
+            <div className='neighborhood-info'>
                 {this.renderNeighborhoods()}
-            </ul>
+            </div>
         </div>
     }
 }

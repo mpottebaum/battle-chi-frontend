@@ -36,13 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.map {
-  height: 100vh;
-}
-
-.game-container {
-  display: grid;
-  grid-template-columns: 40vw 60vw;
-  grid-template-rows: auto;
-}

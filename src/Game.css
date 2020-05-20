@@ -1,0 +1,18 @@
+.map {
+    height: 100vh;
+  }
+  
+  .game-container {
+    display: grid;
+    grid-template-columns: 40vw 60vw;
+    grid-template-rows: auto;
+  }
+
+  .neighborhood-info {
+    height: 60vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 20px;
+  }

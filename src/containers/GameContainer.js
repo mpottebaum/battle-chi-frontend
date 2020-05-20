@@ -8,6 +8,7 @@ import MapGameLogContainer from './MapGameLogContainer'
 import ActionInfoDashboardContainer from './ActionInfoDashboardContainer'
 import { addNeighborhoods } from '../actions/neighborhoods'
 import { updateGame } from '../actions/games'
+import '../Game.css'
 
 
 class GameContainer extends React.Component {

@@ -4,6 +4,8 @@ import { unselectNeighborhood } from '../actions/neighborhoods'
 import PlaceMilitia from './PlaceMilitia'
 import Attack from './Attack'
 import Fortify from './Fortify'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 class Neighborhood extends React.Component {
     
@@ -60,24 +62,26 @@ class Neighborhood extends React.Component {
     render() {
         const militia = this.findMilitia()
         const player = this.findPlayer(militia[0])
-        return <li>
-            <p>{this.props.neighborhood.name}</p>
-            <p>Controlled by: {player.name}</p>
-            <p>Militias: {militia.length}</p>
-            <p>Zone: {this.props.neighborhood.zone.name}</p>
-            <button onClick={this.handleCloseClick}>Close</button>
-            {
-                this.isCurrentPlayersTurn() ?
-                (
-                    this.isControlled(player) ?
-                    this.renderPlayerAction()
+        return <Card>
+            <Card.Body>
+                <Button variant="primary" size="sm" onClick={this.handleCloseClick}>x</Button>
+                <Card.Title>{this.props.neighborhood.name}</Card.Title>
+                <Card.Subtitle>Zone: {this.props.neighborhood.zone.name}</Card.Subtitle>
+                <Card.Text>Controlled by: {player.name}</Card.Text>
+                <Card.Text>Militias: {militia.length}</Card.Text>
+                {
+                    this.isCurrentPlayersTurn() ?
+                    (
+                        this.isControlled(player) ?
+                        this.renderPlayerAction()
+                        :
+                        this.renderOpponentAction()
+                    )
                     :
-                    this.renderOpponentAction()
-                )
-                :
-                null
-            }
-        </li>
+                    null
+                }
+            </Card.Body>
+        </Card>
     }
 }
 
