@@ -15,14 +15,16 @@ class Map extends React.Component {
     determineNeighborhoodFill = name => {
         const neighborhood = this.props.neighborhoods.find(neighborhood => neighborhood.name === name)
         const militium = this.props.game.militia.find(militium => militium.neighborhood_id === neighborhood.id)
-        const player = this.props.game.players.find(player => player.id === militium.player_id)
-        switch(player.turn_order_num) {
-            case 1:
-                return 'red'
-            case 2:
-                return 'blue'
-            default:
-                return 'white'
+        if(militium) {
+            const player = this.props.game.players.find(player => player.id === militium.player_id)
+            switch(player.turn_order_num) {
+                case 1:
+                    return 'red'
+                case 2:
+                    return 'blue'
+            }
+        } else {
+            return 'white'
         }
     }
 

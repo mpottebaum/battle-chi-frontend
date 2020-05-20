@@ -355,7 +355,7 @@ const NeighborhoodMap = props => {
             id='tspan3499'
             x='992.599'
             y='74.454'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -363,7 +363,7 @@ const NeighborhoodMap = props => {
               x='992.599'
               y='74.454'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -377,7 +377,7 @@ const NeighborhoodMap = props => {
             id='tspan3505'
             x='992.599'
             y='89.454'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -385,7 +385,7 @@ const NeighborhoodMap = props => {
               x='992.599'
               y='89.454'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -413,7 +413,7 @@ const NeighborhoodMap = props => {
             id='tspan3523'
             x='984.413'
             y='167.033'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -421,7 +421,7 @@ const NeighborhoodMap = props => {
               x='984.413'
               y='167.033'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -435,7 +435,7 @@ const NeighborhoodMap = props => {
             id='tspan3529'
             x='984.413'
             y='182.033'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -443,7 +443,7 @@ const NeighborhoodMap = props => {
               x='984.413'
               y='182.033'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -471,7 +471,7 @@ const NeighborhoodMap = props => {
             id='tspan3493'
             x='1043.559'
             y='146.937'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -479,7 +479,7 @@ const NeighborhoodMap = props => {
               x='1043.559'
               y='146.937'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -507,7 +507,7 @@ const NeighborhoodMap = props => {
             id='tspan3487'
             x='1058.772'
             y='196.845'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -515,7 +515,7 @@ const NeighborhoodMap = props => {
               x='1058.772'
               y='196.845'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -543,7 +543,7 @@ const NeighborhoodMap = props => {
             id='tspan3535'
             x='882.837'
             y='170.458'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -551,7 +551,7 @@ const NeighborhoodMap = props => {
               x='882.837'
               y='170.458'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -579,7 +579,7 @@ const NeighborhoodMap = props => {
             id='tspan3553'
             x='793.632'
             y='139.743'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -587,7 +587,7 @@ const NeighborhoodMap = props => {
               x='793.632'
               y='139.743'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -601,7 +601,7 @@ const NeighborhoodMap = props => {
             id='tspan3559'
             x='793.632'
             y='154.743'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -609,7 +609,7 @@ const NeighborhoodMap = props => {
               x='793.632'
               y='154.743'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -637,7 +637,7 @@ const NeighborhoodMap = props => {
             id='tspan3862'
             x='767.148'
             y='214.799'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -645,7 +645,7 @@ const NeighborhoodMap = props => {
               x='767.148'
               y='214.799'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -673,7 +673,7 @@ const NeighborhoodMap = props => {
             id='tspan3856'
             x='877.867'
             y='231.924'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -681,7 +681,7 @@ const NeighborhoodMap = props => {
               x='877.867'
               y='231.924'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -709,7 +709,7 @@ const NeighborhoodMap = props => {
             id='tspan3832'
             x='1034.962'
             y='262.299'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -717,7 +717,7 @@ const NeighborhoodMap = props => {
               x='1034.962'
               y='262.299'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -745,7 +745,7 @@ const NeighborhoodMap = props => {
             id='tspan3814'
             x='767.71'
             y='315.547'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -753,7 +753,7 @@ const NeighborhoodMap = props => {
               x='767.71'
               y='315.547'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -781,7 +781,7 @@ const NeighborhoodMap = props => {
             id='tspan3820'
             x='922.148'
             y='308.785'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -789,7 +789,7 @@ const NeighborhoodMap = props => {
               x='922.148'
               y='308.785'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -817,7 +817,7 @@ const NeighborhoodMap = props => {
             id='tspan3826'
             x='1064.273'
             y='320.518'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -825,7 +825,7 @@ const NeighborhoodMap = props => {
               x='1064.273'
               y='320.518'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -853,7 +853,7 @@ const NeighborhoodMap = props => {
             id='tspan3802'
             x='799.273'
             y='389.799'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -861,7 +861,7 @@ const NeighborhoodMap = props => {
               x='799.273'
               y='389.799'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -889,7 +889,7 @@ const NeighborhoodMap = props => {
             id='tspan3790'
             x='879.992'
             y='384.08'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -897,7 +897,7 @@ const NeighborhoodMap = props => {
               x='879.992'
               y='384.08'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -911,7 +911,7 @@ const NeighborhoodMap = props => {
             id='tspan3796'
             x='879.992'
             y='399.08'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -919,7 +919,7 @@ const NeighborhoodMap = props => {
               x='879.992'
               y='399.08'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -947,7 +947,7 @@ const NeighborhoodMap = props => {
             id='tspan3784'
             x='998.428'
             y='388.923'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -955,7 +955,7 @@ const NeighborhoodMap = props => {
               x='998.428'
               y='388.923'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -983,7 +983,7 @@ const NeighborhoodMap = props => {
             id='tspan3772'
             x='1104.987'
             y='376.924'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -991,7 +991,7 @@ const NeighborhoodMap = props => {
               x='1104.987'
               y='376.924'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1005,7 +1005,7 @@ const NeighborhoodMap = props => {
             id='tspan3778'
             x='1104.987'
             y='391.924'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1013,7 +1013,7 @@ const NeighborhoodMap = props => {
               x='1104.987'
               y='391.924'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1041,14 +1041,14 @@ const NeighborhoodMap = props => {
             id='tspan4150'
             x='0'
             y='0'
-            fontSize='11'
+            fontSize='17'
           ></tspan>
           <tspan
             style={{ lineHeight: "1.25" }}
             id='tspan4156'
             x='916.854'
             y='456.018'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1056,7 +1056,7 @@ const NeighborhoodMap = props => {
               x='916.854'
               y='456.018'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1070,7 +1070,7 @@ const NeighborhoodMap = props => {
             id='tspan4162'
             x='916.854'
             y='471.018'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1078,7 +1078,7 @@ const NeighborhoodMap = props => {
               x='916.854'
               y='471.018'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1106,7 +1106,7 @@ const NeighborhoodMap = props => {
             id='tspan4144'
             x='1027.631'
             y='490.921'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1114,7 +1114,7 @@ const NeighborhoodMap = props => {
               x='1027.631'
               y='490.921'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1142,7 +1142,7 @@ const NeighborhoodMap = props => {
             id='tspan4138'
             x='1144.273'
             y='460.518'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1150,7 +1150,7 @@ const NeighborhoodMap = props => {
               x='1144.273'
               y='460.518'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1178,7 +1178,7 @@ const NeighborhoodMap = props => {
             id='tspan4120'
             x='1164.429'
             y='509.518'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1186,7 +1186,7 @@ const NeighborhoodMap = props => {
               x='1164.429'
               y='509.518'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1200,7 +1200,7 @@ const NeighborhoodMap = props => {
             id='tspan4126'
             x='1164.429'
             y='524.518'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1208,7 +1208,7 @@ const NeighborhoodMap = props => {
               x='1164.429'
               y='524.518'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1222,7 +1222,7 @@ const NeighborhoodMap = props => {
             id='tspan4132'
             x='1164.429'
             y='539.518'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1230,7 +1230,7 @@ const NeighborhoodMap = props => {
               x='1164.429'
               y='539.518'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1258,7 +1258,7 @@ const NeighborhoodMap = props => {
             id='tspan4102'
             x='1165.632'
             y='628.342'
-            fontSize='11'
+            fontSize='17'
           >
             Bronzeville{" "}
           </tspan>
@@ -1281,7 +1281,7 @@ const NeighborhoodMap = props => {
             id='tspan4096'
             x='1078.586'
             y='572.643'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1289,7 +1289,7 @@ const NeighborhoodMap = props => {
               x='1078.586'
               y='572.643'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1317,7 +1317,7 @@ const NeighborhoodMap = props => {
             id='tspan4084'
             x='927.354'
             y='641.236'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1325,7 +1325,7 @@ const NeighborhoodMap = props => {
               x='927.354'
               y='641.236'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1339,7 +1339,7 @@ const NeighborhoodMap = props => {
             id='tspan4090'
             x='927.354'
             y='656.236'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1347,7 +1347,7 @@ const NeighborhoodMap = props => {
               x='927.354'
               y='656.236'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1364,7 +1364,7 @@ const NeighborhoodMap = props => {
           strokeWidth='0.986'
           display='inline'
           fontFamily='DejaVu Sans'
-          fontSize='11.829'
+          fontSize='17.829'
           fontStretch='normal'
           fontStyle='normal'
           fontWeight='normal'
@@ -1379,7 +1379,7 @@ const NeighborhoodMap = props => {
             x='915.051'
             y='722.911'
             strokeWidth='0.986'
-            fontSize='10.843'
+            fontSize='17.843'
           >
             <tspan
               style={{}}
@@ -1388,7 +1388,7 @@ const NeighborhoodMap = props => {
               y='722.911'
               strokeWidth='0.986'
               fontFamily='DejaVu Sans'
-              fontSize='10.843'
+              fontSize='17.843'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1411,9 +1411,9 @@ const NeighborhoodMap = props => {
             id='tspan4447'
             x='914.869'
             y='542.171'
-            fontSize='11'
+            fontSize='17'
           >
-            <tspan id='tspan4449' x='914.869' y='542.171' fontSize='11'>
+            <tspan id='tspan4449' x='914.869' y='542.171' fontSize='17'>
               Lawndale
             </tspan>
           </tspan>
@@ -1436,7 +1436,7 @@ const NeighborhoodMap = props => {
             id='tspan4552'
             x='1062.495'
             y='757.437'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1444,7 +1444,7 @@ const NeighborhoodMap = props => {
               x='1062.495'
               y='757.437'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1472,7 +1472,7 @@ const NeighborhoodMap = props => {
             id='tspan4540'
             x='933.073'
             y='767.83'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1480,7 +1480,7 @@ const NeighborhoodMap = props => {
               x='933.073'
               y='767.83'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1494,7 +1494,7 @@ const NeighborhoodMap = props => {
             id='tspan4546'
             x='933.073'
             y='782.83'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1502,7 +1502,7 @@ const NeighborhoodMap = props => {
               x='933.073'
               y='782.83'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1530,7 +1530,7 @@ const NeighborhoodMap = props => {
             id='tspan4718'
             x='1150.711'
             y='808.361'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1538,7 +1538,7 @@ const NeighborhoodMap = props => {
               x='1150.711'
               y='808.361'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1552,7 +1552,7 @@ const NeighborhoodMap = props => {
             id='tspan4724'
             x='1150.711'
             y='823.361'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1560,7 +1560,7 @@ const NeighborhoodMap = props => {
               x='1150.711'
               y='823.361'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1588,7 +1588,7 @@ const NeighborhoodMap = props => {
             id='tspan4708'
             x='1259.992'
             y='796.924'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1596,7 +1596,7 @@ const NeighborhoodMap = props => {
               x='1259.992'
               y='796.924'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1610,7 +1610,7 @@ const NeighborhoodMap = props => {
             id='tspan4712'
             x='1259.992'
             y='811.924'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1618,7 +1618,7 @@ const NeighborhoodMap = props => {
               x='1259.992'
               y='811.924'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1646,7 +1646,7 @@ const NeighborhoodMap = props => {
             id='tspan4702'
             x='932.429'
             y='854.643'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1654,7 +1654,7 @@ const NeighborhoodMap = props => {
               x='932.429'
               y='854.643'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1682,7 +1682,7 @@ const NeighborhoodMap = props => {
             id='tspan4696'
             x='1152.867'
             y='858.361'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1690,7 +1690,7 @@ const NeighborhoodMap = props => {
               x='1152.867'
               y='858.361'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1718,7 +1718,7 @@ const NeighborhoodMap = props => {
             id='tspan4672'
             x='1321.434'
             y='856.21'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1726,7 +1726,7 @@ const NeighborhoodMap = props => {
               x='1321.434'
               y='856.21'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1740,7 +1740,7 @@ const NeighborhoodMap = props => {
             id='tspan4678'
             x='1321.434'
             y='871.21'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1748,7 +1748,7 @@ const NeighborhoodMap = props => {
               x='1321.434'
               y='871.21'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1776,7 +1776,7 @@ const NeighborhoodMap = props => {
             id='tspan4852'
             x='1255.411'
             y='882.97'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1784,7 +1784,7 @@ const NeighborhoodMap = props => {
               x='1255.411'
               y='882.97'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1798,7 +1798,7 @@ const NeighborhoodMap = props => {
             id='tspan4858'
             x='1255.411'
             y='897.97'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1806,7 +1806,7 @@ const NeighborhoodMap = props => {
               x='1255.411'
               y='897.97'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1837,7 +1837,7 @@ const NeighborhoodMap = props => {
             id='tspan7175'
             x='1054.034'
             y='657.181'
-            fontSize='11'
+            fontSize='17'
           >
             New City
           </tspan>
@@ -1863,7 +1863,7 @@ const NeighborhoodMap = props => {
             id='tspan7209'
             x='1210.873'
             y='720.247'
-            fontSize='11'
+            fontSize='17'
           >
             Hyde
           </tspan>
@@ -1872,7 +1872,7 @@ const NeighborhoodMap = props => {
             id='tspan7211'
             x='1210.873'
             y='733.997'
-            fontSize='11'
+            fontSize='17'
           >
             Park
           </tspan>
@@ -1895,7 +1895,7 @@ const NeighborhoodMap = props => {
             id='tspan4987'
             x='1007.867'
             y='962.643'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1903,7 +1903,7 @@ const NeighborhoodMap = props => {
               x='1007.867'
               y='962.643'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1931,7 +1931,7 @@ const NeighborhoodMap = props => {
             id='tspan4975'
             x='1155.483'
             y='1019.76'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1939,7 +1939,7 @@ const NeighborhoodMap = props => {
               x='1155.483'
               y='1019.76'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -1967,7 +1967,7 @@ const NeighborhoodMap = props => {
             id='tspan4969'
             x='1287.286'
             y='998.283'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -1975,7 +1975,7 @@ const NeighborhoodMap = props => {
               x='1287.286'
               y='998.283'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -2006,7 +2006,7 @@ const NeighborhoodMap = props => {
             id='tspan7295'
             x='1057.001'
             y='851.482'
-            fontSize='11'
+            fontSize='17'
           >
             Auburn
           </tspan>
@@ -2015,7 +2015,7 @@ const NeighborhoodMap = props => {
             id='tspan7297'
             x='1057.001'
             y='865.232'
-            fontSize='11'
+            fontSize='17'
           >
             Gresham
           </tspan>
@@ -2041,7 +2041,7 @@ const NeighborhoodMap = props => {
             id='tspan7355'
             x='1079.144'
             y='924.768'
-            fontSize='11'
+            fontSize='17'
           >
             Washington
           </tspan>
@@ -2050,7 +2050,7 @@ const NeighborhoodMap = props => {
             id='tspan7357'
             x='1079.144'
             y='938.518'
-            fontSize='11'
+            fontSize='17'
           >
             Heights
           </tspan>
@@ -2073,7 +2073,7 @@ const NeighborhoodMap = props => {
             id='tspan5128'
             x='1017.429'
             y='1016.518'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -2081,7 +2081,7 @@ const NeighborhoodMap = props => {
               x='1017.429'
               y='1016.518'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
@@ -2109,7 +2109,7 @@ const NeighborhoodMap = props => {
             id='tspan5110'
             x='1317.992'
             y='1132.924'
-            fontSize='11'
+            fontSize='17'
           >
             <tspan
               style={{}}
@@ -2117,7 +2117,7 @@ const NeighborhoodMap = props => {
               x='1317.992'
               y='1132.924'
               fontFamily='DejaVu Sans'
-              fontSize='11'
+              fontSize='17'
               fontStretch='normal'
               fontStyle='normal'
               fontVariant='normal'
