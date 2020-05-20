@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import EndAttack from './EndAttack'
+import EndTurn from './EndTurn'
 
 class CurrentAction extends React.Component {
 
@@ -27,6 +28,13 @@ class CurrentAction extends React.Component {
             :
             null
     }
+
+    renderEndTurn = () => {
+        return this.props.game.turn_stage === 2 ?
+            <EndTurn gameId={this.props.game.id}/>
+            :
+            null
+    }
     
     render() {
         const player = this.findPlayer()
@@ -42,6 +50,7 @@ class CurrentAction extends React.Component {
                 null
             }
             {this.renderEndAttack()}
+            {this.renderEndTurn()}
         </div>
     }
 }

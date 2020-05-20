@@ -90,3 +90,14 @@ export const endAttack = id => {
         fetch(url, configObj)
     }
 }
+
+export const endTurn = id => {
+    const configObj = {
+        method: 'PATCH',
+        headers: HEADERS
+    }
+    const url = gamesUrl + `/${id}/cycle`
+    return dispatch => {
+        fetch(url, configObj)
+    }
+}

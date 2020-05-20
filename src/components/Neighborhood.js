@@ -16,6 +16,9 @@ class Neighborhood extends React.Component {
     }
 
     findPlayer = militium => {
+        if(!militium) {
+            return {name: 'no one'}
+        }
         return this.props.game.players.find(player => {
             return player.id === militium.player_id
         })
@@ -55,6 +58,8 @@ class Neighborhood extends React.Component {
         return player.id === this.props.currentPlayer.id
     }
 
+
+
     isCurrentPlayersTurn = () => {
         return this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num
     }
@@ -72,10 +77,20 @@ class Neighborhood extends React.Component {
                 {
                     this.isCurrentPlayersTurn() ?
                     (
-                        this.isControlled(player) ?
-                        this.renderPlayerAction()
+                        this.props.game.setup ?
+                        (
+                            player.name === 'no one' || this.isControlled(player) ?
+                            <PlaceMilitia player={this.props.currentPlayer} neighborhood={this.props.neighborhood}/>
+                            :
+                            null
+                        )
                         :
-                        this.renderOpponentAction()
+                        (
+                            this.isControlled(player) ?
+                            this.renderPlayerAction()
+                            :
+                            this.renderOpponentAction()
+                        )
                     )
                     :
                     null
