@@ -1,5 +1,4 @@
 import React from 'react'
-// import { ActionCableConsumer } from 'react-actioncable-provider'
 import { connect } from 'react-redux'
 import { createPlayer } from '../actions/players'
 
@@ -29,7 +28,7 @@ class NewPlayerForm extends React.Component {
 
     render() {
         return <div>
-            {this.props.gameLoader ? 'Loading game ID' : `ID: ${this.props.game.id}`}
+            {this.props.gameLoader ? 'Loading game ID' : `Game ID: ${this.props.game.id}`}
             <form onSubmit={this.handleSubmit}>
                 <input
                     onChange={this.handleChange}
