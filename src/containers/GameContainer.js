@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
+import Spinner from 'react-bootstrap/Spinner'
 import MapGameLogContainer from './MapGameLogContainer'
 import ActionInfoDashboardContainer from './ActionInfoDashboardContainer'
 import { addNeighborhoods } from '../actions/neighborhoods'
@@ -28,14 +29,18 @@ class GameContainer extends React.Component {
         return <div className={'game-container'}>
             {
                 this.props.gameLoader ?
-                'Loading'
+                <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
                 :
                 <ActionCableConsumer
                     channel={{channel: 'PlayersChannel', game: this.props.match.params.id}}
                     onReceived={this.handleReceived}
                 >
                     {this.props.neighborhoodsLoader ?
-                        'Loading...'
+                        <Spinner animation="border" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </Spinner>
                         :
                         <React.Fragment>
                             <MapGameLogContainer />

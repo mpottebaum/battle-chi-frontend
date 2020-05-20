@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
+import Spinner from 'react-bootstrap/Spinner'
 import Lobby from '../components/Lobby'
 import { updateGame, addGame } from '../actions/games'
 
@@ -32,7 +33,9 @@ class LobbyContainer extends React.Component {
         return <React.Fragment>
             {
                 this.props.gameLoader ?
-                'Loading'
+                <Spinner animation="border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </Spinner>
                 :
                 <ActionCableConsumer
                     channel={{channel: 'PlayersChannel', game: this.props.game.id}}
