@@ -1,36 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import EndAttack from './EndAttack'
-import { setPlaceMilitiaCount } from '../actions/militia'
 
 class CurrentAction extends React.Component {
-
-    componentDidMount() {
-        if(this.props.currentPlayer) {
-            const placeMilitiaCount = this.calcPlaceMilitiaCount()
-            this.props.setPlaceMilitiaCount(placeMilitiaCount)
-        }
-    }
-
-    calcPlaceMilitiaCount = () => {
-        const numNeighborhoods = this.calcNumNeighborhoods()
-        return Math.floor(numNeighborhoods / 3)
-    }
-
-    calcNumNeighborhoods = () => {
-        const { game, currentPlayer } = this.props
-        const player = game.players.find(player => player.id === currentPlayer.id)
-        const playerMilitia = game.militia.filter(militium => militium.player_id === currentPlayer.id)
-        const neighborhoods = []
-        playerMilitia.forEach(militium => {
-            if(neighborhoods.includes(militium.neighborhood_id)) {
-                return
-            } else {
-                neighborhoods.push(militium.neighborhood_id)
-            }
-        })
-        return neighborhoods.length
-    }
 
     translateTurnStage = () => {
         switch(this.props.game.turn_stage) {
@@ -65,7 +37,7 @@ class CurrentAction extends React.Component {
             <p>Stage: {this.translateTurnStage()}</p>
             {
                 this.props.game.turn_stage === 0 ?
-                `Militias to place: ${this.props.placeMilitiaCount - this.props.militiaPlaced}`
+                `Militias to place: ${player.place_militium.num_militia - player.place_militium.militia_placed}`
                 :
                 null
             }
@@ -77,16 +49,8 @@ class CurrentAction extends React.Component {
 const mapStateToProps = state => {
     return {
         game: state.game,
-        currentPlayer: state.currentPlayer,
-        placeMilitiaCount: state.placeMilitiaCount,
-        militiaPlaced: state.militiaPlaced
+        currentPlayer: state.currentPlayer
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-        setPlaceMilitiaCount: count => dispatch(setPlaceMilitiaCount(count))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CurrentAction)
+export default connect(mapStateToProps)(CurrentAction)
