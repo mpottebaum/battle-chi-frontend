@@ -7,6 +7,8 @@ const gameReducer = (
             return action.game
         case 'JOIN_GAME':
             return action.game
+        case 'ADD_GAME':
+            return action.game
         case 'UPDATE_GAME':
             return action.game
         default:

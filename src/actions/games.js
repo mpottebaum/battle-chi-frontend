@@ -11,6 +11,7 @@ export const createGame = () => {
         .then(resp => resp.json())
         .then(game => {
             dispatch({type: 'CREATE_GAME', game: game})
+            localStorage.setItem('gameId', game.id)
         })
     }
 }
@@ -23,6 +24,41 @@ export const joinGame = id => {
         .then(resp => resp.json())
         .then(game => {
             dispatch({type: 'JOIN_GAME', game: game})
+            localStorage.setItem('gameId', game.id)
+        })
+    }
+}
+
+export const addGame = (gameId, playerId) => {
+    const url = gamesUrl + `/${gameId}`
+    return dispatch => {
+        dispatch({type: 'START_ADD_GAME'})
+        fetch(url)
+        .then(resp => resp.json())
+        .then(game => {
+            dispatch({type: 'ADD_GAME', game: game})
+            const player = game.players.find(player => player.id === parseInt(playerId))
+            dispatch({type: 'ADD_PLAYER', player: player})
+        })
+    }
+}
+
+export const addGameAndNeighborhoods = (gameId, playerId) => {
+    const url = gamesUrl + `/${gameId}/retrieve`
+    return dispatch => {
+        dispatch({type: 'START_ADD_GAME'})
+        fetch(url)
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data)
+            dispatch({type: 'ADD_GAME', game: data.game})
+            const player = data.game.players.find(player => player.id === parseInt(playerId))
+            dispatch({type: 'ADD_PLAYER', player: player})
+            dispatch({
+                type: 'ADD_NEIGHBORHOODS',
+                neighborhoods: data.neighborhoods,
+                zones: data.zones
+            })
         })
     }
 }

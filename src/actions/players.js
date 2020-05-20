@@ -12,6 +12,7 @@ export const createPlayer = playerData => {
         .then(resp => resp.json())
         .then(player => {
             dispatch({type: 'CREATE_PLAYER', player: player})
+            localStorage.setItem('playerId', player.id)
         })
     }
 }
