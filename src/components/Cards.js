@@ -59,7 +59,25 @@ class Cards extends React.Component {
     }
 
     handleClick = () => {
-        this.props.tradeCards(this.props.selectedCards)
+        this.props.tradeCards(this.props.selectedCards, this.props.currentPlayer.id)
+    }
+
+    isCurrentPlayersTurn = () => {
+        return this.props.game.turn_order_num === this.props.currentPlayer.turn_order_num
+    }
+
+    isPlaceMilitia = () => {
+        return this.props.game.turn_stage === 0
+    }
+
+    renderTradeButton = () => {
+        return this.isCurrentPlayersTurn() && this.isPlaceMilitia() ?
+            <button
+                disabled={this.props.selectedCards.length === 3 ? this.disableButton() : true}
+                onClick={this.handleClick}
+            >Trade In Set</button>
+            :
+            null
     }
 
     render() {
@@ -68,10 +86,7 @@ class Cards extends React.Component {
             <ul>
                 {this.renderCards()}
             </ul>
-            <button
-                disabled={this.props.selectedCards.length === 3 ? this.disableButton() : true}
-                onClick={this.handleClick}
-            >Trade In Set</button>
+            {this.props.game.setup ? null : this.renderTradeButton()}
         </div>
     }
 }
@@ -86,7 +101,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        tradeCards: cardIds => dispatch(tradeCards(cardIds))
+        tradeCards: (cardIds, playerId) => dispatch(tradeCards(cardIds, playerId))
     }
 }
 
