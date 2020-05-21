@@ -18,7 +18,7 @@ export const tradeCards = (cardIds, playerId) => {
         headers: HEADERS,
         body: JSON.stringify({card_ids: cardIds})
     }
-    const url = playersUrl + `${playerId}/cards/trade`
+    const url = playersUrl + `/${playerId}/cards/trade`
     return dispatch => {
         dispatch({type: 'UNSELECT_ALL_CARDS'})
         fetch(url, configObj)

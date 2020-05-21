@@ -19,9 +19,9 @@ class Cards extends React.Component {
         const selectedCards = player.cards.filter(card => this.props.selectedCards.includes(card.id))
         if(selectedCards.every(card => card.fighter_type === selectedCards[0].fighter_type)) {
             return false
-        } else if(this.oneOfEach()) {
+        } else if(this.oneOfEach(selectedCards)) {
             return false
-        } else if(this.twoPlusWildCard()) {
+        } else if(this.twoPlusWildCard(selectedCards)) {
             return false
         } else {
             return true
@@ -30,10 +30,10 @@ class Cards extends React.Component {
 
     oneOfEach = selectedCards => {
         const lib = {}
-        let isOneOfEach = false
+        let isOneOfEach = true
         selectedCards.forEach(card => {
             if(lib[card.fighter_type]) {
-                isOneOfEach = true
+                isOneOfEach = false
             } else {
                 lib[card.fighter_type] = 1
             }

@@ -31,7 +31,7 @@ class CurrentAction extends React.Component {
     }
 
     renderEndTurn = () => {
-        return this.props.game.turn_stage === 2 ?
+        return this.props.game.turn_stage === 2 && this.props.game.turn_order_num === this.props.currentPlayer.turn_order_num ?
             <EndTurn gameId={this.props.game.id}/>
             :
             null
