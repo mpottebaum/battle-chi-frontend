@@ -1,13 +1,13 @@
 import React from 'react'
 import CurrentAction from '../components/CurrentAction'
-import GameInfo from '../components/GameInfo'
+import GameLog from '../components/GameLog'
 import DashboardContainer from './DashboardContainer'
 
 class ActionInfoDashboardContainer extends React.Component {
     render() {
         return <div>
             <CurrentAction />
-            <GameInfo />
+            <GameLog />
             <DashboardContainer />
         </div>
     }

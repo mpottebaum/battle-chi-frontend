@@ -18,7 +18,7 @@ class NeighborhoodInfo extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className={'dashboard-tab'}>
             <h3>Neighborhoods</h3>
             <div className='neighborhood-info'>
                 {this.renderNeighborhoods()}

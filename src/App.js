@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import StartGameContainer from './containers/StartGameContainer'
 import LobbyContainer from './containers/LobbyContainer'
 import GameContainer from './containers/GameContainer'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

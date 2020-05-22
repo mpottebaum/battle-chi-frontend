@@ -81,7 +81,7 @@ class Cards extends React.Component {
     }
 
     render() {
-        return <div>
+        return <div className='dashboard-tab'>
             <h3>Cards</h3>
             <ul>
                 {this.renderCards()}

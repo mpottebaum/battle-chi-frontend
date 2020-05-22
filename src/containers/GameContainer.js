@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
 import Spinner from 'react-bootstrap/Spinner'
-import MapGameLogContainer from './MapGameLogContainer'
+import Map from '../components/Map'
 import ActionInfoDashboardContainer from './ActionInfoDashboardContainer'
 import { addNeighborhoods } from '../actions/neighborhoods'
 import { updateGame, addGameAndNeighborhoods } from '../actions/games'
@@ -43,7 +43,7 @@ class GameContainer extends React.Component {
                         </Spinner>
                         :
                         <React.Fragment>
-                            <MapGameLogContainer />
+                            <Map />
                             <ActionInfoDashboardContainer />
                         </React.Fragment>
                     }

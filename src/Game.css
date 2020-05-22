@@ -1,17 +1,21 @@
 .map {
     height: 100vh;
+    width: 100%;
   }
   
   .game-container {
     display: grid;
-    grid-template-columns: 40vw 60vw;
+    grid-template-columns: minmax(492px, 40vw) 60vw;
     grid-template-rows: auto;
   }
 
-  .neighborhood-info {
+  .dashboard-tab {
     height: 60vh;
     overflow-y: scroll;
     overflow-x: hidden;
+  }
+
+  .neighborhood-info {
     display: grid;
     grid-template-columns: repeat(auto-fill, 200px);
     grid-gap: 20px;
