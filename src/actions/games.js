@@ -59,6 +59,14 @@ export const addGameAndNeighborhoods = (gameId, playerId) => {
                 neighborhoods: data.neighborhoods,
                 zones: data.zones
             })
+            const startedBattle = data.game.battles.find(battle => battle.defense_militia === null)
+            if(startedBattle) {
+                dispatch({type: 'START_BATTLE', battleId: startedBattle.id})
+            } else if(data.game.battles.some(battle => battle.active === true)) {
+                const activeBattle = data.game.battles.find(battle => battle.active === true)
+                dispatch({type: 'START_BATTLE', battleId: activeBattle.id})
+                dispatch({type: 'END_DEFENSE'})
+            }
         })
     }
 }
@@ -73,6 +81,8 @@ export const updateGame = (game, currentPlayer) => {
         if(startedBattle) {
             dispatch({type: 'START_BATTLE', battleId: startedBattle.id})
         } else if(game.battles.some(battle => battle.active === true)) {
+            const activeBattle = game.battles.find(battle => battle.active === true)
+            dispatch({type: 'START_BATTLE', battleId: activeBattle.id})
             dispatch({type: 'END_DEFENSE'})
         } else {
             dispatch({type: 'END_BATTLE'})

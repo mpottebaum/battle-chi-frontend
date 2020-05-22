@@ -9,11 +9,18 @@ class EndAttack extends React.Component {
     }
 
     render() {
-        return <button onClick={this.handleClick}>End Attack</button>
+        return this.props.currentBattleId ?
+            null
+            :
+            <button onClick={this.handleClick}>End Attack</button>     
     }
 }
 
-
+const mapStateToProps = state => {
+    return {
+        currentBattleId: state.currentBattleId
+    }
+}
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -21,4 +28,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(EndAttack)
+export default connect(mapStateToProps, mapDispatchToProps)(EndAttack)
