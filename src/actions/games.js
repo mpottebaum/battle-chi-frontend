@@ -71,21 +71,20 @@ export const addGameAndNeighborhoods = (gameId, playerId) => {
     }
 }
 
-export const updateGame = (game, currentPlayer) => {
+export const updateGame = game => {
     return dispatch => {
         dispatch({type: 'UPDATE_GAME', game: game})
-        if(game.turn_stage === 1) {
-            dispatch({type: 'RESET_MILITIA_PLACED'})
-        }
-        const startedBattle = game.battles.find(battle => battle.defense_militia === null)
-        if(startedBattle) {
-            dispatch({type: 'START_BATTLE', battleId: startedBattle.id})
-        } else if(game.battles.some(battle => battle.active === true)) {
-            const activeBattle = game.battles.find(battle => battle.active === true)
-            dispatch({type: 'START_BATTLE', battleId: activeBattle.id})
-            dispatch({type: 'END_DEFENSE'})
-        } else {
-            dispatch({type: 'END_BATTLE'})
+        if(game.battles) {
+            const startedBattle = game.battles.find(battle => battle.defense_militia === null)
+            if(startedBattle) {
+                dispatch({type: 'START_BATTLE', battleId: startedBattle.id})
+            } else if(game.battles.some(battle => battle.active === true)) {
+                const activeBattle = game.battles.find(battle => battle.active === true)
+                dispatch({type: 'START_BATTLE', battleId: activeBattle.id})
+                dispatch({type: 'END_DEFENSE'})
+            } else {
+                dispatch({type: 'END_BATTLE'})
+            }
         }
     }
 }
