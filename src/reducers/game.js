@@ -10,7 +10,15 @@ const gameReducer = (
         case 'ADD_GAME':
             return action.game
         case 'UPDATE_GAME':
-            return action.game
+            return {
+                ...state,
+                ...action.game
+            }
+        // case 'UPDATE_GAME_MILITIA':
+        //     return {
+        //         ...state,
+        //         ...action.game
+        //     }
         default:
             return state
     }
