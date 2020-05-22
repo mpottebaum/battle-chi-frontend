@@ -46,7 +46,11 @@ class Neighborhood extends React.Component {
         const player = this.findPlayer(militia[0])
         switch(this.props.game.turn_stage) {
             case 0:
-                return <PlaceMilitia player={player} neighborhood={this.props.neighborhood}/>
+                if(player.cards.length >= 5) {
+                    return null
+                } else {
+                    return <PlaceMilitia player={player} neighborhood={this.props.neighborhood}/>
+                }
             case 2:
                 return <Fortify player={player} neighborhood={this.props.neighborhood}/>
             default:

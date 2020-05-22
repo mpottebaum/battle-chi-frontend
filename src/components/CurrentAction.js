@@ -36,6 +36,20 @@ class CurrentAction extends React.Component {
             :
             null
     }
+
+    renderPlaceMilitias = player => {
+        return this.props.game.turn_stage === 0 ?
+            `Militias to place: ${player.place_militium.num_militia - player.place_militium.militia_placed}`
+            :
+            null
+    }
+
+    renderForceTrade = player => {
+        return player.cards.length >= 5 && player.id === this.props.currentPlayer.id ?
+            'You must trade in a set of cards'
+            :
+            null
+    }
     
     render() {
         const player = this.findPlayer()
@@ -43,12 +57,8 @@ class CurrentAction extends React.Component {
             <TurnStageBar />
             <p>Number: {this.props.game.turn_num}</p>
             <p>Player: {player.name}</p>
-            {
-                this.props.game.turn_stage === 0 ?
-                `Militias to place: ${player.place_militium.num_militia - player.place_militium.militia_placed}`
-                :
-                null
-            }
+            {this.renderForceTrade(player)}
+            {this.renderPlaceMilitias(player)}
             {this.renderEndAttack()}
             {this.renderEndTurn()}
         </div>
