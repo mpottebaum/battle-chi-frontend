@@ -43,9 +43,25 @@
   }
 
 div.bg-place {
-  background-color: green;
+  background-color: #4d8c4d;
 }
 
 div.bg-attack {
-  background-color: red;
+  background-color: #8c4d4d;
+}
+
+div.bg-fortify {
+  background-color: #4d848c;
+}
+
+div.bg-inactive {
+  background-color: #bcc2d1;
+}
+
+div.bg-active {
+  background-color: #666663;
+}
+
+div.progress {
+  height: 30px;
 }

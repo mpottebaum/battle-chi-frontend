@@ -39,28 +39,46 @@ class CurrentAction extends React.Component {
     }
 
     renderPlaceMilitias = player => {
-        return this.props.game.turn_stage === 0 ?
-            `Militias to place: ${player.place_militium.num_militia - player.place_militium.militia_placed}`
+        return this.props.game.turn_stage === 0 && this.props.currentPlayer.id === player.id ?
+            <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militias left to place</h3>
             :
             null
     }
 
     renderForceTrade = player => {
         return player.cards.length >= 5 && player.id === this.props.currentPlayer.id ?
-            'You must trade in a set of cards'
+            <h3>You must trade in a set of cards</h3>
             :
             null
+    }
+
+    renderInstruction = player => {
+        if(player.id === this.props.currentPlayer.id) {
+            switch(this.props.game.turn_stage) {
+                case 0:
+                    if(player.cards.length >= 5) {
+                        return <h3>You must trade in a set of cards</h3>
+                    } else {
+                        return <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militias left to place</h3>
+                    }
+                case 1:
+                    return <h3>Select enemy neighborhoods to attack</h3>
+                case 2:
+                    return <h3>Select one of your neighborhoods to fortify with nearby militias</h3>
+            }
+        } else {
+            return null
+        }
     }
     
     render() {
         const player = this.findPlayer()
         return <div className='current-action'>
-            <TurnStageBar />
-            <PlayerTable turnPlayer={player} game={this.props.game}/>
-            {this.renderForceTrade(player)}
-            {this.renderPlaceMilitias(player)}
+            {this.renderInstruction(player)}
+            <TurnStageBar turnPlayer={player}/>
             {this.renderEndAttack()}
             {this.renderEndTurn()}
+            <PlayerTable turnPlayer={player} game={this.props.game}/>
         </div>
     }
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { endTurn } from '../actions/games'
+import Button from 'react-bootstrap/Button'
 
 class EndTurn extends React.Component {
 
@@ -9,7 +10,7 @@ class EndTurn extends React.Component {
     }
 
     render() {
-        return <button onClick={this.handleClick}>End Turn</button>
+        return <Button size="lg" variant="outline-primary" onClick={this.handleClick}>End Turn</Button>
     }
 }
 

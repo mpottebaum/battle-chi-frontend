@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { endAttack } from '../actions/games'
+import Button from 'react-bootstrap/Button'
 
 class EndAttack extends React.Component {
     
@@ -12,7 +13,7 @@ class EndAttack extends React.Component {
         return this.props.currentBattleId ?
             null
             :
-            <button onClick={this.handleClick}>End Attack</button>     
+            <Button size="lg" variant="outline-primary" onClick={this.handleClick}>End Attack</Button>     
     }
 }
 
