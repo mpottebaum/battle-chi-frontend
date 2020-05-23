@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import EndAttack from './EndAttack'
 import EndTurn from './EndTurn'
 import TurnStageBar from './TurnStageBar'
+import PlayerTable from './PlayerTable'
 
 class CurrentAction extends React.Component {
 
@@ -53,10 +54,9 @@ class CurrentAction extends React.Component {
     
     render() {
         const player = this.findPlayer()
-        return <div>
+        return <div className='current-action'>
             <TurnStageBar />
-            <p>Number: {this.props.game.turn_num}</p>
-            <p>Player: {player.name}</p>
+            <PlayerTable turnPlayer={player} game={this.props.game}/>
             {this.renderForceTrade(player)}
             {this.renderPlaceMilitias(player)}
             {this.renderEndAttack()}

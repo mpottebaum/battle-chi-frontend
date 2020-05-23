@@ -5,7 +5,7 @@ import DashboardContainer from './DashboardContainer'
 
 class ActionInfoDashboardContainer extends React.Component {
     render() {
-        return <div>
+        return <div className='info-dashboard'>
             <CurrentAction />
             <GameLog />
             <DashboardContainer />

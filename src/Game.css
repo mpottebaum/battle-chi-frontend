@@ -9,6 +9,27 @@
     grid-template-rows: auto;
   }
 
+  .info-dashboard {
+    display: grid;
+    grid-template-columns: minmax(300px, 30vw) minmax(300px, 30vw);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "action log"
+      "dash dash";
+  }
+
+  .current-action {
+    grid-area: action;
+  }
+
+  .game-log {
+    grid-area: log;
+  }
+
+  .dashboard {
+    grid-area: dash;
+  }
+
   .dashboard-tab {
     height: 60vh;
     overflow-y: scroll;

@@ -37,7 +37,7 @@ class DashboardContainer extends React.Component {
     
     render() {
         const battle = this.props.game.battles.find(battle => battle.id === this.props.currentBattleId)
-        return <React.Fragment>
+        return <div className='dashboard'>
             {
                 this.props.currentBattleId ?
                 (
@@ -106,7 +106,7 @@ class DashboardContainer extends React.Component {
                 // </Tab.Container>
                 
             }
-        </React.Fragment>
+        </div>
     }
 }
 
