@@ -42,6 +42,18 @@
     grid-gap: 20px;
   }
 
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    grid-gap: 20px;
+  }
+
+  .zones {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 5px;
+  }
+
 div.bg-place {
   background-color: #4d8c4d;
 }
@@ -64,4 +76,8 @@ div.bg-active {
 
 div.progress {
   height: 30px;
+}
+
+span.badge-bonus {
+  font-size: 15px;
 }

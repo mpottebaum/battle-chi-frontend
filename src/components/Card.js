@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { selectCard, unselectCard } from '../actions/cards'
+import Table from 'react-bootstrap/Table'
 
 class Card extends React.Component {
     renderFighterType = () => {
@@ -35,16 +36,27 @@ class Card extends React.Component {
     renderStyle = () => {
         if(this.props.selectedCards.includes(this.props.card.id)) {
             return {
-                border: 'solid red'
+                border: 'solid #ff6161'
             }
         }
     }
 
     render() {
         const neighborhood = this.findNeighborhood()
-        return <div onClick={this.handleClick} style={this.renderStyle()}>
-            <p>{this.renderFighterType()}{neighborhood ? ` | ${neighborhood.name}` : null}</p>
-        </div>
+        return <Table bordered hover onClick={this.handleClick} style={this.renderStyle()}>
+                <thead>
+                    <tr>
+                        <th>Fighter Type</th>
+                        <th>Neighborhood</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{this.renderFighterType()}</td>
+                        <td>{neighborhood ? neighborhood.name : 'n/a'}</td>
+                    </tr>
+                </tbody>
+            </Table>
     }
 }
 

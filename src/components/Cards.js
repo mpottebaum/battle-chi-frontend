@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Card from './Card'
 import { tradeCards } from '../actions/cards'
+import Button from 'react-bootstrap/Button'
 
 class Cards extends React.Component {
 
@@ -71,22 +72,28 @@ class Cards extends React.Component {
     }
 
     renderTradeButton = () => {
-        return this.isCurrentPlayersTurn() && this.isPlaceMilitia() ?
-            <button
-                disabled={this.props.selectedCards.length === 3 ? this.disableButton() : true}
-                onClick={this.handleClick}
-            >Trade In Set</button>
-            :
-            null
+        if(this.isCurrentPlayersTurn() && this.isPlaceMilitia()) {
+            if(this.props.selectedCards.length >= 3) {
+                if(!this.disableButton()) {
+                    return <Button onClick={this.handleClick}>Trade In Set</Button>
+                } else {
+                    return <Button disabled>Trade In Set</Button>
+                }
+            } else {
+                return <Button disabled>Trade In Set</Button>
+            }
+        } else {
+            return null
+        }
     }
 
     render() {
         return <div className='dashboard-tab'>
-            <h3>Cards</h3>
-            <ul>
-                {this.renderCards()}
-            </ul>
             {this.props.game.setup ? null : this.renderTradeButton()}
+            <div className='cards'>
+                {this.renderCards()}
+            </div>
+
         </div>
     }
 }

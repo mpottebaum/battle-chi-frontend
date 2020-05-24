@@ -19,10 +19,14 @@ class NeighborhoodInfo extends React.Component {
 
     render() {
         return <div className={'dashboard-tab'}>
-            <h3>Neighborhoods</h3>
-            <div className='neighborhood-info'>
-                {this.renderNeighborhoods()}
-            </div>
+            {
+                this.props.selectedNeighborhoods.length === 0 ?
+                <h3>Click on the map to select neighborhoods</h3>
+                :
+                <div className='neighborhood-info'>
+                    {this.renderNeighborhoods()}
+                </div>
+            }
         </div>
     }
 }
