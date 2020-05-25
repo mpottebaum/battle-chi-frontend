@@ -38,7 +38,7 @@
 
   .neighborhood-info {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 200px);
+    grid-template-columns: repeat(auto-fill, 300px);
     grid-gap: 20px;
   }
 
@@ -54,15 +54,19 @@
     grid-gap: 5px;
   }
 
-div.bg-place {
+button.btn-place, button.btn-attack, button.btn-fortify {
+  color: white;
+}
+
+div.bg-place, button.btn-place {
   background-color: #4d8c4d;
 }
 
-div.bg-attack {
+div.bg-attack, button.btn-attack {
   background-color: #8c4d4d;
 }
 
-div.bg-fortify {
+div.bg-fortify, button.btn-fortify {
   background-color: #4d848c;
 }
 
@@ -80,4 +84,21 @@ div.progress {
 
 span.badge-bonus {
   font-size: 15px;
+}
+
+#root {
+  font-size: medium;
+}
+
+.close-button {
+  float: right;
+}
+
+.center {
+  text-align: center;
+}
+
+select.number-select {
+  width: 30px;
+  float: right;
 }

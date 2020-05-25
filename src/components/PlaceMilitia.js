@@ -11,7 +11,7 @@ class PlaceMilitia extends React.Component {
     }
 
     render() {
-        return <Button variant="primary" size="lg" onClick={this.handleClick}>Place Militia</Button>
+        return <Button variant="place" size="lg" onClick={this.handleClick}>Place Militia</Button>
     }
 }
 

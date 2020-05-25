@@ -6,6 +6,7 @@ import Attack from './Attack'
 import Fortify from './Fortify'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import Table from 'react-bootstrap/Table'
 
 class Neighborhood extends React.Component {
     
@@ -17,7 +18,7 @@ class Neighborhood extends React.Component {
 
     findPlayer = militium => {
         if(!militium) {
-            return {name: 'no one'}
+            return {name: 'N/A'}
         }
         return this.props.game.players.find(player => {
             return player.id === militium.player_id
@@ -68,16 +69,46 @@ class Neighborhood extends React.Component {
         return this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num
     }
 
+    styleBackgroundColor = player => {
+        if(player.name !== 'N/A') {
+            const color = this.getBackgroundColor(player.turn_order_num)
+            return {
+                backgroundColor: color
+            }
+        } else {
+            return {}
+        }
+    }
+
+    getBackgroundColor = orderNum => {
+        switch(orderNum) {
+            case 1:
+                return '#ffa6a6'
+            case 2:
+                return '#a6c2ff'
+        }
+    }
+
     render() {
         const militia = this.findMilitia()
         const player = this.findPlayer(militia[0])
-        return <Card>
+        return <Card style={this.styleBackgroundColor(player)}>
             <Card.Body>
-                <Button variant="primary" size="sm" onClick={this.handleCloseClick}>x</Button>
-                <Card.Title>{this.props.neighborhood.name}</Card.Title>
-                <Card.Subtitle>Zone: {this.props.neighborhood.zone.name}</Card.Subtitle>
-                <Card.Text>Controlled by: {player.name}</Card.Text>
-                <Card.Text>Militias: {militia.length}</Card.Text>
+                <Button className='close-button' variant="outline-secondary" size="sm" onClick={this.handleCloseClick}>X</Button>
+                <h3>{this.props.neighborhood.name}</h3>
+                <h5>Zone: {this.props.neighborhood.zone.name}</h5>
+                <Card.Text>
+                    <Table bordered style={{backgroundColor: '#d6d6d6'}}>
+                        <thead>
+                            <th>Controller</th>
+                            <td>{player.name}</td>
+                        </thead>
+                        <tbody>
+                            <th>Militias</th>
+                            <td>{militia.length}</td>
+                        </tbody>
+                    </Table>
+                </Card.Text>
                 {
                     this.isCurrentPlayersTurn() ?
                     (

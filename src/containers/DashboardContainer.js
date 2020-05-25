@@ -12,6 +12,7 @@ import Battle from '../components/Battle'
 // import TabContent from 'react-bootstrap/TabContent'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import Spinner from 'react-bootstrap/Spinner'
 // import Tab from 'react-bootstrap/Tab'
 // import Row from 'react-bootstrap/Row'
 // import Col from 'react-bootstrap/Col'
@@ -26,7 +27,13 @@ class DashboardContainer extends React.Component {
     }
 
     renderDefense = battle => {
-        return battle.defense_player_id === this.props.currentPlayer.id ? <Defend battle={battle}/> : 'Waiting for opponent to mount defense'
+        return battle.defense_player_id === this.props.currentPlayer.id ?
+          <Defend battle={battle}/>
+          : 
+          <div className='center'>
+            <h3>Waiting for opponent to mount defense</h3>
+            <Spinner animation="grow" />
+          </div>
     }
 
     handleSelect = key => {

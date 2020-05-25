@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { setBattleDefense } from '../actions/battles'
+import Form from 'react-bootstrap/Form'
+import Table from 'react-bootstrap/Table'
+import Button from 'react-bootstrap/Button'
 
 class Defend extends React.Component {
     constructor() {
@@ -10,9 +13,15 @@ class Defend extends React.Component {
         }
     }
 
-    findNeighborhood = () => {
+    findDefenseNeighborhood = () => {
         return this.props.neighborhoods.find(neighborhood => {
             return neighborhood.id === this.props.battle.defense_neighborhood_id
+        })
+    }
+
+    findAttackNeighborhood = () => {
+        return this.props.neighborhoods.find(neighborhood => {
+            return neighborhood.id === this.props.battle.attack_neighborhood_id
         })
     }
 
@@ -22,14 +31,14 @@ class Defend extends React.Component {
         })
     }
 
-    findMilitia = () => {
+    findMilitia = neighborhood => {
         return this.props.game.militia.filter(militium => {
-            return militium.neighborhood_id === this.props.battle.defense_neighborhood_id
+            return militium.neighborhood_id === neighborhood.id
         })
     }
 
-    renderOptions = () => {
-        const militia = this.findMilitia()
+    renderOptions = defenseNeighborhood => {
+        const militia = this.findMilitia(defenseNeighborhood)
         const numOptions = []
         if(militia.length > 1) {
             numOptions.push(1, 2)
@@ -51,19 +60,47 @@ class Defend extends React.Component {
     }
 
     render() {
-        const neighborhood = this.findNeighborhood()
-        const militia = this.findMilitia()
+        const defenseNeighborhood = this.findDefenseNeighborhood()
+        const defenseMilitia = this.findMilitia(defenseNeighborhood)
+        const attackNeighborhood = this.findAttackNeighborhood()
+        const attackMilitia = this.findMilitia(attackNeighborhood)
         const attacker = this.findAttacker()
         const numAttackMilitias = this.props.battle.attack_militia
-        return <form onSubmit={this.handleSubmit}>
-            <p>{attacker.name} has attacked {neighborhood.name} with {numAttackMilitias} militias</p>
-            <p>{neighborhood.name} has {militia.length} militias</p>
-            <label>Select the number of militias to defend your neighborhood</label>
-            <select onChange={this.handleChange} value={this.state.numMilitia}>
-                {this.renderOptions()}
-            </select>
-            <input type='submit' value='Defend' />
-        </form>
+        return <Form onSubmit={this.handleSubmit} className='center'>
+            <Form.Group>
+                <Form.Text>{attacker.name} has attacked {defenseNeighborhood.name} with {numAttackMilitias} militias</Form.Text>
+            </Form.Group>
+            <Form.Group>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Neighborhood</th>
+                            <th>Total Militias</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Attack</th>
+                            <td>{attackNeighborhood.name}</td>
+                            <td>{attackMilitia.length}</td>
+                        </tr>
+                        <tr>
+                            <th>Defense</th>
+                            <td>{defenseNeighborhood.name}</td>
+                            <td>{defenseMilitia.length}</td>
+                        </tr>
+                    </tbody>
+                </Table>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Select the number of militias to defend your neighborhood</Form.Label>
+                <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia} className='number-select'>
+                    {this.renderOptions(defenseNeighborhood)}
+                </Form.Control>
+            </Form.Group>
+            <Button type='submit'>Defend</Button>
+        </Form>
     }
 }
 
