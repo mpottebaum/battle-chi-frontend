@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fortify } from '../actions/players'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class Fortify extends React.Component {
     constructor() {
@@ -56,19 +58,22 @@ class Fortify extends React.Component {
     }
     
     render() {
-        return <form onSubmit={this.handleSubmit}>
-            <p>Fortify Neighborhood</p>
-            <label htmlFor='neighborhoodId'>Move militias from:</label>
-            <select value={this.state.neighborhoodId} onChange={this.handleChange} name='neighborhoodId'>
-                <option value='' disabled>Select Neighborhood</option>
-                {this.renderNeighborhoodOptions()}
-            </select>
-            <label>Number of Militias:</label>
-            <select value={this.state.numMilitia} onChange={this.handleChange} name='numMilitia'>
-                {this.renderMilitiaOptions()}
-            </select>
-            <input type='submit' value='Fortify'/>
-        </form>
+        return <Form onSubmit={this.handleSubmit}>
+            <Form.Group>
+                <Form.Label htmlFor='neighborhoodId'>Move militias from:</Form.Label>
+                <Form.Control as='select' value={this.state.neighborhoodId} onChange={this.handleChange} name='neighborhoodId'>
+                    <option value='' disabled>Select Neighborhood</option>
+                    {this.renderNeighborhoodOptions()}
+                </Form.Control>
+            </Form.Group>
+            <Form.Group>
+                <Form.Label>Number of Militias:</Form.Label>
+                <Form.Control as='select' value={this.state.numMilitia} onChange={this.handleChange} name='numMilitia'>
+                    {this.renderMilitiaOptions()}
+                </Form.Control>
+            </Form.Group>
+            <Button type='submit' variant='fortify' size='lg'>Fortify Neighborhood</Button>
+        </Form>
     }
 }
 

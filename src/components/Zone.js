@@ -42,7 +42,7 @@ class Zone extends React.Component {
         if (this.isControlled()) {
             return 'Controlled'
         } else {
-            return 'Uncontrolled'
+            return 'Disputed'
         }
     }
 

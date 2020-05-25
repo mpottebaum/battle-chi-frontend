@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { endBattle } from '../actions/battles'
+import Button from 'react-bootstrap/Button'
 
 class ContinueAttack extends React.Component {
 
@@ -9,7 +10,7 @@ class ContinueAttack extends React.Component {
     }
 
     render() {
-        return <button onClick={this.handleClick}>Continue</button>
+        return <Button onClick={this.handleClick} variant="outline-dark" size='lg'>Continue</Button>
     }
 }
 
