@@ -452,7 +452,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3227' x='161.888' y='253.216'>
+          <tspan id='tspan3227' x='161.888' y='253.216' data-name='Portage Park'>
           {props.determineMilitiaCount('Portage Park')}
           </tspan>
         </text>
@@ -473,7 +473,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3215'>{props.determineMilitiaCount('Jefferson Park')}</tspan>
+          <tspan id='tspan3215' data-name='Jefferson Park'>{props.determineMilitiaCount('Jefferson Park')}</tspan>
         </text>
         <text
           id='text260'
@@ -492,7 +492,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3217'>{props.determineMilitiaCount('Albany Park')}</tspan>
+          <tspan id='tspan3217' data-name='Albany Park'>{props.determineMilitiaCount('Albany Park')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -511,7 +511,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3219'>{props.determineMilitiaCount("Roger's Park")}</tspan>
+          <tspan id='tspan3219' data-name="Roger's Park">{props.determineMilitiaCount("Roger's Park")}</tspan>
         </text>
         <text
           id='text268'
@@ -530,7 +530,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3223'>{props.determineMilitiaCount('Lincoln Square')}</tspan>
+          <tspan id='tspan3223' data-name='Lincoln Square'>{props.determineMilitiaCount('Lincoln Square')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -549,7 +549,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3221'>{props.determineMilitiaCount('Edgewater')}</tspan>
+          <tspan id='tspan3221' data-name='Edgewater'>{props.determineMilitiaCount('Edgewater')}</tspan>
         </text>
         <text
           id='text292'
@@ -568,7 +568,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3225'>{props.determineMilitiaCount('Uptown')}</tspan>
+          <tspan id='tspan3225' data-name='Uptown'>{props.determineMilitiaCount('Uptown')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -587,7 +587,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3229' x='235.756' y='260.403'>
+          <tspan id='tspan3229' x='235.756' y='260.403' data-name='Irving Park'>
           {props.determineMilitiaCount('Irving Park')}
           </tspan>
         </text>
@@ -608,7 +608,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3233'>{props.determineMilitiaCount('Lakeview')}</tspan>
+          <tspan id='tspan3233' data-name='Lakeview'>{props.determineMilitiaCount('Lakeview')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -627,7 +627,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3235'>{props.determineMilitiaCount('Logan Square')}</tspan>
+          <tspan id='tspan3235' data-name='Logan Square'>{props.determineMilitiaCount('Logan Square')}</tspan>
         </text>
         <text
           id='text314'
@@ -646,7 +646,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3231'>{props.determineMilitiaCount('Belmont Cragin')}</tspan>
+          <tspan id='tspan3231' data-name='Belmont Cragin'>{props.determineMilitiaCount('Belmont Cragin')}</tspan>
         </text>
         <text
           id='text318'
@@ -665,7 +665,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3237'>{props.determineMilitiaCount('Lincoln Park')}</tspan>
+          <tspan id='tspan3237' data-name='Lincoln Park'>{props.determineMilitiaCount('Lincoln Park')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -684,7 +684,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3239' x='175.325' y='416.824'>
+          <tspan id='tspan3239' x='175.325' y='416.824' data-name='Austin'>
           {props.determineMilitiaCount('Austin')}
           </tspan>
         </text>
@@ -713,6 +713,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='Humboldt Park'
           >
             {props.determineMilitiaCount('Humboldt Park')}
           </tspan>
@@ -734,7 +735,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3241'>{props.determineMilitiaCount('West Town')}</tspan>
+          <tspan id='tspan3241' data-name='West Town'>{props.determineMilitiaCount('West Town')}</tspan>
         </text>
         <text
           id='text334'
@@ -753,7 +754,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3249'>{props.determineMilitiaCount('Near North Side')}</tspan>
+          <tspan id='tspan3249' data-name='Near North Side'>{props.determineMilitiaCount('Near North Side')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -772,7 +773,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3243' x='314.186' y='467.132'>
+          <tspan id='tspan3243' x='314.186' y='467.132' data-name='Garfield Park'>
           {props.determineMilitiaCount('Garfield Park')}
           </tspan>
         </text>
@@ -793,7 +794,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3247' x='407.052' y='518.876'>
+          <tspan id='tspan3247' x='407.052' y='518.876' data-name='Near West Side'>
             {props.determineMilitiaCount('Near West Side')}
           </tspan>
         </text>
@@ -814,7 +815,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3251'>{props.determineMilitiaCount('Loop')}</tspan>
+          <tspan id='tspan3251' data-name='Loop'>{props.determineMilitiaCount('Loop')}</tspan>
         </text>
         <text
           id='text350'
@@ -833,7 +834,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3245' x='284.564' y='566.309'>
+          <tspan id='tspan3245' x='284.564' y='566.309' data-name='Lawndale'>
           {props.determineMilitiaCount('Lawndale')}
           </tspan>
         </text>
@@ -854,7 +855,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3271'>{props.determineMilitiaCount('New City')}</tspan>
+          <tspan id='tspan3271' data-name='New City'>{props.determineMilitiaCount('New City')}</tspan>
         </text>
         <text
           id='text358'
@@ -873,7 +874,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3259'>{props.determineMilitiaCount('Bridgeport')}</tspan>
+          <tspan id='tspan3259' data-name='Bridgeport'>{props.determineMilitiaCount('Bridgeport')}</tspan>
         </text>
         <text
           id='text362'
@@ -892,7 +893,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3261'>{props.determineMilitiaCount('Bronzeville')}</tspan>
+          <tspan id='tspan3261' data-name='Bronzeville'>{props.determineMilitiaCount('Bronzeville')}</tspan>
         </text>
         <text
           id='text366'
@@ -911,7 +912,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3269'>{props.determineMilitiaCount('Brighton Park')}</tspan>
+          <tspan id='tspan3269' data-name='Brighton Park'>{props.determineMilitiaCount('Brighton Park')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -930,7 +931,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3273'>{props.determineMilitiaCount('Gage Park')}</tspan>
+          <tspan id='tspan3273' data-name='Gage Park'>{props.determineMilitiaCount('Gage Park')}</tspan>
         </text>
         <text
           id='text374'
@@ -949,7 +950,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3275'>{props.determineMilitiaCount('Chicago Lawn')}</tspan>
+          <tspan id='tspan3275' data-name='Chicago Lawn'>{props.determineMilitiaCount('Chicago Lawn')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -968,7 +969,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3277'>{props.determineMilitiaCount('Englewood')}</tspan>
+          <tspan id='tspan3277' data-name='Englewood'>{props.determineMilitiaCount('Englewood')}</tspan>
         </text>
         <text
           id='text382'
@@ -987,7 +988,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3263'>{props.determineMilitiaCount('Hyde Park')}</tspan>
+          <tspan id='tspan3263' data-name='Hyde Park'>{props.determineMilitiaCount('Hyde Park')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1006,7 +1007,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3265'>{props.determineMilitiaCount('Greater Grand Crossing')}</tspan>
+          <tspan id='tspan3265' data-name='Greater Grand Crossing'>{props.determineMilitiaCount('Greater Grand Crossing')}</tspan>
         </text>
         <text
           id='text396'
@@ -1025,7 +1026,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3267'>{props.determineMilitiaCount('South Shore')}</tspan>
+          <tspan id='tspan3267' data-name='South Shore'>{props.determineMilitiaCount('South Shore')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1044,7 +1045,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3289'>{props.determineMilitiaCount('Chatham')}</tspan>
+          <tspan id='tspan3289' data-name='Chatham'>{props.determineMilitiaCount('Chatham')}</tspan>
         </text>
         <text
           id='text404'
@@ -1063,7 +1064,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3291'>{props.determineMilitiaCount('Calumet Heights')}</tspan>
+          <tspan id='tspan3291' data-name='Calumet Heights'>{props.determineMilitiaCount('Calumet Heights')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1082,7 +1083,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3293'>{props.determineMilitiaCount('South Chicago')}</tspan>
+          <tspan id='tspan3293' data-name='South Chicago'>{props.determineMilitiaCount('South Chicago')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1101,7 +1102,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3279'>{props.determineMilitiaCount('Ashburn')}</tspan>
+          <tspan id='tspan3279' data-name='Ashburn'>{props.determineMilitiaCount('Ashburn')}</tspan>
         </text>
         <text
           id='text416'
@@ -1120,7 +1121,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3281'>{props.determineMilitiaCount('Auburn Gresham')}</tspan>
+          <tspan id='tspan3281' data-name='Auburn Gresham'>{props.determineMilitiaCount('Auburn Gresham')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1139,7 +1140,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3283'>{props.determineMilitiaCount('Beverly')}</tspan>
+          <tspan id='tspan3283' data-name='Beverly'>{props.determineMilitiaCount('Beverly')}</tspan>
         </text>
         <text
           id='text424'
@@ -1158,7 +1159,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3285'>{props.determineMilitiaCount('Washington Heights')}</tspan>
+          <tspan id='tspan3285' data-name='Washington Heights'>{props.determineMilitiaCount('Washington Heights')}</tspan>
         </text>
         <text
           id='text428'
@@ -1177,7 +1178,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3287'>{props.determineMilitiaCount('Morgan Park')}</tspan>
+          <tspan id='tspan3287' data-name='Morgan Park'>{props.determineMilitiaCount('Morgan Park')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1196,7 +1197,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3295'>{props.determineMilitiaCount('Pullman')}</tspan>
+          <tspan id='tspan3295' data-name='Pullman'>{props.determineMilitiaCount('Pullman')}</tspan>
         </text>
         <text
           id='text436'
@@ -1215,7 +1216,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3297'>{props.determineMilitiaCount('South Deering')}</tspan>
+          <tspan id='tspan3297' data-name='South Deering'>{props.determineMilitiaCount('South Deering')}</tspan>
         </text>
         <text
           xmlSpace='preserve'
@@ -1234,7 +1235,7 @@ const NeighborhoodMap = props => {
           fontStretch='normal'
           fontVariant='normal'
         >
-          <tspan id='tspan3299'>{props.determineMilitiaCount('Hegewisch')}</tspan>
+          <tspan id='tspan3299' data-name='Hegewisch'>{props.determineMilitiaCount('Hegewisch')}</tspan>
         </text>
         <text
           id='text3255'
@@ -1253,7 +1254,7 @@ const NeighborhoodMap = props => {
           fontVariant='normal'
           xmlSpace='preserve'
         >
-          <tspan id='tspan3257'>{props.determineMilitiaCount('Near South Side')}</tspan>
+          <tspan id='tspan3257' data-name='Near South Side'>{props.determineMilitiaCount('Near South Side')}</tspan>
         </text>
       </g>
       <g
@@ -1304,6 +1305,7 @@ const NeighborhoodMap = props => {
           >
             <tspan
               id='tspan3501'
+              data-name="Roger's Park"
               x='981.1'
               y='67.267'
               style={{
@@ -1344,6 +1346,7 @@ const NeighborhoodMap = props => {
           >
             <tspan
               id='tspan3507'
+              data-name="Roger's Park"
               x='981.1'
               y='82.267'
               style={{
@@ -1415,6 +1418,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Lincoln Square'
             >
               Lincoln
             </tspan>
@@ -1455,6 +1459,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Lincoln Square'
             >
               Square
             </tspan>
@@ -1511,6 +1516,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Edgewater'
             >
               Edgewater
             </tspan>
@@ -1567,6 +1573,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Uptown'
             >
               Uptown
             </tspan>
@@ -1623,6 +1630,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Albany Park'
             >
               Albany Park
             </tspan>
@@ -1655,6 +1663,7 @@ const NeighborhoodMap = props => {
                 fontVariantNumeric: "normal",
                 fontVariantEastAsian: "normal",
               }}
+              data-name='Jefferson Park'
             >
               Jefferson
             </tspan>
@@ -1678,6 +1687,7 @@ const NeighborhoodMap = props => {
                 fontVariantNumeric: "normal",
                 fontVariantEastAsian: "normal",
               }}
+              data-name='Jefferson Park'
             >
               Park
             </tspan>
@@ -1698,7 +1708,7 @@ const NeighborhoodMap = props => {
           y='224.799'
           display='inline'
         >
-          <tspan id='tspan298' x='736.401' y='224.799'>
+          <tspan id='tspan298' x='736.401' y='224.799' data-name='Portage Park'>
             Portage Park
           </tspan>
         </text>
@@ -1753,6 +1763,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Irving Park'
             >
               Irving Park
             </tspan>
@@ -1809,6 +1820,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Lakeview'
             >
               Lakeview
             </tspan>
@@ -1865,6 +1877,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Belmont Cragin'
             >
               Belmont Cragin
             </tspan>
@@ -1921,6 +1934,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Logan Square'
             >
               Logan Square
             </tspan>
@@ -1977,6 +1991,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Lincoln Park'
             >
               Lincoln Park
             </tspan>
@@ -2033,6 +2048,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Austin'
             >
               Austin
             </tspan>
@@ -2089,6 +2105,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Humboldt Park'
             >
               Humboldt
             </tspan>
@@ -2129,6 +2146,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Humboldt Park'
             >
               Park
             </tspan>
@@ -2185,6 +2203,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='West Town'
             >
               West Town
             </tspan>
@@ -2241,6 +2260,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Near North Side'
             >
               Near North
             </tspan>
@@ -2281,6 +2301,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Near North Side'
             >
               Side
             </tspan>
@@ -2356,6 +2377,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Garfield Park'
             >
               Garfield
             </tspan>
@@ -2396,6 +2418,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Garfield Park'
             >
               Park
             </tspan>
@@ -2452,6 +2475,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Near West Side'
             >
               Near West Side
             </tspan>
@@ -2508,6 +2532,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Loop'
             >
               Loop
             </tspan>
@@ -2564,6 +2589,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Near South Side'
             >
               Near
             </tspan>
@@ -2604,6 +2630,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Near South Side'
             >
               South
             </tspan>
@@ -2644,6 +2671,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Near South Side'
             >
               Side
             </tspan>
@@ -2682,6 +2710,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='Bronzeville'
           >
             Bronzeville{" "}
           </tspan>
@@ -2737,6 +2766,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Bridgeport'
             >
               Bridgeport
             </tspan>
@@ -2757,7 +2787,7 @@ const NeighborhoodMap = props => {
           y='645.297'
           display='inline'
         >
-          <tspan id='tspan388' x='894.796' y='645.297'>
+          <tspan id='tspan388' x='894.796' y='645.297' data-name='Brighton Park'>
             Brighton Park
           </tspan>
         </text>
@@ -2816,6 +2846,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Gage Park'
             >
               Gage Park
             </tspan>
@@ -2872,6 +2903,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Lawndale'
             >
               Lawndale
             </tspan>
@@ -2928,6 +2960,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Englewood'
             >
               Englewood
             </tspan>
@@ -2948,7 +2981,7 @@ const NeighborhoodMap = props => {
           y='769.83'
           display='inline'
         >
-          <tspan id='tspan386' x='895.073' y='769.83'>
+          <tspan id='tspan386' x='895.073' y='769.83' data-name='Chicago Lawn'>
             Chicago Lawn
           </tspan>
         </text>
@@ -3003,6 +3036,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Greater Grand Crossing'
             >
               Greater Grand
             </tspan>
@@ -3043,6 +3077,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Greater Grand Crossing'
             >
               Crossing
             </tspan>
@@ -3099,6 +3134,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='South Shore'
             >
               South{" "}
             </tspan>
@@ -3139,6 +3175,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='South Shore'
             >
               Shore
             </tspan>
@@ -3195,6 +3232,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Ashburn'
             >
               Ashburn
             </tspan>
@@ -3251,6 +3289,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Chatham'
             >
               Chatham
             </tspan>
@@ -3307,6 +3346,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='South Chicago'
             >
               South
             </tspan>
@@ -3347,6 +3387,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='South Chicago'
             >
               Chicago
             </tspan>
@@ -3403,6 +3444,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Calumet Heights'
             >
               Calumet
             </tspan>
@@ -3443,6 +3485,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Calumet Heights'
             >
               Heights
             </tspan>
@@ -3484,6 +3527,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='New City'
           >
             New City
           </tspan>
@@ -3506,7 +3550,7 @@ const NeighborhoodMap = props => {
           stroke='none'
           display='inline'
         >
-          <tspan id='tspan384' x='1174.873' y='716.247'>
+          <tspan id='tspan384' x='1174.873' y='716.247' data-name='Hyde Park'>
             Hyde Park
           </tspan>
         </text>
@@ -3561,6 +3605,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Beverly'
             >
               Beverly
             </tspan>
@@ -3617,6 +3662,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Pullman'
             >
               Pullman
             </tspan>
@@ -3673,6 +3719,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='South Deering'
             >
               South Deering
             </tspan>
@@ -3714,6 +3761,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='Auburn Gresham'
           >
             Auburn
           </tspan>
@@ -3735,6 +3783,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='Auburn Gresham'
           >
             Gresham
           </tspan>
@@ -3775,6 +3824,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='Washington Heights'
           >
             Washington
           </tspan>
@@ -3796,6 +3846,7 @@ const NeighborhoodMap = props => {
             fontStyle='normal'
             fontVariant='normal'
             fontWeight='normal'
+            data-name='Washington Heights'
           >
             Heights
           </tspan>
@@ -3851,6 +3902,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Morgan Park'
             >
               Morgan Park
             </tspan>
@@ -3907,6 +3959,7 @@ const NeighborhoodMap = props => {
               fontStyle='normal'
               fontVariant='normal'
               fontWeight='normal'
+              data-name='Hegewisch'
             >
               Hegewisch
             </tspan>
