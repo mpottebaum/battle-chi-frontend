@@ -28,7 +28,7 @@ const CardsHelp = () => {
             <Card card={{neighborhood_id: null, fighter_type: 0}}/>
         </div>
         <h2>Militia bonuses</h2>
-        <p>Each time any player trades in a set of cards, the number of militias received increases as shown in the table below.</p>
+        <p>Each time any player trades in a set of cards, the number of militias received for all players increases as shown in the table below.</p>
         <p>After the sixth set, the number of militias received increases by 5.</p>
         <Table bordered>
             <thead>
