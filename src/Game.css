@@ -133,3 +133,44 @@ span.badge-bonus {
   margin-top: 8px;
   margin-bottom: 15px;
 }
+
+.main-title {
+  display: block;
+  margin-top: 25vh;
+}
+
+.menu-container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  width: 60vw;
+}
+
+.main-menu {
+  display: grid;
+  grid-template-columns: 30vw 30vw;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas: 
+    "resume resume"
+    "create join";
+}
+
+.resume-game {
+  grid-area: resume;
+}
+
+.create-game {
+  grid-area: create;
+  width: 70%;
+  margin-top: 18px;
+}
+
+.create-options {
+  font-size: small;
+}
+
+.join-game {
+  grid-area: join;
+  margin-top: 20px;
+}
