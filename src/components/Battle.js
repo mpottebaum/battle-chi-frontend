@@ -67,6 +67,16 @@ class Battle extends React.Component {
         })
     }
 
+    renderDie = front => {
+        if(front) {
+            return <img className='die-img' src={`/dice/${front.result}.jpg`} />
+        } else {
+            return null
+        }
+    }
+
+
+
     createResults = (sortedAttackFronts, sortedDefenseFronts) => {
         const results = {}
         for(let i=0; i < sortedDefenseFronts.length; i++) {
@@ -130,6 +140,16 @@ class Battle extends React.Component {
             <ContinueAttack battle={this.props.battle} playerId={this.props.currentPlayer.id}/>
     }
 
+    numFrontsColumns = (sortedAttackFronts, sortedDefenseFronts) => {
+        if(sortedAttackFronts.length === 3) {
+            return 3
+        } else if(sortedAttackFronts.length === 2 | sortedDefenseFronts === 2) {
+            return 2
+        } else {
+            return 1
+        }
+    }
+
     render() {
         const attackPlayer = this.findAttackPlayer()
         const attackNeighborhood = this.findAttackNeighborhood()
@@ -143,26 +163,57 @@ class Battle extends React.Component {
             <div className='center'>
                 <h1>Battle</h1>
             </div>
+            <div className='fronts' style={{gridTemplateColumns: `repeat(${this.numFrontsColumns(sortedAttackFronts, sortedDefenseFronts)}, 100px)`}}>
+                <div className='front'>
+                    <div className='front-attack' style={this.styleNeighborhoodBg(attackPlayer)}>
+                        {this.renderDie(sortedAttackFronts[0])}
+                    </div>
+                    <div className='front-defense' style={this.styleNeighborhoodBg(defensePlayer)}>
+                        {this.renderDie(sortedDefenseFronts[0])}
+                    </div>
+                </div>
+                {
+                    sortedAttackFronts[1] || sortedDefenseFronts[1] ?
+                        <div className='front'>
+                            <div className='front-attack' style={this.styleNeighborhoodBg(attackPlayer)}>
+                                {sortedAttackFronts[1] ? this.renderDie(sortedAttackFronts[1]) : null}
+                            </div>
+                            <div className='front-defense' style={this.styleNeighborhoodBg(defensePlayer)}>
+                                {sortedDefenseFronts[1] ? this.renderDie(sortedDefenseFronts[1]) : null}
+                            </div>
+                        </div>
+                        :
+                        null
+
+                }
+                {
+                    sortedAttackFronts[2] ?
+                        <div className='front'>
+                            <div className='front-attack' style={this.styleNeighborhoodBg(attackPlayer)}>
+                                {this.renderDie(sortedAttackFronts[2])}
+                            </div>
+                            <div className='front-defense' style={this.styleNeighborhoodBg(defensePlayer)}></div>
+                        </div>
+                        :
+                        null
+
+                }
+            </div>
             <Table bordered>
                 <thead>
                     <tr>
                         <th></th>
                         <th>Militias Lost</th>
-                        <th>First Front</th>
-                        <th>Second Front</th>
-                        <th>Third Front</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>                    
                         <th style={this.styleNeighborhoodBg(attackPlayer)}>{attackNeighborhood.name}</th>
                         <td>{this.attackMilitiasLost(sortedAttackFronts, sortedDefenseFronts)}</td>
-                        {this.renderAttackFronts(sortedAttackFronts, sortedDefenseFronts)}
                     </tr>
                     <tr>                    
                         <th style={this.styleNeighborhoodBg(defensePlayer)}>{defenseNeighborhood.name}</th>
                         <td>{this.defenseMilitiasLost(sortedAttackFronts, sortedDefenseFronts)}</td>
-                        {this.renderDefenseFronts(sortedAttackFronts, sortedDefenseFronts)}
                     </tr>
                 </tbody>
             </Table>
