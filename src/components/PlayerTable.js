@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 
 class PlayerTable extends React.Component {
     
+
     generateOrderNums = () => {
         return [...Array(this.props.game.num_players).keys()].map(i => i + 1)
     }
@@ -18,7 +19,7 @@ class PlayerTable extends React.Component {
     }
 
     getBackgroundStyle = orderNum => {
-        if(this.props.turnPlayer.turn_order_num === orderNum) {
+        if(this.props.game.turn_order_num === orderNum) {
             const color = this.getBackgroundColor(orderNum)
             return {backgroundColor: color}
         } else {
@@ -82,7 +83,7 @@ class PlayerTable extends React.Component {
     // }
     
     render() {
-        return <Table bordered hover size="sm">
+        return <Table bordered hover size="sm" className='player-table'>
                 <thead>
                     <tr>
                         <td>Turn {this.props.game.turn_num}</td>
@@ -109,7 +110,8 @@ class PlayerTable extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        zones: state.zones
+        zones: state.zones,
+        game: state.game
     }
 }
 

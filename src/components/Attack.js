@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { createBattle } from '../actions/battles'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class Attack extends React.Component {
     constructor() {
@@ -74,20 +76,26 @@ class Attack extends React.Component {
     
     render() {
         return <Form onSubmit={this.handleSubmit}>
-            <Form.Group>
-                <Form.Label htmlFor='neighborhoodId'>Attack From</Form.Label>
-                <Form.Control as='select' value={this.state.neighborhoodId} onChange={this.handleChange} name='neighborhoodId'>
-                    <option value='' disabled>Select Neighborhood</option>
-                    {this.renderNeighborhoodOptions()}
-                </Form.Control>
+            <Form.Group as={Row}>
+                <Form.Label column htmlFor='neighborhoodId'>Attack From</Form.Label>
+                <Col sm={8}>
+                    <Form.Control as='select' value={this.state.neighborhoodId} onChange={this.handleChange} name='neighborhoodId'>
+                        <option value='' disabled>Select Neighborhood</option>
+                        {this.renderNeighborhoodOptions()}
+                    </Form.Control>
+                </Col>
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Number of Attacking Militias</Form.Label>
-                <Form.Control as='select' value={this.state.numMilitia} onChange={this.handleChange} name='numMilitia'>
-                    {this.renderMilitiaOptions()}
-                </Form.Control>
+            <Form.Group as={Row}>
+                <Form.Label column sm={6}>Send Militias</Form.Label>
+                <Col sm={3}>
+                    <Form.Control as='select' value={this.state.numMilitia} onChange={this.handleChange} name='numMilitia'>
+                        {this.renderMilitiaOptions()}
+                    </Form.Control>
+                </Col>
+                <Col >
+                    <Button variant='attack' type='submit' size='lg'>Attack</Button>
+                </Col>
             </Form.Group>
-            <Button variant='attack' type='submit' size='lg'>Attack</Button>
         </Form>
     }
 }

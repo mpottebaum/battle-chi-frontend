@@ -74,7 +74,6 @@ class CurrentAction extends React.Component {
     render() {
         const player = this.findPlayer()
         return <div className='current-action'>
-            <PlayerTable turnPlayer={player} game={this.props.game}/>
             <TurnStageBar turnPlayer={player}/>
             <div className='center'>
                 {this.renderInstruction(player)}

@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { fortify } from '../actions/players'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
 
 class Fortify extends React.Component {
     constructor() {
@@ -59,20 +61,28 @@ class Fortify extends React.Component {
     
     render() {
         return <Form onSubmit={this.handleSubmit}>
-            <Form.Group>
-                <Form.Label htmlFor='neighborhoodId'>Move militias from:</Form.Label>
-                <Form.Control as='select' value={this.state.neighborhoodId} onChange={this.handleChange} name='neighborhoodId'>
-                    <option value='' disabled>Select Neighborhood</option>
-                    {this.renderNeighborhoodOptions()}
-                </Form.Control>
+            <Form.Group as={Row}>
+                <Form.Label column sm={4} htmlFor='neighborhoodId'>Move from</Form.Label>
+                <Col sm={8}>
+                    <Form.Control as='select' value={this.state.neighborhoodId} onChange={this.handleChange} name='neighborhoodId'>
+                        <option value='' disabled>Select Neighborhood</option>
+                        {this.renderNeighborhoodOptions()}
+                    </Form.Control>
+                </Col>
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Number of Militias:</Form.Label>
-                <Form.Control as='select' value={this.state.numMilitia} onChange={this.handleChange} name='numMilitia'>
-                    {this.renderMilitiaOptions()}
-                </Form.Control>
+            <Form.Group as={Row}>
+                <Form.Label column sm={9}>Send Militias</Form.Label>
+                <Col sm={3}>
+                    <Form.Control as='select' value={this.state.numMilitia} onChange={this.handleChange} name='numMilitia'>
+                        {this.renderMilitiaOptions()}
+                    </Form.Control>
+                </Col>
             </Form.Group>
-            <Button type='submit' variant='fortify' size='lg'>Fortify Neighborhood</Button>
+            <Row>
+                <Col>
+                    <Button type='submit' variant='fortify' size='lg'>Fortify Neighborhood</Button>
+                </Col>
+            </Row>
         </Form>
     }
 }

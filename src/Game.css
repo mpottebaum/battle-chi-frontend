@@ -14,7 +14,7 @@
     grid-template-columns: minmax(300px, 30vw) minmax(300px, 30vw);
     grid-template-rows: auto;
     grid-template-areas: 
-      "action log"
+      "table action"
       "dash dash";
   }
 
@@ -22,8 +22,8 @@
     grid-area: action;
   }
 
-  .game-log {
-    grid-area: log;
+  .player-table {
+    grid-area: table;
   }
 
   .dashboard {
@@ -98,7 +98,17 @@ span.badge-bonus {
   text-align: center;
 }
 
-select.number-select {
+/* select.number-select {
   width: 30px;
   float: right;
+} */
+
+.neighborhood {
+  padding: 15px;
+}
+
+.conquer {
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
 }

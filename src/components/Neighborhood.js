@@ -92,13 +92,13 @@ class Neighborhood extends React.Component {
     render() {
         const militia = this.findMilitia()
         const player = this.findPlayer(militia[0])
-        return <Card style={this.styleBackgroundColor(player)}>
+        return <Card style={this.styleBackgroundColor(player)} className='neighborhood'>
             <Card.Body>
                 <Button className='close-button' variant="outline-secondary" size="sm" onClick={this.handleCloseClick}>X</Button>
                 <h3>{this.props.neighborhood.name}</h3>
                 <h5>Zone: {this.props.neighborhood.zone.name}</h5>
                 <Card.Text>
-                    <Table bordered style={{backgroundColor: '#d6d6d6'}}>
+                    <Table style={{backgroundColor: '#fafafa'}}>
                         <thead>
                             <th>Controller</th>
                             <td>{player.name}</td>

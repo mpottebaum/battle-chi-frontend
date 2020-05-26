@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { conquer } from '../actions/battles'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 
 class Conquer extends React.Component {
@@ -32,15 +34,25 @@ class Conquer extends React.Component {
     }
 
     render() {
-        return <Form onSubmit={this.handleSubmit}>
-            <Form.Text>You conquered {this.props.defenseNeighborhood.name}</Form.Text>
-            <Form.Group>
-                <Form.Label>Select the number of militias to move from {this.props.attackNeighborhood.name}</Form.Label>
-                <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
-                    {this.renderOptions()}
-                </Form.Control>
+        return <Form onSubmit={this.handleSubmit} className='conquer'>
+            <Form.Group as={Row}>
+                <Col>
+                    <h3>You conquered {this.props.defenseNeighborhood.name}</h3>
+                </Col>
             </Form.Group>
-            <Button type='submit' size='lg' variant="outline-success">Move Militias</Button>
+            <Form.Group as={Row}>
+                <Col sm={7}>
+                    <Form.Label>Select the number of militias to move from {this.props.attackNeighborhood.name}</Form.Label>
+                </Col>
+                <Col sm={2}>
+                    <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
+                        {this.renderOptions()}
+                    </Form.Control>
+                </Col>
+                <Col sm={3}>
+                    <Button type='submit' size='lg' variant="outline-success">Move Militias</Button>
+                </Col>
+            </Form.Group>
         </Form>
     }
 }

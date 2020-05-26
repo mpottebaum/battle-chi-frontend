@@ -4,6 +4,8 @@ import { setBattleDefense } from '../actions/battles'
 import Form from 'react-bootstrap/Form'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 class Defend extends React.Component {
     constructor() {
@@ -59,47 +61,84 @@ class Defend extends React.Component {
         })
     }
 
+    styleBackground = player => {
+        switch(player.turn_order_num) {
+            case 0:
+                return {
+                    backgroundColor: '#fffac2'
+                }
+            case 1:
+                return {
+                    backgroundColor: '#ffa6a6'
+                }
+            case 2:
+                return {
+                    backgroundColor: '#a6c2ff'
+                }
+        }
+    }
+
+    findPlayer = militia => {
+        if(militia.length > 0) {
+            return this.props.game.players.find(player => player.id === militia[0].player_id)
+        } else {
+            return {turn_order_num: 0}
+        }
+    }
+
     render() {
         const defenseNeighborhood = this.findDefenseNeighborhood()
         const defenseMilitia = this.findMilitia(defenseNeighborhood)
+        const defensePlayer = this.findPlayer(defenseMilitia)
         const attackNeighborhood = this.findAttackNeighborhood()
         const attackMilitia = this.findMilitia(attackNeighborhood)
+        const attackPlayer = this.findPlayer(attackMilitia)
         const attacker = this.findAttacker()
         const numAttackMilitias = this.props.battle.attack_militia
         return <Form onSubmit={this.handleSubmit} className='center'>
-            <Form.Group>
-                <Form.Text>{attacker.name} has attacked {defenseNeighborhood.name} with {numAttackMilitias} militias</Form.Text>
+            <Form.Group as={Row}>
+                <Col>
+                    <Table bordered>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Neighborhood</th>
+                                <th>Total Militias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Attack</th>
+                                <td style={this.styleBackground(attackPlayer)}>{attackNeighborhood.name}</td>
+                                <td style={this.styleBackground(attackPlayer)}>{attackMilitia.length}</td>
+                            </tr>
+                            <tr>
+                                <th>Defense</th>
+                                <td style={this.styleBackground(defensePlayer)}>{defenseNeighborhood.name}</td>
+                                <td style={this.styleBackground(defensePlayer)}>{defenseMilitia.length}</td>
+                            </tr>
+                        </tbody>
+                    </Table>
+                </Col>
             </Form.Group>
-            <Form.Group>
-                <Table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Neighborhood</th>
-                            <th>Total Militias</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>Attack</th>
-                            <td>{attackNeighborhood.name}</td>
-                            <td>{attackMilitia.length}</td>
-                        </tr>
-                        <tr>
-                            <th>Defense</th>
-                            <td>{defenseNeighborhood.name}</td>
-                            <td>{defenseMilitia.length}</td>
-                        </tr>
-                    </tbody>
-                </Table>
+            <Form.Group as={Row}>
+                <Col>
+                    <h3>{attacker.name} has attacked {defenseNeighborhood.name} with {numAttackMilitias} militias</h3>
+                </Col>
             </Form.Group>
-            <Form.Group>
-                <Form.Label>Select the number of militias to defend your neighborhood</Form.Label>
-                <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia} className='number-select'>
-                    {this.renderOptions(defenseNeighborhood)}
-                </Form.Control>
+            <Form.Group as={Row}>
+                <Col sm={8}>
+                    <Form.Label>Select the number of militias to send in defense</Form.Label>
+                </Col>
+                <Col sm={1}>
+                    <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
+                        {this.renderOptions(defenseNeighborhood)}
+                    </Form.Control>
+                </Col>
+                <Col sm={2}>
+                    <Button type='submit' size='lg'>Defend</Button>
+                </Col>
             </Form.Group>
-            <Button type='submit'>Defend</Button>
         </Form>
     }
 }
