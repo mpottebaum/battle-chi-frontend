@@ -8,7 +8,7 @@ class StartGameContainer extends React.Component {
     render() {
         return <div>
                 <h1>Battle For Chicago</h1>
-                {this.props.game ? <NewPlayerForm history={this.props.history} /> : <MainMenu />}
+                {this.props.game ? <NewPlayerForm history={this.props.history} /> : <MainMenu history={this.props.history}/>}
         </div>
     }
 }

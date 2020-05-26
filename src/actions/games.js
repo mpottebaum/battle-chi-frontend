@@ -1,9 +1,11 @@
 import { gamesUrl, HEADERS } from '../constants/index'
 
-export const createGame = () => {
+export const createGame = setup => {
+    const body = (setup === 'random' ? {random: true} : {random: false})
     const configObj = {
         method: 'POST',
-        headers: HEADERS
+        headers: HEADERS,
+        body: JSON.stringify(body)
     }
     return dispatch => {
         dispatch({type: 'START_CREATE_GAME'})
