@@ -25,8 +25,16 @@ export const joinGame = id => {
         fetch(url)
         .then(resp => resp.json())
         .then(game => {
-            dispatch({type: 'JOIN_GAME', game: game})
-            localStorage.setItem('gameId', game.id)
+            if(game.error) {
+                if(game.error === 'Not Found') {
+                    alert('The game ID you provided is invalid')
+                } else {
+                    alert(game.error)
+                }
+            } else {
+                dispatch({type: 'JOIN_GAME', game: game})
+                localStorage.setItem('gameId', game.id)
+            }
         })
     }
 }
