@@ -1,6 +1,7 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
 import { connect } from 'react-redux'
+import Spinner from 'react-bootstrap/Spinner'
 
 class PlayerTable extends React.Component {
     
@@ -9,21 +10,16 @@ class PlayerTable extends React.Component {
         return [...Array(this.props.game.num_players).keys()].map(i => i + 1)
     }
 
-    getBackgroundColor = orderNum => {
+    getBackgroundStyle = orderNum => {
         switch(orderNum) {
             case 1:
-                return '#ffa6a6'
+                return {
+                    backgroundColor: '#ffa6a6'
+                }
             case 2:
-                return '#a6c2ff'
-        }
-    }
-
-    getBackgroundStyle = orderNum => {
-        if(this.props.game.turn_order_num === orderNum) {
-            const color = this.getBackgroundColor(orderNum)
-            return {backgroundColor: color}
-        } else {
-            return {}
+                return {
+                    backgroundColor: '#a6c2ff'
+                }
         }
     }
 
@@ -31,7 +27,14 @@ class PlayerTable extends React.Component {
         const orderNums = this.generateOrderNums()
         return orderNums.map(orderNum => {
             const player = this.props.game.players.find(player => player.turn_order_num === orderNum)
-            return <th style={this.getBackgroundStyle(orderNum)}>{player.name}</th>
+            if(this.props.game.turn_order_num === orderNum) {
+                return <th style={this.getBackgroundStyle(orderNum)}>
+                        {player.name}
+                        <Spinner animation="grow" size="sm" className='turn-indicator' />
+                    </th>
+            } else {
+                return <th>{player.name}</th>
+            }
         })
     }
 

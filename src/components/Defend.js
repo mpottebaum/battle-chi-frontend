@@ -95,51 +95,61 @@ class Defend extends React.Component {
         const attackPlayer = this.findPlayer(attackMilitia)
         const attacker = this.findAttacker()
         const numAttackMilitias = this.props.battle.attack_militia
-        return <Form onSubmit={this.handleSubmit} className='center'>
+        return <div>
+
+        <Table bordered>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Neighborhood</th>
+                    <th>Total Militias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Attack</th>
+                    <td style={this.styleBackground(attackPlayer)}>{attackNeighborhood.name}</td>
+                    <td style={this.styleBackground(attackPlayer)}>{attackMilitia.length}</td>
+                </tr>
+                <tr>
+                    <th>Defense</th>
+                    <td style={this.styleBackground(defensePlayer)}>{defenseNeighborhood.name}</td>
+                    <td style={this.styleBackground(defensePlayer)}>{defenseMilitia.length}</td>
+                </tr>
+            </tbody>
+        </Table>
+        <Form onSubmit={this.handleSubmit} className='center'>
             <Form.Group as={Row}>
                 <Col>
-                    <Table bordered>
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Neighborhood</th>
-                                <th>Total Militias</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th>Attack</th>
-                                <td style={this.styleBackground(attackPlayer)}>{attackNeighborhood.name}</td>
-                                <td style={this.styleBackground(attackPlayer)}>{attackMilitia.length}</td>
-                            </tr>
-                            <tr>
-                                <th>Defense</th>
-                                <td style={this.styleBackground(defensePlayer)}>{defenseNeighborhood.name}</td>
-                                <td style={this.styleBackground(defensePlayer)}>{defenseMilitia.length}</td>
-                            </tr>
-                        </tbody>
-                    </Table>
+                    <h3>{attacker.name} attacked {defenseNeighborhood.name} with {numAttackMilitias} militias</h3>
                 </Col>
             </Form.Group>
             <Form.Group as={Row}>
-                <Col>
-                    <h3>{attacker.name} has attacked {defenseNeighborhood.name} with {numAttackMilitias} militias</h3>
+                <Col sm={2}>
                 </Col>
-            </Form.Group>
-            <Form.Group as={Row}>
                 <Col sm={8}>
                     <Form.Label>Select the number of militias to send in defense</Form.Label>
+                </Col>
+                <Col sm={2}>
+                </Col>
+            </Form.Group>
+            <Row>
+                <Col sm={5}>
                 </Col>
                 <Col sm={1}>
                     <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
                         {this.renderOptions(defenseNeighborhood)}
                     </Form.Control>
                 </Col>
-                <Col sm={2}>
+                <Col sm={1}>
                     <Button type='submit' size='lg'>Defend</Button>
                 </Col>
-            </Form.Group>
+                <Col sm={5}>
+                </Col>
+            </Row>
         </Form>
+        </div>
+
     }
 }
 

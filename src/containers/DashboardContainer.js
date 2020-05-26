@@ -41,6 +41,19 @@ class DashboardContainer extends React.Component {
             key: key
         })
     }
+
+    renderCardIndicator = () => {
+      if(this.props.game.turn_stage === 0) {
+        const player = this.props.game.players.find(player => player.turn_order_num === this.props.game.turn_order_num)
+        if(player.id === this.props.currentPlayer.id && player.cards.length >= 5) {
+          return <Spinner animation="grow" size="sm" className='turn-indicator' />
+        } else {
+          return null
+        }
+      } else {
+        return null
+      }
+    }
     
     render() {
         const battle = this.props.game.battles.find(battle => battle.id === this.props.currentBattleId)
@@ -57,7 +70,7 @@ class DashboardContainer extends React.Component {
                 <Tabs>
                   <TabList>
                     <Tab>Neighborhoods</Tab>
-                    <Tab>Cards</Tab>
+                    <Tab>Cards{this.renderCardIndicator()}</Tab>
                     <Tab>Zones</Tab>
                     <Tab>Help</Tab>
                   </TabList>

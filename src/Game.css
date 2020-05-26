@@ -112,3 +112,8 @@ span.badge-bonus {
   margin-left: auto;
   margin-right: auto;
 }
+
+.turn-indicator {
+  margin-left: 1rem;
+  margin-bottom: 0.3rem;
+}
