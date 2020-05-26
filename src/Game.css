@@ -174,3 +174,43 @@ span.badge-bonus {
   grid-area: join;
   margin-top: 20px;
 }
+
+.die-img {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fronts {
+  display: grid;
+  /* grid-template-columns: 100px 100px 100px; */
+  grid-gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.front {
+  display: grid;
+  grid-template-columns: 50px 50px;
+  align-items: center;
+  justify-content: center;
+  margin: 5px;
+  /* grid-template-areas: 
+    "first second third"; */
+}
+
+/* .first-front {
+  grid-area: first;
+}
+
+.second-front {
+  grid-area: second;
+}
+
+.third-front {
+  grid-area: third;
+} */
+
+.front-attack, .front-defense {
+  padding: 8px;
+}
