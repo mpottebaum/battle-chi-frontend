@@ -117,3 +117,19 @@ span.badge-bonus {
   margin-left: 1rem;
   margin-bottom: 0.3rem;
 }
+
+.card-img {
+  object-fit: cover;
+  width: 150px;
+  height: 225px;
+}
+
+.card-neighborhood {
+  margin-top: 12px;
+  margin-bottom: 15px;
+}
+
+.trade-btn {
+  margin-top: 8px;
+  margin-bottom: 15px;
+}

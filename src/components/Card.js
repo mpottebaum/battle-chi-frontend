@@ -2,18 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { selectCard, unselectCard } from '../actions/cards'
 import Table from 'react-bootstrap/Table'
+import {default as BootCard} from 'react-bootstrap/Card'
 
 class Card extends React.Component {
-    renderFighterType = () => {
+    renderImg = () => {
         switch(this.props.card.fighter_type) {
             case 1:
-                return 'Gunman'
+                return '/card_images/jordan.jpg'
             case 2:
-                return 'Tank'
+                return '/card_images/oprah.jpg'
             case 3:
-                return 'Drone'
+                return '/card_images/billycorgan.png'
             case 0:
-                return 'Wild Card'
+                return '/card_images/kanye.jpg'
         }
     }
 
@@ -43,20 +44,10 @@ class Card extends React.Component {
 
     render() {
         const neighborhood = this.findNeighborhood()
-        return <Table bordered hover onClick={this.handleClick} style={this.renderStyle()}>
-                <thead>
-                    <tr>
-                        <th>Fighter Type</th>
-                        <th>Neighborhood</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{this.renderFighterType()}</td>
-                        <td>{neighborhood ? neighborhood.name : 'n/a'}</td>
-                    </tr>
-                </tbody>
-            </Table>
+        return <BootCard onClick={this.handleClick} style={this.renderStyle()} className='center'>
+                <BootCard.Img variant='top' src={this.renderImg()} className='card-img'/>
+                <h3 className='card-neighborhood'>{neighborhood ? neighborhood.name : 'Wild Card'}</h3>
+            </BootCard>
     }
 }
 
