@@ -223,6 +223,7 @@ span.badge-bonus {
 
 .front-attack, .front-defense {
   padding: 10px;
+  margin-bottom: 2px;
 }
 
 .new-player {
