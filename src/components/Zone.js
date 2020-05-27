@@ -10,16 +10,22 @@ class Zone extends React.Component {
 
     neighborhoodStyle = neighborhood => {
         const militia = this.props.game.militia.find(militium => militium.neighborhood_id === neighborhood.id)
-        const player = this.props.game.players.find(player => player.id === militia.player_id)
-        switch(player.turn_order_num) {
-            case 1:
-                return {
-                    backgroundColor: '#ffa6a6'
-                }
-            case 2:
-                return {
-                    backgroundColor: '#a6c2ff'
-                }
+        if(militia) {
+            const player = this.props.game.players.find(player => player.id === militia.player_id)
+            switch(player.turn_order_num) {
+                case 1:
+                    return {
+                        backgroundColor: '#ffa6a6'
+                    }
+                case 2:
+                    return {
+                        backgroundColor: '#a6c2ff'
+                    }
+            }
+        } else {
+            return {
+                backgroundColor: '#fffac2'
+            }
         }
     }
 
@@ -32,7 +38,7 @@ class Zone extends React.Component {
 
     isControlled = () => {
         const militias = this.props.game.militia.filter(militium => this.props.zone.neighborhood_ids.includes(militium.neighborhood_id))
-        if(militias.every(militium => militium.player_id === militias[0].player_id)) {
+        if(militias.length > 0 && militias.every(militium => militium.player_id === militias[0].player_id)) {
             const militium = this.props.game.militia.find(militium => this.props.zone.neighborhood_ids.includes(militium.neighborhood_id))
             return this.props.game.players.find(player => player.id === militium.player_id)
         } else {

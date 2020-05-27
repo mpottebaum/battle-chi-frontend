@@ -19,26 +19,34 @@ class TurnStageBar extends React.Component {
     }
     
     renderAttack = () => {
-        if(this.props.turnStage === 1) {
-            if(this.props.currentPlayer.id === this.props.turnPlayer.id) {
-                return <ProgressBar now={34} variant='attack' label={'Attack'} key={2} />
-            } else {
-                return <ProgressBar now={34} variant='active' label={'Attack'} key={2} />
-            }
+        if(this.props.setup) {
+            return null
         } else {
-            return <ProgressBar now={34} variant='inactive' label={'Attack'} key={2} />
+            if(this.props.turnStage === 1) {
+                if(this.props.currentPlayer.id === this.props.turnPlayer.id) {
+                    return <ProgressBar now={34} variant='attack' label={'Attack'} key={2} />
+                } else {
+                    return <ProgressBar now={34} variant='active' label={'Attack'} key={2} />
+                }
+            } else {
+                return <ProgressBar now={34} variant='inactive' label={'Attack'} key={2} />
+            }
         }
     }
     
     renderFortify = () => {
-        if(this.props.turnStage === 2) {
-            if(this.props.currentPlayer.id === this.props.turnPlayer.id) {
-                return <ProgressBar now={33} variant='fortify' label={'Fortify'} key={3} />
-            } else {
-                return <ProgressBar now={33} variant='active' label={'Fortify'} key={3} />
-            }
+        if(this.props.setup) {
+            return null
         } else {
-            return <ProgressBar now={33} variant='inactive' label={'Fortify'} key={3} />
+            if(this.props.turnStage === 2) {
+                if(this.props.currentPlayer.id === this.props.turnPlayer.id) {
+                    return <ProgressBar now={33} variant='fortify' label={'Fortify'} key={3} />
+                } else {
+                    return <ProgressBar now={33} variant='active' label={'Fortify'} key={3} />
+                }
+            } else {
+                return <ProgressBar now={33} variant='inactive' label={'Fortify'} key={3} />
+            }
         }
     }
     
