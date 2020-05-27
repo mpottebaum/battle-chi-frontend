@@ -15,7 +15,10 @@ class Map extends React.Component {
     determineNeighborhoodFill = name => {
         const neighborhood = this.props.neighborhoods.find(neighborhood => neighborhood.name === name)
         const militium = this.props.game.militia.find(militium => militium.neighborhood_id === neighborhood.id)
-        if(militium) {
+        
+        if(this.props.showZoneId && neighborhood.zone.id === this.props.showZoneId) {
+            return '#8fffe1'
+        } else if(militium) {
             const player = this.props.game.players.find(player => player.id === militium.player_id)
             switch(player.turn_order_num) {
                 case 1:
@@ -75,7 +78,8 @@ class Map extends React.Component {
 const mapStateToProps = state => {
     return {
         neighborhoods: state.neighborhoods,
-        game: state.game
+        game: state.game,
+        showZoneId: state.showZoneId
     }
 }
 

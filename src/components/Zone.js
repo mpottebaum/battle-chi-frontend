@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup'
 import Badge from 'react-bootstrap/Badge'
+import Button from 'react-bootstrap/Button'
+import { displayZone } from '../actions/zones'
 
 class Zone extends React.Component {
 
@@ -68,12 +70,17 @@ class Zone extends React.Component {
         }
     }
 
+    handleClick = () => {
+        this.props.displayZone(this.props.zone.id)
+    }
+
     render() {
         return <Card>
             <Card.Header>
                 <Card.Title>{this.props.zone.name}</Card.Title>
             </Card.Header>
             <Card.Body>
+                <Button onClick={this.handleClick} variant='outline-secondary'>View Zone</Button>
                 <Card.Text>{this.renderControlled()}</Card.Text>
                 <Badge variant='bonus' style={this.badgeStyle()}>+{this.props.zone.num_militia} Militias</Badge>
                 <ListGroup>
@@ -91,4 +98,10 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(Zone)
+const mapDispatchToProps = dispatch => {
+    return {
+        displayZone: zoneId => dispatch(displayZone(zoneId))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Zone)
