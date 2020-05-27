@@ -41,7 +41,7 @@ class LobbyContainer extends React.Component {
                     channel={{channel: 'PlayersChannel', game: this.props.game.id}}
                     onReceived={this.handleReceived}
                 >
-                    <Lobby />
+                    <Lobby gameId={this.props.game.id}/>
                 </ActionCableConsumer>
             }
         </React.Fragment>

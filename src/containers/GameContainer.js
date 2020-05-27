@@ -42,7 +42,7 @@ class GameContainer extends React.Component {
                     onReceived={this.handleReceived}
                 >
                     {this.props.neighborhoodsLoader ?
-                        <div className='center game-load'>
+                        <div className='center neighborhood-load'>
                             <Spinner animation="border" role="status" className='center game-load'>
                                 <span className="sr-only">Loading...</span>
                             </Spinner>
