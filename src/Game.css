@@ -214,3 +214,16 @@ span.badge-bonus {
 .front-attack, .front-defense {
   padding: 8px;
 }
+
+.new-player {
+  width: 20%;
+  display: inline-block;
+}
+
+.lobby, .game-load {
+  margin-top: 40vh;
+}
+
+/* .game-load {
+
+} */

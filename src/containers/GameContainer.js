@@ -26,26 +26,33 @@ class GameContainer extends React.Component {
     }
 
     render() {
-        return <div className={'game-container'}>
+        return <div>
             {
                 this.props.gameLoader ?
-                <Spinner animation="border" role="status">
-                    <span className="sr-only">Loading...</span>
-                </Spinner>
+                <div className='center game-load'>
+                    <Spinner animation="border" role="status">
+                        <span className="sr-only">Loading...</span>
+                    </Spinner>
+                    <h3>Loading...</h3>
+                </div>
+
                 :
                 <ActionCableConsumer
                     channel={{channel: 'PlayersChannel', game: this.props.match.params.id}}
                     onReceived={this.handleReceived}
                 >
                     {this.props.neighborhoodsLoader ?
-                        <Spinner animation="border" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </Spinner>
+                        <div className='center game-load'>
+                            <Spinner animation="border" role="status" className='center game-load'>
+                                <span className="sr-only">Loading...</span>
+                            </Spinner>
+                            <h3>Loading...</h3>
+                        </div>
                         :
-                        <React.Fragment>
+                        <div className={'game-container'}>
                             <Map />
                             <ActionInfoDashboardContainer />
-                        </React.Fragment>
+                        </div>
                     }
                 </ActionCableConsumer>
             }
