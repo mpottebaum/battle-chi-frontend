@@ -10,6 +10,7 @@ import defendingReducer from './defending'
 import battleLoaderReducer from './battleLoader'
 import currentBattleIdReducer from './currentBattleId'
 import selectedCardsReducer from './selectedCards'
+import matchNeighborhoodCardsReducer from './matchNeighborhoodCards'
 
 const rootReducer = combineReducers({
     game: gameReducer,
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
     defending: defendingReducer,
     battleLoader: battleLoaderReducer,
     currentBattleId: currentBattleIdReducer,
-    selectedCards: selectedCardsReducer
+    selectedCards: selectedCardsReducer,
+    matchNeighborhoodCards: matchNeighborhoodCardsReducer
 })
 
 export default rootReducer

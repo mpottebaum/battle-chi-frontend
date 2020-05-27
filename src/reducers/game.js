@@ -14,11 +14,6 @@ const gameReducer = (
                 ...state,
                 ...action.game
             }
-        case 'CLEAR_MATCH_NEIGHBORHOOD_CARDS':
-            return {
-                ...state,
-                match_neighborhood_cards: null
-            }
         // case 'UPDATE_GAME_MILITIA':
         //     return {
         //         ...state,

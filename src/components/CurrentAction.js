@@ -56,9 +56,9 @@ class CurrentAction extends React.Component {
         if(player.id === this.props.currentPlayer.id) {
             switch(this.props.game.turn_stage) {
                 case 0:
-                    if(player.cards.length >= 5 && !this.props.game.match_neighborhood_cards) {
+                    if(player.cards.length >= 5 && !this.props.matchNeighborhoodCards) {
                         return <h3>You must trade in a set of cards</h3>
-                    } else if(this.props.game.match_neighborhood_cards) {
+                    } else if(this.props.matchNeighborhoodCards) {
                         return <h3>Place two militias in any of the displayed neighborhoods</h3>
                     } else {
                         return <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militias left to place</h3>
@@ -89,7 +89,8 @@ class CurrentAction extends React.Component {
 const mapStateToProps = state => {
     return {
         game: state.game,
-        currentPlayer: state.currentPlayer
+        currentPlayer: state.currentPlayer,
+        matchNeighborhoodCards: state.matchNeighborhoodCards
     }
 }
 

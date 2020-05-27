@@ -4,7 +4,7 @@ import Neighborhood from './Neighborhood'
 
 class CardMatchNeighborhoods extends React.Component {
     renderNeighborhoods = () => {
-        return this.props.game.match_neighborhood_cards.map(card => {
+        return this.props.matchNeighborhoodCards.map(card => {
             const neighborhood = this.props.neighborhoods.find(neighborhood => card.neighborhood_id === neighborhood.id)
             return <Neighborhood key={neighborhood.id} neighborhood={neighborhood}/>
         })
@@ -20,7 +20,8 @@ class CardMatchNeighborhoods extends React.Component {
 const mapStateToProps = state => {
     return {
         game: state.game,
-        neighborhoods: state.neighborhoods
+        neighborhoods: state.neighborhoods,
+        matchNeighborhoodCards: state.matchNeighborhoodCards
     }
 }
 

@@ -81,8 +81,9 @@ export const addGameAndNeighborhoods = (gameId, playerId) => {
     }
 }
 
-export const updateGame = game => {
+export const updateGame = resp => {
     return dispatch => {
+        const game = resp.game
         dispatch({type: 'UPDATE_GAME', game: game})
         if(game.battles) {
             const startedBattle = game.battles.find(battle => battle.defense_militia === null)
@@ -95,6 +96,9 @@ export const updateGame = game => {
             } else {
                 dispatch({type: 'END_BATTLE'})
             }
+        }
+        if(resp.match_neighborhood_cards) {
+            dispatch({type: 'ADD_MATCH_NEIGHBORHOOOD_CARDS', cards: resp.match_neighborhood_cards})
         }
     }
 }

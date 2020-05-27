@@ -22,7 +22,7 @@ class GameContainer extends React.Component {
     }
 
     handleReceived = resp => {
-        this.props.updateGame(resp.game)
+        this.props.updateGame(resp)
     }
 
     render() {
