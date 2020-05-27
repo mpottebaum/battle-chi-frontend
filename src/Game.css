@@ -178,27 +178,36 @@ span.badge-bonus {
 
 .die-img {
   width: 70%;
+  display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-.fronts {
+.attack-fronts, .defense-fronts {
   display: grid;
-  /* grid-template-columns: 100px 100px 100px; */
-  grid-gap: 10px;
+  grid-template-columns: 70px;
+  grid-template-rows: 57px 57px;
+  /* grid-gap: 10px; */
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.front {
+.fronts {
   display: grid;
-  grid-template-columns: 50px 50px;
+  grid-template-columns: 70px 70px;
+  justify-content: center;
+}
+
+/* .front {
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 100px;
   align-items: center;
   justify-content: center;
   margin: 5px;
-  /* grid-template-areas: 
-    "first second third"; */
-}
+  grid-template-areas: 
+    "first second third";
+} */
 
 /* .first-front {
   grid-area: first;
@@ -213,7 +222,7 @@ span.badge-bonus {
 } */
 
 .front-attack, .front-defense {
-  padding: 8px;
+  padding: 10px;
 }
 
 .new-player {

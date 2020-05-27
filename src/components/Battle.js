@@ -34,38 +34,38 @@ class Battle extends React.Component {
         return this.props.battle.battle_fronts.filter(front => front.player_id === this.props.battle.defense_player_id)
     }
 
-    renderAttackFronts = (sortedAttackFronts, sortedDefenseFronts) => {
-        const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
-        let i = -1
-        return sortedAttackFronts.map(front => {
-            i++
-            if(i <= 1) {
-                return results[i] && results[i] === 'attack' ?
-                    <td style={{backgroundColor: 'black', color: 'white'}}>{front.result}</td>
-                    :
-                    <td>{front.result}</td>
-            }  else {
-                return <td>{front.result}</td>
-            }
-        })
-    }
+    // renderAttackFronts = (sortedAttackFronts, sortedDefenseFronts) => {
+    //     const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
+    //     let i = -1
+    //     return sortedAttackFronts.map(front => {
+    //         i++
+    //         if(i <= 1) {
+    //             return results[i] && results[i] === 'attack' ?
+    //                 <td style={{backgroundColor: 'black', color: 'white'}}>{front.result}</td>
+    //                 :
+    //                 <td>{front.result}</td>
+    //         }  else {
+    //             return <td>{front.result}</td>
+    //         }
+    //     })
+    // }
 
-    renderDefenseFronts = (sortedAttackFronts, sortedDefenseFronts) => {
-        const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
-        console.log(results)
-        let i = -1
-        return sortedDefenseFronts.map(front => {
-            i++
-            if(i <= 1) {
-                return results[i] && results[i] === 'defense' ?
-                    <td style={{backgroundColor: 'black', color: 'white'}}>{front.result}</td>
-                    :
-                    <td>{front.result}</td>
-            }  else {
-                return <td>{front.result}</td>
-            }
-        })
-    }
+    // renderDefenseFronts = (sortedAttackFronts, sortedDefenseFronts) => {
+    //     const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
+    //     console.log(results)
+    //     let i = -1
+    //     return sortedDefenseFronts.map(front => {
+    //         i++
+    //         if(i <= 1) {
+    //             return results[i] && results[i] === 'defense' ?
+    //                 <td style={{backgroundColor: 'black', color: 'white'}}>{front.result}</td>
+    //                 :
+    //                 <td>{front.result}</td>
+    //         }  else {
+    //             return <td>{front.result}</td>
+    //         }
+    //     })
+    // }
 
     renderDie = front => {
         if(front) {
@@ -74,8 +74,6 @@ class Battle extends React.Component {
             return null
         }
     }
-
-
 
     createResults = (sortedAttackFronts, sortedDefenseFronts) => {
         const results = {}
@@ -110,12 +108,40 @@ class Battle extends React.Component {
         const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
         let lost = 0
         if(results[0] === 'attack') {
-            lost += 1
+            lost -= 1
         }
         if(results[1] && results[1] === 'attack') {
-            lost += 1
+            lost -= 1
         }
         return lost
+    }
+
+    styleDieFrame = (player, resultsValue) => {
+        const styleObj = {}
+        if(player.turn_order_num === 1) {
+            styleObj.backgroundColor = '#ffa6a6'
+        } else if(player.turn_order_num === 2) {
+            styleObj.backgroundColor = '#a6c2ff'
+        }
+        
+        if(player.id === this.props.battle.attack_player_id){
+            if(resultsValue) {
+                if(resultsValue === 'attack') {
+                    styleObj.border = 'solid green'
+                } else {
+                    styleObj.border = 'solid red'
+                }
+            }
+        } else if(player.id === this.props.battle.defense_player_id){
+            if(resultsValue) {
+                if(resultsValue === 'defense') {
+                    styleObj.border = 'solid green'
+                } else {
+                    styleObj.border = 'solid red'
+                }
+            }
+        }
+        return styleObj
     }
 
     styleNeighborhoodBg = player => {
@@ -160,51 +186,54 @@ class Battle extends React.Component {
         const defenseFronts = this.getDefenseFronts()
         const sortedAttackFronts = this.sortFronts(attackFronts)
         const sortedDefenseFronts = this.sortFronts(defenseFronts)
+        const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
         return <div>
             <div className='center'>
                 <h1>Battle</h1>
             </div>
-            <div className='fronts' style={{gridTemplateColumns: `repeat(${this.numFrontsColumns(sortedAttackFronts, sortedDefenseFronts)}, 100px)`}}>
-                <div className='front'>
-                    <div className='front-attack' style={this.styleNeighborhoodBg(attackPlayer)}>
+            <div className='fronts'>
+                <div className='attack-fronts'>
+                    <div className='front-attack' style={this.styleDieFrame(attackPlayer, results[0])}>
                         {this.renderDie(sortedAttackFronts[0])}
                     </div>
-                    <div className='front-defense' style={this.styleNeighborhoodBg(defensePlayer)}>
-                        {this.renderDie(sortedDefenseFronts[0])}
-                    </div>
-                </div>
-                {
-                    sortedAttackFronts[1] || sortedDefenseFronts[1] ?
-                        <div className='front'>
-                            <div className='front-attack' style={this.styleNeighborhoodBg(attackPlayer)}>
+                    {
+                        sortedAttackFronts[1] ?
+                            <div className='front-attack' style={this.styleDieFrame(attackPlayer, results[1])}>
                                 {sortedAttackFronts[1] ? this.renderDie(sortedAttackFronts[1]) : null}
                             </div>
-                            <div className='front-defense' style={this.styleNeighborhoodBg(defensePlayer)}>
-                                {sortedDefenseFronts[1] ? this.renderDie(sortedDefenseFronts[1]) : null}
-                            </div>
-                        </div>
-                        :
-                        null
+                            :
+                            null
 
-                }
-                {
-                    sortedAttackFronts[2] ?
-                        <div className='front'>
-                            <div className='front-attack' style={this.styleNeighborhoodBg(attackPlayer)}>
+                    }
+                    {
+                        sortedAttackFronts[2] ?
+                            <div className='front-attack' style={this.styleDieFrame(attackPlayer, results[2])}>
                                 {this.renderDie(sortedAttackFronts[2])}
                             </div>
-                            <div className='front-defense' style={this.styleNeighborhoodBg(defensePlayer)}></div>
-                        </div>
-                        :
-                        null
+                            :
+                            null
 
-                }
+                    }
+                </div>
+                <div className='defense-fronts'>
+                    <div className='front-defense' style={this.styleDieFrame(defensePlayer, results[0])}>
+                        {this.renderDie(sortedDefenseFronts[0])}
+                    </div>
+                    {
+                        sortedDefenseFronts[1] ?
+                            <div className='front-defense' style={this.styleDieFrame(defensePlayer, results[1])}>
+                                {sortedDefenseFronts[1] ? this.renderDie(sortedDefenseFronts[1]) : null}
+                            </div>
+                            :
+                            null
+                    }
+                </div>
             </div>
             <Table bordered>
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Militias Lost</th>
+                        <th>Casualties</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -239,3 +268,7 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Battle)
+
+
+
+// style={{gridTemplateColumns: `repeat(${this.numFrontsColumns(sortedAttackFronts, sortedDefenseFronts)}, 200px)`}}
