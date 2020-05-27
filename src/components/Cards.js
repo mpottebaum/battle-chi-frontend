@@ -89,10 +89,10 @@ class Cards extends React.Component {
 
     render() {
         const player = this.findPlayer()
-        return <div className='dashboard-tab center'>
+        return <div className='dashboard-tab'>
             {
                 player.cards.length > 0 ?
-                <div>
+                <div className='center'>
                     {this.props.game.setup ? null : this.renderTradeButton()}
                     <h2>Your Cards</h2>
                     <p>Click on a card to select it</p>
@@ -101,7 +101,9 @@ class Cards extends React.Component {
                     </div>
                 </div>
                 :
-                null
+                <div className='center'>
+                    <h2>You do not have any cards</h2>
+                </div>
             }
             <CardsHelp />
         </div>

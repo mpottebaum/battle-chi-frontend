@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import NeighborhoodInfo from '../components/NeighborhoodInfo'
 import Cards from '../components/Cards'
-import GameInfo from '../components/GameInfo'
 import ZoneInfo from '../components/ZoneInfo'
 import Help from '../components/Help'
 import Defend from '../components/Defend'
@@ -73,7 +72,6 @@ class DashboardContainer extends React.Component {
                     <Tab>Neighborhoods</Tab>
                     <Tab>Cards{this.renderCardIndicator()}</Tab>
                     <Tab>Zones</Tab>
-                    <Tab>Game</Tab>
                     <Tab>Help</Tab>
                   </TabList>
 
@@ -85,9 +83,6 @@ class DashboardContainer extends React.Component {
                   </TabPanel>
                   <TabPanel>
                     <ZoneInfo />
-                  </TabPanel>
-                  <TabPanel>
-                    <GameInfo />
                   </TabPanel>
                   <TabPanel>
                     <Help />

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Table from 'react-bootstrap/Table'
 
-class GameInfo extends React.Component {
+class CardSetsTable extends React.Component {
 
     nextBonus = () => {
         switch(this.props.game.card_sets) {
@@ -24,10 +24,10 @@ class GameInfo extends React.Component {
     }
 
     render() {
-        return <div className='dashboard-tab'>
-            <Table>
+        return <div>
+            <Table bordered>
                 <thead>
-                    <th>Card Sets Traded</th>
+                    <th>Card Sets Traded In Current Game</th>
                     <th>Next Militia Bonus</th>
                 </thead>
                 <tbody>
@@ -45,4 +45,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(GameInfo)
+export default connect(mapStateToProps)(CardSetsTable)
