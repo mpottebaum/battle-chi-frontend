@@ -25,6 +25,9 @@ class Card extends React.Component {
     }
 
     handleClick = () => {
+        if(this.props.card.id === 0) {
+            return
+        }
         if(this.props.selectedCards.includes(this.props.card.id)) {
             this.props.unselectCard(this.props.card.id)
         } else {
@@ -44,7 +47,7 @@ class Card extends React.Component {
 
     render() {
         const neighborhood = this.findNeighborhood()
-        return <BootCard onClick={this.handleClick} style={this.renderStyle()} className='center'>
+        return <BootCard onClick={this.handleClick} style={this.renderStyle()} className='center hand-card'>
                 <BootCard.Img variant='top' src={this.renderImg()} className='card-img'/>
                 <h3 className='card-neighborhood'>{neighborhood ? neighborhood.name : 'Wild Card'}</h3>
             </BootCard>

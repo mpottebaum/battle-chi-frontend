@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Zone from './Zone'
 import Button from 'react-bootstrap/Button'
 import { resetMap } from '../actions/zones'
+import ZonesHelp from './ZonesHelp'
 
 class ZoneInfo extends React.Component {
 
@@ -15,16 +16,19 @@ class ZoneInfo extends React.Component {
     }
 
     render() {
-        return <div className='dashboard-tab center'>
-            <Button
-                onClick={this.handleClick}
-                variant='outline-secondary'
-                size='lg'
-                style={{marginBottom: '10px', marginTop: '5px'}}
-                >Reset Map</Button>
+        return <div className='dashboard-tab'>
+            <div className='center'>
+                <Button
+                    onClick={this.handleClick}
+                    variant='outline-secondary'
+                    size='lg'
+                    style={{marginBottom: '10px', marginTop: '5px'}}
+                    >Reset Map</Button>
+            </div>
             <div className='zones'>
                 {this.renderZones()}
             </div>
+            <ZonesHelp />
         </div>
     }
 }

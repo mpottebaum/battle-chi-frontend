@@ -11,21 +11,21 @@ const CardsHelp = () => {
         <h4>Three of the same image</h4>
         <div className='cards'>
 
-            <Card card={{neighborhood_id: 192, fighter_type: 2}}/>
-            <Card card={{neighborhood_id: 205, fighter_type: 2}}/>
-            <Card card={{neighborhood_id: 169, fighter_type: 2}}/>
+            <Card card={{id: 0, neighborhood_id: 192, fighter_type: 2}}/>
+            <Card card={{id: 0, neighborhood_id: 205, fighter_type: 2}}/>
+            <Card card={{id: 0, neighborhood_id: 169, fighter_type: 2}}/>
         </div>
         <h4>Three of each image</h4>
         <div className='cards'>
-            <Card card={{neighborhood_id: 191, fighter_type: 3}}/>
-            <Card card={{neighborhood_id: 205, fighter_type: 2}}/>
-            <Card card={{neighborhood_id: 187, fighter_type: 1}}/>
+            <Card card={{id: 0, neighborhood_id: 191, fighter_type: 3}}/>
+            <Card card={{id: 0, neighborhood_id: 205, fighter_type: 2}}/>
+            <Card card={{id: 0, neighborhood_id: 187, fighter_type: 1}}/>
         </div>
         <h4>Two different images plus one Wild Card</h4>
         <div className='cards'>
-            <Card card={{neighborhood_id: 191, fighter_type: 3}}/>
-            <Card card={{neighborhood_id: 187, fighter_type: 1}}/>
-            <Card card={{neighborhood_id: null, fighter_type: 0}}/>
+            <Card card={{id: 0, neighborhood_id: 191, fighter_type: 3}}/>
+            <Card card={{id: 0, neighborhood_id: 187, fighter_type: 1}}/>
+            <Card card={{id: 0, neighborhood_id: null, fighter_type: 0}}/>
         </div>
         <h2>Militia bonuses</h2>
         <CardSetsTable />
