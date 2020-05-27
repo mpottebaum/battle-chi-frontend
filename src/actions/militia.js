@@ -14,3 +14,18 @@ export const placeMilitia = (playerId, neighborhoodId, endStage) => {
         fetch(url, configObj)
     }
 }
+
+export const cardPlaceMilitia = (playerId, neighborhoodId) => {
+    return dispatch => {
+        dispatch({type: 'CLEAR_MATCH_NEIGHBORHOOD_CARDS'})
+        const configObj = {
+            method: 'POST',
+            headers: HEADERS,
+            body: JSON.stringify({
+                neighborhood_id: neighborhoodId,
+            })
+        }
+        const url = playersUrl + `/${playerId}/militia/card`
+        fetch(url, configObj)
+    }
+}
