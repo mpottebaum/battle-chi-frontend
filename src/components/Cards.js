@@ -11,8 +11,7 @@ class Cards extends React.Component {
         return this.props.game.players.find(player => player.id === this.props.currentPlayer.id)
     }
 
-    renderCards = () => {
-        const player = this.findPlayer()
+    renderCards = player => {
         return player.cards.map(card => <Card card={card}/>)
     }
 
@@ -89,13 +88,21 @@ class Cards extends React.Component {
     }
 
     render() {
+        const player = this.findPlayer()
         return <div className='dashboard-tab center'>
-            <h2>Your Cards</h2>
-            <p>Click on a card to select it</p>
-            {this.props.game.setup ? null : this.renderTradeButton()}
-            <div className='cards'>
-                {this.renderCards()}
-            </div>
+            {
+                player.cards.length > 0 ?
+                <div>
+                    {this.props.game.setup ? null : this.renderTradeButton()}
+                    <h2>Your Cards</h2>
+                    <p>Click on a card to select it</p>
+                    <div className='cards'>
+                        {this.renderCards(player)}
+                    </div>
+                </div>
+                :
+                null
+            }
             <CardsHelp />
         </div>
     }

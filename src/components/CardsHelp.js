@@ -5,8 +5,7 @@ import Table from 'react-bootstrap/Table'
 const CardsHelp = () => {
     return <div>
         <h2>About Cards</h2>
-        <p>Sets of 3 cards can be traded in at the beginning of your turn for additional militias.</p>
-        <p>If you have 5 or more cards, you will be forced to trade in sets until you have less than 5 cards.</p>
+        <p>You receive one card at the end of your turn if you have conquered one or more of your opponent's neighborhoods. Sets of 3 cards can be traded in at the beginning of your turn for additional militias. If you have 5 or more cards, you will be forced to trade in sets until you have less than 5 cards.</p>
         <h2>Example Sets</h2>
         <h4>Three of the same image</h4>
         <div className='cards'>
