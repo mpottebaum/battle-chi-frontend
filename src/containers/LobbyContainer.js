@@ -23,7 +23,7 @@ class LobbyContainer extends React.Component {
     
 
     handleReceived = resp => {
-        this.props.updateGame(resp.game)
+        this.props.updateGame(resp)
         if(this.props.game.players.length === this.props.game.num_players) {
             this.props.history.push(`/game/${this.props.game.id}`)
         }
