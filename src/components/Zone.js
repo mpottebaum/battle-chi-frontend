@@ -80,7 +80,7 @@ class Zone extends React.Component {
                 <Card.Title>{this.props.zone.name}</Card.Title>
             </Card.Header>
             <Card.Body>
-                <Button onClick={this.handleClick} variant='outline-secondary'>View Zone</Button>
+                <Button onClick={this.handleClick} variant='outline-secondary' size='lg'>View Zone</Button>
                 <Card.Text>{this.renderControlled()}</Card.Text>
                 <Badge variant='bonus' style={this.badgeStyle()}>+{this.props.zone.num_militia} Militias</Badge>
                 <ListGroup>

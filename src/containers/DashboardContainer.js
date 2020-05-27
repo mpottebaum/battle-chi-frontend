@@ -65,7 +65,7 @@ class DashboardContainer extends React.Component {
         const battle = this.props.game.battles.find(battle => battle.id === this.props.currentBattleId)
         return <div className='dashboard'>
             {
-                this.props.currentBattleId || this.props.matchNeighborhoodCards ?
+                this.props.currentBattleId || (this.props.matchNeighborhoodCards && this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num) ?
                 this.renderSpecialActions(battle)
                 :
                 <Tabs>

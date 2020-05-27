@@ -16,7 +16,12 @@ class ZoneInfo extends React.Component {
 
     render() {
         return <div className='dashboard-tab center'>
-            <Button onClick={this.handleClick} variant='outline-secondary'>Reset Map</Button>
+            <Button
+                onClick={this.handleClick}
+                variant='outline-secondary'
+                size='lg'
+                style={{marginBottom: '10px', marginTop: '5px'}}
+                >Reset Map</Button>
             <div className='zones'>
                 {this.renderZones()}
             </div>
