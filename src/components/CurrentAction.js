@@ -61,7 +61,11 @@ class CurrentAction extends React.Component {
                     } else if(this.props.matchNeighborhoodCards) {
                         return <h3>Place two militias in any of the displayed neighborhoods</h3>
                     } else {
-                        return <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militias left to place</h3>
+                        if(player.place_militium.num_militia - player.place_militium.militia_placed === 1) {
+                            return <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militia left to place</h3>
+                        } else {
+                            return <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militias left to place</h3>
+                        }
                     }
                 case 1:
                     return <h3>Select enemy neighborhoods to attack</h3>

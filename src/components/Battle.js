@@ -79,7 +79,8 @@ class Battle extends React.Component {
 
     createResults = (sortedAttackFronts, sortedDefenseFronts) => {
         const results = {}
-        for(let i=0; i < sortedDefenseFronts.length; i++) {
+        const shorterArr = sortedDefenseFronts.length <= sortedAttackFronts.length ? sortedDefenseFronts : sortedAttackFronts
+        for(let i=0; i < shorterArr.length; i++) {
             if(sortedDefenseFronts[i].result >= sortedAttackFronts[i].result){
                 results[i] = 'defense'
             } else {
