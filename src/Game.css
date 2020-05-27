@@ -6,7 +6,7 @@
   
   .game-container {
     display: grid;
-    grid-template-columns: minmax(492px, 40vw) 60vw;
+    grid-template-columns: minmax(492px, 36vw) 60vw;
     grid-template-rows: auto;
   }
 
@@ -237,4 +237,12 @@ span.badge-bonus {
 
 .hand-card {
   cursor: pointer;
+}
+
+/* .defend-form {
+  justify-content: center;
+} */
+
+.defend-label, .defend-select {
+  width: 100%;
 }

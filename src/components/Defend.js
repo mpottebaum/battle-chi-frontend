@@ -118,23 +118,23 @@ class Defend extends React.Component {
                 </tr>
             </tbody>
         </Table>
-        <Form onSubmit={this.handleSubmit} className='center'>
+        <Form onSubmit={this.handleSubmit} className='center defend-form'>
             <Form.Group as={Row}>
                 <Col>
                     <h3>{attacker.name} attacked {defenseNeighborhood.name} with {numAttackMilitias} militias</h3>
                 </Col>
             </Form.Group>
             <Form.Group as={Row}>
-                <Col sm={2}>
+                <Col sm={2} className='defend-label' >
                 </Col>
                 <Col sm={8}>
                     <Form.Label>Select the number of militias to send in defense</Form.Label>
                 </Col>
-                <Col sm={2}>
+                <Col sm={2} className='defend-label' >
                 </Col>
             </Form.Group>
             <Row>
-                <Col sm={5}>
+                <Col sm={5} className='defend-select' >
                 </Col>
                 <Col sm={1}>
                     <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
@@ -144,7 +144,7 @@ class Defend extends React.Component {
                 <Col sm={1}>
                     <Button type='submit' size='lg'>Defend</Button>
                 </Col>
-                <Col sm={5}>
+                <Col sm={5} className='defend-select' >
                 </Col>
             </Row>
         </Form>
