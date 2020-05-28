@@ -23,19 +23,68 @@ class CardSetsTable extends React.Component {
         }
     }
 
+    getBorder = numSets => {
+        if(this.props.game.card_sets === numSets) {
+            return {
+                border: 'solid yellow'
+            }
+        } else if(numSets === 6 && this.props.game.card_sets > 6) {
+            return {
+                border: 'solid yellow'
+            }
+        }
+        else {
+            return null
+        }
+    }
+
+    calculateBonus = () => {
+        if(this.props.game.card_sets > 6) {
+            return 15 + ((this.props.game.card_sets - 6) * 5)
+        } else {
+            return 20
+        }
+    }
+
     render() {
-        return <div>
-            <Table bordered>
-                <thead>
-                    <th>Card Sets Traded In Current Game</th>
-                    <th>Next Militia Bonus</th>
-                </thead>
-                <tbody>
-                    <td>{this.props.game.card_sets}</td>
-                    <td>{this.nextBonus()}</td>
-                </tbody>
-            </Table>
-        </div>
+        return <Table bordered>
+            <thead>
+                <tr>
+                    <th>Card Set</th>
+                    <th>Number of Militias</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>First</th>
+                    <td style={this.getBorder(0)}>4</td>
+                </tr>
+                <tr>
+                    <th>Second</th>
+                    <td style={this.getBorder(1)}>6</td>
+                </tr>
+                <tr>
+                    <th>Third</th>
+                    <td style={this.getBorder(2)}>8</td>
+                </tr>
+                <tr>
+                    <th>Fourth</th>
+                    <td style={this.getBorder(3)}>10</td>
+                </tr>
+                <tr>
+                    <th>Fifth</th>
+                    <td style={this.getBorder(4)}>12</td>
+                </tr>
+                <tr>
+                    <th>Sixth</th>
+                    <td style={this.getBorder(5)}>15</td>
+                </tr>
+                <tr>
+                    <th>Seventh+</th>
+                    <td style={this.getBorder(6)}>{this.calculateBonus()}</td>
+                </tr>
+            </tbody>
+        </Table>
     }
 }
 

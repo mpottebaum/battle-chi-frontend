@@ -131,8 +131,7 @@ span.badge-bonus {
 }
 
 .trade-btn {
-  margin-top: 8px;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .main-title {
@@ -246,4 +245,29 @@ span.badge-bonus {
 
 .defend-label, .defend-select {
   width: 100%;
+}
+
+.tab-help {
+  margin-top: 60px;
+}
+
+.help-title {
+  margin-bottom: 15px;
+}
+
+.help-header {
+  margin-top: 5px;
+  margin-bottom: 12px;
+}
+
+.help-subhead {
+  margin-bottom: 15px;
+}
+
+.help-pg {
+  margin-bottom: 15px;
+}
+
+.card-example {
+  margin-bottom: 40px;
 }
