@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import EndAttack from './EndAttack'
 import EndTurn from './EndTurn'
 import TurnStageBar from './TurnStageBar'
-import PlayerTable from './PlayerTable'
 
 class CurrentAction extends React.Component {
 

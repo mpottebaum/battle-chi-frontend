@@ -2,6 +2,7 @@ import React from 'react'
 import Table from 'react-bootstrap/Table'
 import { connect } from 'react-redux'
 import Spinner from 'react-bootstrap/Spinner'
+import ResetMap from './ResetMap'
 
 class PlayerTable extends React.Component {
     
@@ -94,7 +95,7 @@ class PlayerTable extends React.Component {
 
     renderPlayerHead = player => {
         if(this.props.game.turn_order_num === player.turn_order_num) {
-            return <th style={this.getTdStyle(player.turn_order_num)}>
+            return <th style={this.getBackgroundStyle(player.turn_order_num)}>
                     {player.name}
                     <Spinner animation="grow" size="sm" className='turn-indicator' />
                 </th>
@@ -151,13 +152,14 @@ class PlayerTable extends React.Component {
     // }
     
     render() {
-        return <Table bordered hover size="sm" className='player-table'>
+        return <div className='player-table'>
+            <Table bordered hover size="sm">
                 <thead>
-                    <tr>
+                    <tr style={{fontSize: 'small'}}>
                         <td>Turn {this.props.game.turn_num}</td>
-                        <th>Neighborhoods</th>
-                        <th>Zones</th>
-                        <th>Militias</th>
+                        <th style={this.getTextAlign()}>Neighborhoods</th>
+                        <th style={this.getTextAlign()}>Zones</th>
+                        <th style={this.getTextAlign()}>Militias</th>
                         {/* {this.renderPlayerHeads()} */}
                     </tr>
                 </thead>
@@ -176,6 +178,8 @@ class PlayerTable extends React.Component {
                     </tr> */}
                 </tbody>
             </Table>
+            <ResetMap />
+        </div>
     }
 }
 

@@ -11,20 +11,8 @@ class ZoneInfo extends React.Component {
         return this.props.zones.map(zone => <Zone zone={zone} />)
     }
 
-    handleClick = () => {
-        this.props.resetMap()
-    }
-
     render() {
         return <div className='dashboard-tab'>
-            <div className='center'>
-                <Button
-                    onClick={this.handleClick}
-                    variant='outline-secondary'
-                    size='lg'
-                    style={{marginBottom: '10px', marginTop: '5px'}}
-                    >Reset Map</Button>
-            </div>
             <div className='zones'>
                 {this.renderZones()}
             </div>
