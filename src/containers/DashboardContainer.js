@@ -55,7 +55,7 @@ class DashboardContainer extends React.Component {
           (this.props.battleLoader ? 'Loading' : this.renderDefense(battle))
           :
           <Battle battle={battle}/>
-      } else if(this.props.game.turn_order_num === this.props.currentPlayer.turn_order_num && this.props.matchNeighborhoodCards) {
+      } else if(this.props.game.turn_order_num === this.props.currentPlayer.turn_order_num && this.props.matchNeighborhoodCards.length > 0) {
           return <CardMatchNeighborhoods />
       }
     }
@@ -64,7 +64,7 @@ class DashboardContainer extends React.Component {
         const battle = this.props.game.battles.find(battle => battle.id === this.props.currentBattleId)
         return <div className='dashboard'>
             {
-                this.props.currentBattleId || (this.props.matchNeighborhoodCards && this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num) ?
+                this.props.currentBattleId || (this.props.matchNeighborhoodCards.length > 0 && this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num) ?
                 this.renderSpecialActions(battle)
                 :
                 <Tabs>

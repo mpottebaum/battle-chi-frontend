@@ -48,9 +48,9 @@ class Neighborhood extends React.Component {
         const player = this.findPlayer(militia[0])
         switch(this.props.game.turn_stage) {
             case 0:
-                if(player.cards.length >= 5 && !this.props.matchNeighborhoodCards) {
+                if(player.cards.length >= 5 && !this.props.matchNeighborhoodCards.length > 0) {
                     return null
-                } else if(this.props.matchNeighborhoodCards) {
+                } else if(this.props.matchNeighborhoodCards.length > 0) {
                     return <CardPlaceMilitia player={player} neighborhood={this.props.neighborhood} />
                 } else {
                     return <PlaceMilitia player={player} neighborhood={this.props.neighborhood}/>
