@@ -13,7 +13,7 @@ class EndAttack extends React.Component {
         return this.props.currentBattleId ?
             null
             :
-            <Button size="lg" variant="outline-primary" onClick={this.handleClick}>End Attack</Button>     
+            <Button size="lg" variant="outline-primary" className='end-attack' onClick={this.handleClick}>End Attack</Button>     
     }
 }
 

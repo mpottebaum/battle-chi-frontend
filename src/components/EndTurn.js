@@ -10,7 +10,7 @@ class EndTurn extends React.Component {
     }
 
     render() {
-        return <Button size="lg" variant="outline-primary" onClick={this.handleClick}>End Turn</Button>
+        return <Button size="lg" variant="outline-primary" className='end-turn' onClick={this.handleClick}>End Turn</Button>
     }
 }
 

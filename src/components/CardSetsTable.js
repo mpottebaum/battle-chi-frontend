@@ -26,15 +26,19 @@ class CardSetsTable extends React.Component {
     getBorder = numSets => {
         if(this.props.game.card_sets === numSets) {
             return {
-                border: 'solid yellow'
+                border: 'solid yellow',
+                textAlign: 'center'
             }
         } else if(numSets === 6 && this.props.game.card_sets > 6) {
             return {
-                border: 'solid yellow'
+                border: 'solid yellow',
+                textAlign: 'center'
             }
         }
         else {
-            return null
+            return {
+                textAlign: 'center'
+            }
         }
     }
 
@@ -47,7 +51,7 @@ class CardSetsTable extends React.Component {
     }
 
     render() {
-        return <Table bordered>
+        return <Table bordered className='sets-table'>
             <thead>
                 <tr>
                     <th>Card Set</th>

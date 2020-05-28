@@ -94,10 +94,12 @@ class Cards extends React.Component {
                 player.cards.length > 0 ?
                 <div className='center'>
                     <h2>Your Cards</h2>
-                    <p>Click on a card to select it</p>
-                    {this.props.game.setup ? null : this.renderTradeButton()}
-                    <div className='cards'>
+                    <div className='cards your-cards'>
                         {this.renderCards(player)}
+                    </div>
+                    <div className='card-actions'>
+                        <p>Click on a card to select it</p>
+                        {this.props.game.setup ? null : this.renderTradeButton()}
                     </div>
                 </div>
                 :

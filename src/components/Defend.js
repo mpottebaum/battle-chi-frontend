@@ -78,6 +78,14 @@ class Defend extends React.Component {
         }
     }
 
+    styleDatum = player => {
+        const background = this.styleBackground(player)
+        return {
+            ...background,
+            textAlign: 'center'
+        }
+    }
+
     findPlayer = militia => {
         if(militia.length > 0) {
             return this.props.game.players.find(player => player.id === militia[0].player_id)
@@ -97,24 +105,24 @@ class Defend extends React.Component {
         const numAttackMilitias = this.props.battle.attack_militia
         return <div>
 
-        <Table bordered>
+        <Table bordered className='defend-table'>
             <thead>
                 <tr>
                     <th></th>
-                    <th>Neighborhood</th>
-                    <th>Total Militias</th>
+                    <th style={{textAlign: 'center'}}>Neighborhood</th>
+                    <th style={{textAlign: 'center'}}>Total Militias</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>Attack</th>
-                    <td style={this.styleBackground(attackPlayer)}>{attackNeighborhood.name}</td>
-                    <td style={this.styleBackground(attackPlayer)}>{attackMilitia.length}</td>
+                    <td style={this.styleDatum(attackPlayer)}>{attackNeighborhood.name}</td>
+                    <td style={this.styleDatum(attackPlayer)}>{attackMilitia.length}</td>
                 </tr>
                 <tr>
                     <th>Defense</th>
-                    <td style={this.styleBackground(defensePlayer)}>{defenseNeighborhood.name}</td>
-                    <td style={this.styleBackground(defensePlayer)}>{defenseMilitia.length}</td>
+                    <td style={this.styleDatum(defensePlayer)}>{defenseNeighborhood.name}</td>
+                    <td style={this.styleDatum(defensePlayer)}>{defenseMilitia.length}</td>
                 </tr>
             </tbody>
         </Table>

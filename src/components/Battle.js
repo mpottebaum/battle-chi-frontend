@@ -96,10 +96,10 @@ class Battle extends React.Component {
         const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
         let lost = 0
         if(results[0] === 'defense') {
-            lost += 1
+            lost += -1
         }
         if(results[1] && results[1] === 'defense') {
-            lost += 1
+            lost += -1
         }
         return lost
     }
@@ -229,21 +229,21 @@ class Battle extends React.Component {
                     }
                 </div>
             </div>
-            <Table bordered>
+            <Table bordered className='battle-table'>
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Casualties</th>
+                        <th style={{textAlign: 'center'}}>Casualties</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>                    
                         <th style={this.styleNeighborhoodBg(attackPlayer)}>{attackNeighborhood.name}</th>
-                        <td>{this.attackMilitiasLost(sortedAttackFronts, sortedDefenseFronts)}</td>
+                        <td style={{textAlign: 'center'}}>{this.attackMilitiasLost(sortedAttackFronts, sortedDefenseFronts)}</td>
                     </tr>
                     <tr>                    
                         <th style={this.styleNeighborhoodBg(defensePlayer)}>{defenseNeighborhood.name}</th>
-                        <td>{this.defenseMilitiasLost(sortedAttackFronts, sortedDefenseFronts)}</td>
+                        <td style={{textAlign: 'center'}}>{this.defenseMilitiasLost(sortedAttackFronts, sortedDefenseFronts)}</td>
                     </tr>
                 </tbody>
             </Table>
