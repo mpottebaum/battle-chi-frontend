@@ -145,7 +145,7 @@ class Defend extends React.Component {
                 <Col sm={5} className='defend-select' >
                 </Col>
                 <Col sm={1}>
-                    <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
+                    <Form.Control as='select' className='battle-options' onChange={this.handleChange} value={this.state.numMilitia}>
                         {this.renderOptions(defenseNeighborhood)}
                     </Form.Control>
                 </Col>

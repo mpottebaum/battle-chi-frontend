@@ -40,7 +40,7 @@
 
   .neighborhood-info {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fill, 320px);
     grid-gap: 20px;
   }
 
@@ -111,7 +111,7 @@ span.badge-bonus {
 }
 
 .conquer {
-  width: 55%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -238,11 +238,15 @@ span.badge-bonus {
 }
 
 /* .defend-form {
-  justify-content: center;
+  width: 80%;
 } */
 
 .defend-label, .defend-select {
   width: 100%;
+}
+
+select.battle-options {
+  min-width: 40px;
 }
 
 .tab-help {
@@ -270,12 +274,16 @@ span.badge-bonus {
   margin-bottom: 40px;
 }
 
-.end-turn {
-  margin-top: 36px;
+.instructions {
+  margin-top: 33px;
 }
 
-.end-attack {
-  margin-top: 58px;
+ /* {
+  margin-top: 22px;
+} */
+
+.end-attack, .end-turn {
+  margin-top: 23px;
 }
 
 /* .cards {

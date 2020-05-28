@@ -45,7 +45,7 @@ class Conquer extends React.Component {
                     <Form.Label>Select the number of militias to move from {this.props.attackNeighborhood.name}</Form.Label>
                 </Col>
                 <Col sm={2}>
-                    <Form.Control as='select' onChange={this.handleChange} value={this.state.numMilitia}>
+                    <Form.Control as='select' className='battle-options' onChange={this.handleChange} value={this.state.numMilitia}>
                         {this.renderOptions()}
                     </Form.Control>
                 </Col>

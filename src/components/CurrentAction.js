@@ -67,7 +67,7 @@ class CurrentAction extends React.Component {
                         }
                     }
                 case 1:
-                    return <h3>Select enemy neighborhoods to attack</h3>
+                    return <h3>Select enemy neighborhoods to attack from your adjacent neighborhoods</h3>
                 case 2:
                     return <h3>Select one of your neighborhoods to fortify with nearby militias</h3>
             }
@@ -81,7 +81,9 @@ class CurrentAction extends React.Component {
         return <div className='current-action'>
             <TurnStageBar turnPlayer={player}/>
             <div className='center'>
-                {this.renderInstruction(player)}
+                <div className='instructions'>
+                    {this.renderInstruction(player)}
+                </div>
                 {this.renderEndAttack()}
                 {this.renderEndTurn()}
             </div>

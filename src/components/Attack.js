@@ -92,7 +92,7 @@ class Attack extends React.Component {
                         {this.renderMilitiaOptions()}
                     </Form.Control>
                 </Col>
-                <Col >
+                <Col>
                     <Button variant='attack' type='submit' size='lg'>Attack</Button>
                 </Col>
             </Form.Group>
