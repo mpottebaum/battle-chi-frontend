@@ -127,3 +127,10 @@ export const endTurn = id => {
         fetch(url, configObj)
     }
 }
+
+export const clearGame = () => {
+    return dispatch => {
+        dispatch({type: 'CLEAR_GAME'})
+        dispatch({type: 'START_ADD_GAME'})
+    }
+}

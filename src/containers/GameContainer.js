@@ -51,7 +51,7 @@ class GameContainer extends React.Component {
                         :
                         <div className={'game-container'}>
                             <Map />
-                            <ActionInfoDashboardContainer />
+                            <ActionInfoDashboardContainer history={this.props.history}/>
                         </div>
                     }
                 </ActionCableConsumer>

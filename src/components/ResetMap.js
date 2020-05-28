@@ -10,14 +10,12 @@ class ResetMap extends React.Component {
     }
 
     render() {
-        return <div className='center'>
-            <Button
+        return <Button
                 onClick={this.handleClick}
                 variant='outline-secondary'
                 size='lg'
-                style={{marginBottom: '10px', marginTop: '5px'}}
+                style={{marginBottom: '10px', marginTop: '5px', marginLeft: '5px'}}
                 >Reset Map</Button>
-        </div>
     }
 }
 

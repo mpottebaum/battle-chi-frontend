@@ -6,7 +6,7 @@ import DashboardContainer from './DashboardContainer'
 class ActionInfoDashboardContainer extends React.Component {
     render() {
         return <div className='info-dashboard'>
-            <PlayerTable />
+            <PlayerTable history={this.props.history}/>
             <CurrentAction />
             <DashboardContainer />
         </div>

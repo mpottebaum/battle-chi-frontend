@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table'
 import { connect } from 'react-redux'
 import Spinner from 'react-bootstrap/Spinner'
 import ResetMap from './ResetMap'
+import ExitGame from './ExitGame'
 
 class PlayerTable extends React.Component {
     
@@ -178,7 +179,10 @@ class PlayerTable extends React.Component {
                     </tr> */}
                 </tbody>
             </Table>
-            <ResetMap />
+            <div className='center'>
+                <ExitGame history={this.props.history}/>
+                <ResetMap />
+            </div>
         </div>
     }
 }

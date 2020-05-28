@@ -14,6 +14,8 @@ const gameReducer = (
                 ...state,
                 ...action.game
             }
+        case 'CLEAR_GAME':
+            return null
         // case 'UPDATE_GAME_MILITIA':
         //     return {
         //         ...state,
