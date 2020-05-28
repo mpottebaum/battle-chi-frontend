@@ -117,7 +117,7 @@ class Neighborhood extends React.Component {
                     (
                         this.props.game.setup ?
                         (
-                            player.name === 'no one' || this.isControlled(player) ?
+                            player.name === 'N/A' || this.isControlled(player) ?
                             <PlaceMilitia player={this.props.currentPlayer} neighborhood={this.props.neighborhood}/>
                             :
                             null

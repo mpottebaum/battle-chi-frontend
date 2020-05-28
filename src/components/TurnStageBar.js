@@ -6,7 +6,11 @@ class TurnStageBar extends React.Component {
     
     renderPlace = () => {
         if(this.props.setup) {
-            return <ProgressBar now={100} variant='place' label={'Place a militia'} key={1} />
+            if(this.props.currentPlayer.id === this.props.turnPlayer.id) {
+                return <ProgressBar now={100} variant='place' label={'Place a militia'} key={1} />
+            } else {
+                return <ProgressBar now={100} variant='inactive' label={'Place a militia'} key={1} />
+            }
         } else if(this.props.turnStage === 0) {
             if(this.props.currentPlayer.id === this.props.turnPlayer.id) {
                 return <ProgressBar now={33} variant='place' label={'Place militias'} key={1} />

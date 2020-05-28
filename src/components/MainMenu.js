@@ -54,6 +54,7 @@ class MainMenu extends React.Component {
                 {this.renderResume()}
             </div>
             <div className='create-game'>
+                <h4 className='main-header'>Create New Game</h4>
                 <Form onSubmit={this.handleCreateSubmit}>
                     <Form.Group as={Row} className='create-options'>
                         <Col sm={6}>
@@ -83,6 +84,7 @@ class MainMenu extends React.Component {
                 </Form>
             </div>
             <div className='join-game'>
+                <h4 className='main-header'>Join a Game</h4>
                 <Form onSubmit={this.handleJoinSubmit}>
                     <Form.Group>
                         <Form.Control onChange={this.handleJoinChange} type='number' name='gameId' placeholder='Enter Game ID' value={this.state.gameId} />

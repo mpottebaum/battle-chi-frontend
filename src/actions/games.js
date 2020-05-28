@@ -100,6 +100,9 @@ export const updateGame = resp => {
         if(resp.match_neighborhood_cards) {
             dispatch({type: 'ADD_MATCH_NEIGHBORHOOOD_CARDS', cards: resp.match_neighborhood_cards})
         }
+        if(game.turn_stage > 0) {
+            dispatch({type: 'CLEAR_MATCH_NEIGHBORHOOD_CARDS'})
+        }
     }
 }
 

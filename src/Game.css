@@ -146,22 +146,24 @@ span.badge-bonus {
 
 .main-menu {
   display: grid;
-  grid-template-columns: 30vw 30vw;
+  grid-template-columns: 27vw;
+  justify-content: center;
   justify-items: center;
-  align-items: center;
-  grid-template-areas: 
+  grid-template-rows: minmax(45px, auto);
+  /* align-items: center; */
+  /* grid-template-areas: 
     "resume resume"
-    "create join";
+    "create join"; */
 }
 
-.resume-game {
+/* .resume-game {
   grid-area: resume;
-}
+} */
 
 .create-game {
-  grid-area: create;
+  /* grid-area: create; */
   width: 70%;
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .create-options {
@@ -169,8 +171,8 @@ span.badge-bonus {
 }
 
 .join-game {
-  grid-area: join;
-  margin-top: 20px;
+  /* grid-area: join; */
+  margin-top: 40px;
 }
 
 .die-img {
@@ -246,7 +248,7 @@ span.badge-bonus {
 }
 
 select.battle-options {
-  min-width: 40px;
+  min-width: 45px;
 }
 
 .tab-help {
@@ -283,7 +285,7 @@ select.battle-options {
 } */
 
 .end-attack, .end-turn {
-  margin-top: 23px;
+  margin-top: 21px;
 }
 
 /* .cards {
@@ -318,4 +320,8 @@ table.battle-table {
   width: 40%;
   margin-right: auto;
   margin-left: auto;
+}
+
+.main-header {
+  margin-bottom: 10px;
 }
