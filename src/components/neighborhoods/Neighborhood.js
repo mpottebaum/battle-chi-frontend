@@ -19,7 +19,7 @@ class Neighborhood extends React.Component {
 
     findPlayer = militium => {
         if(!militium) {
-            return {name: 'N/A'}
+            return {name: '-'}
         }
         return this.props.game.players.find(player => {
             return player.id === militium.player_id

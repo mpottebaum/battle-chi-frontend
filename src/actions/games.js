@@ -19,7 +19,7 @@ export const createGame = setup => {
 }
 
 export const joinGame = id => {
-    const url = gamesUrl + `/${id}`
+    const url = gamesUrl + `/${id}/join`
     return dispatch => {
         dispatch({type: 'START_JOIN_GAME'})
         fetch(url)
