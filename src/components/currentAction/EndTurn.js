@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { endTurn } from '../actions/games'
+import { endTurn } from '../../actions/games'
 import Button from 'react-bootstrap/Button'
 
 class EndTurn extends React.Component {

@@ -132,5 +132,8 @@ export const clearGame = () => {
     return dispatch => {
         dispatch({type: 'CLEAR_GAME'})
         dispatch({type: 'START_ADD_GAME'})
+        dispatch({type: 'END_BATTLE'})
+        dispatch({type: 'END_DEFENSE'})
+        dispatch({type: 'CLEAR_MATCH_NEIGHBORHOOD_CARDS'})
     }
 }

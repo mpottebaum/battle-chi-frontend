@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Neighborhood from './Neighborhood'
+import Neighborhood from '../neighborhoods/Neighborhood'
 
 class CardMatchNeighborhoods extends React.Component {
     renderNeighborhoods = () => {

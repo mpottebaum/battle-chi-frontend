@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import { connect } from 'react-redux'
-import { clearGame } from '../actions/games'
+import { clearGame } from '../../actions/games'
 
 class ExitGame extends React.Component {
 

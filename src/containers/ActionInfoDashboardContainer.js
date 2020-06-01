@@ -1,6 +1,6 @@
 import React from 'react'
-import CurrentAction from '../components/CurrentAction'
-import PlayerTable from '../components/PlayerTable'
+import CurrentAction from '../components/currentAction/CurrentAction'
+import PlayerTable from '../components/playersTable/PlayerTable'
 import DashboardContainer from './DashboardContainer'
 
 class ActionInfoDashboardContainer extends React.Component {

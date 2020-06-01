@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { ActionCableConsumer } from 'react-actioncable-provider'
 import Spinner from 'react-bootstrap/Spinner'
-import Lobby from '../components/Lobby'
+import Lobby from '../components/startGame/Lobby'
 import { updateGame, addGame } from '../actions/games'
 
 class LobbyContainer extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { placeMilitia } from '../actions/militia'
+import { placeMilitia } from '../../actions/militia'
 import Button from 'react-bootstrap/Button'
 
 class PlaceMilitia extends React.Component {

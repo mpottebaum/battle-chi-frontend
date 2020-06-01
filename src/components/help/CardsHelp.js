@@ -1,7 +1,6 @@
 import React from 'react'
-import Card from './Card'
-import Table from 'react-bootstrap/Table'
-import CardSetsTable from './CardSetsTable'
+import Card from '../cards/Card'
+import CardSetsTable from '../cards/CardSetsTable'
 
 const CardsHelp = () => {
     return <div className='tab-help'>

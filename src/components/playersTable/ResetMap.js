@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Button from 'react-bootstrap/Button'
-import { resetMap } from '../actions/zones'
+import { resetMap } from '../../actions/zones'
 
 class ResetMap extends React.Component {
 

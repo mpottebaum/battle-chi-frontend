@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createPlayer } from '../actions/players'
+import { createPlayer } from '../../actions/players'
 import Spinner from 'react-bootstrap/Spinner'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'

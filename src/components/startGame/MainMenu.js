@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createGame, joinGame } from '../actions/games'
+import { createGame, joinGame } from '../../actions/games'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
@@ -99,7 +99,7 @@ class MainMenu extends React.Component {
 const mapDispatchToProps = dispatch => {
     return {
         createGame: setup => dispatch(createGame(setup)),
-        joinGame: id => dispatch(joinGame(id))
+        joinGame: id => dispatch(joinGame(id)),
     }
 }
 

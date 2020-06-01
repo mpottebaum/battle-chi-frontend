@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Card from './Card'
-import CardsHelp from './CardsHelp'
-import { tradeCards } from '../actions/cards'
+import CardsHelp from '../help/CardsHelp'
+import { tradeCards } from '../../actions/cards'
 import Button from 'react-bootstrap/Button'
 
 class Cards extends React.Component {

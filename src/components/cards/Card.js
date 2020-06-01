@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { selectCard, unselectCard } from '../actions/cards'
-import Table from 'react-bootstrap/Table'
+import { selectCard, unselectCard } from '../../actions/cards'
 import {default as BootCard} from 'react-bootstrap/Card'
 
 class Card extends React.Component {

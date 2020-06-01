@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import NeighborhoodMap from '../svg/NeighborhoodMap'
-import { selectNeighborhood } from '../actions/neighborhoods'
+import NeighborhoodMap from '../../svg/NeighborhoodMap'
+import { selectNeighborhood } from '../../actions/neighborhoods'
 
 
 class Map extends React.Component {

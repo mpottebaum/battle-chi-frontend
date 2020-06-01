@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setBattleDefense } from '../actions/battles'
+import { setBattleDefense } from '../../actions/battles'
 import Form from 'react-bootstrap/Form'
 import Table from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'

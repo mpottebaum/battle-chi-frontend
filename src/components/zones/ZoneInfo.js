@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Zone from './Zone'
-import Button from 'react-bootstrap/Button'
-import { resetMap } from '../actions/zones'
-import ZonesHelp from './ZonesHelp'
+import { resetMap } from '../../actions/zones'
+import ZonesHelp from '../help/ZonesHelp'
 
 class ZoneInfo extends React.Component {
 

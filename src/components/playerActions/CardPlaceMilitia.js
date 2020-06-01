@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { cardPlaceMilitia } from '../actions/militia'
+import { cardPlaceMilitia } from '../../actions/militia'
 import Button from 'react-bootstrap/Button'
 
 class CardPlaceMilitia extends React.Component {

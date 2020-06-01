@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { endBattle } from '../actions/battles'
+import { endBattle } from '../../actions/battles'
 import Button from 'react-bootstrap/Button'
 
 class ContinueAttack extends React.Component {
