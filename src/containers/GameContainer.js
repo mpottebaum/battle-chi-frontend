@@ -14,8 +14,12 @@ class GameContainer extends React.Component {
     componentDidMount() {
         if(this.props.gameLoader) {
             const gameId = localStorage.getItem('gameId')
-            const playerId = localStorage.getItem('playerId')
-            this.props.addGameAndNeighborhoods(gameId, playerId)
+            if(this.props.match.params.id === gameId) {
+                const playerId = localStorage.getItem('playerId')
+                this.props.addGameAndNeighborhoods(gameId, playerId)
+            } else {
+                this.props.history.push('/')
+            }
         } else {
             this.props.addNeighborhoods()
         }
@@ -26,6 +30,7 @@ class GameContainer extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return <div>
             {
                 this.props.gameLoader ?

@@ -6,16 +6,6 @@ import TurnStageBar from './TurnStageBar'
 
 class CurrentAction extends React.Component {
 
-    translateTurnStage = () => {
-        switch(this.props.game.turn_stage) {
-            case 0:
-                return 'Place Militias'
-            case 1:
-                return 'Attack'
-            case 2:
-                return 'Fortify'
-        }
-    }
 
     findPlayer = () => {
         return this.props.game.players.find(player => {
@@ -33,20 +23,6 @@ class CurrentAction extends React.Component {
     renderEndTurn = () => {
         return this.props.game.turn_stage === 2 && this.props.game.turn_order_num === this.props.currentPlayer.turn_order_num ?
             <EndTurn gameId={this.props.game.id}/>
-            :
-            null
-    }
-
-    renderPlaceMilitias = player => {
-        return this.props.game.turn_stage === 0 && this.props.currentPlayer.id === player.id ?
-            <h3>You have {player.place_militium.num_militia - player.place_militium.militia_placed} militias left to place</h3>
-            :
-            null
-    }
-
-    renderForceTrade = player => {
-        return player.cards.length >= 5 && player.id === this.props.currentPlayer.id ?
-            <h3>You must trade in a set of cards</h3>
             :
             null
     }

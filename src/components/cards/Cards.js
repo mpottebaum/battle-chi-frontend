@@ -11,52 +11,39 @@ class Cards extends React.Component {
         return this.props.game.players.find(player => player.id === this.props.currentPlayer.id)
     }
 
-    renderCards = player => {
-        return player.cards.map(card => <Card card={card}/>)
-    }
-
-    disableButton = () => {
+    enableButton = () => {
         const player = this.findPlayer()
         const selectedCards = player.cards.filter(card => this.props.selectedCards.includes(card.id))
         if(selectedCards.every(card => card.fighter_type === selectedCards[0].fighter_type)) {
-            return false
-        } else if(this.oneOfEach(selectedCards)) {
-            return false
-        } else if(this.twoPlusWildCard(selectedCards)) {
-            return false
-        } else {
+            console.log('same')
             return true
+        } else if(this.oneOfEach(selectedCards)) {
+            console.log('one of each')
+            return true
+        } else if(this.wildCard(selectedCards)) {
+            console.log('wild')
+            return true
+        } else {
+            return false
         }
     }
 
     oneOfEach = selectedCards => {
         const lib = {}
-        let isOneOfEach = true
+        let oneOfEach = true
         selectedCards.forEach(card => {
             if(lib[card.fighter_type]) {
-                isOneOfEach = false
+                oneOfEach = false
             } else {
                 lib[card.fighter_type] = 1
             }
         })
-        return isOneOfEach
+        return oneOfEach
     }
 
-    twoPlusWildCard = selectedCards => {
+    wildCard = selectedCards => {
         const wildCards = selectedCards.filter(card => card.fighter_type === 0)
-        const remainingCards = selectedCards.filter(card => card.fighter_type !== 0)
-        switch(wildCards.length) {
-            case 2:
-                return true
-            case 1:
-                if(remainingCards[0].fighter_type === remainingCards[1].fighter_type) {
-                    return false
-                } else {
-                    return true
-                }
-            case 0:
-                return false
-        }
+        return wildCards.length > 0
     }
 
     handleClick = () => {
@@ -73,18 +60,18 @@ class Cards extends React.Component {
 
     renderTradeButton = () => {
         if(this.isCurrentPlayersTurn() && this.isPlaceMilitia()) {
-            if(this.props.selectedCards.length >= 3) {
-                if(!this.disableButton()) {
-                    return <Button onClick={this.handleClick} size='lg' className='trade-btn'>Trade In Set</Button>
-                } else {
-                    return <Button disabled size='lg' className='trade-btn'>Trade In Set</Button>
-                }
+            if(this.props.selectedCards.length === 3 && this.enableButton()) {
+                return <Button onClick={this.handleClick} size='lg' className='trade-btn'>Trade In Set</Button>
             } else {
                 return <Button disabled size='lg' className='trade-btn'>Trade In Set</Button>
             }
         } else {
             return null
         }
+    }
+
+    renderCards = player => {
+        return player.cards.map(card => <Card card={card}/>)
     }
 
     render() {

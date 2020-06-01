@@ -73,7 +73,7 @@ class Neighborhood extends React.Component {
     }
 
     styleBackgroundColor = player => {
-        if(player.name !== 'N/A') {
+        if(player.name !== '-') {
             const color = this.getBackgroundColor(player.turn_order_num)
             return {
                 backgroundColor: color
@@ -117,7 +117,7 @@ class Neighborhood extends React.Component {
                     (
                         this.props.game.setup ?
                         (
-                            player.name === 'N/A' || this.isControlled(player) ?
+                            player.name === '-' || this.isControlled(player) ?
                             <PlaceMilitia player={this.props.currentPlayer} neighborhood={this.props.neighborhood}/>
                             :
                             null

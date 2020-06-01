@@ -5,8 +5,8 @@ import Neighborhood from './Neighborhood'
 class NeighborhoodInfo extends React.Component {
 
     findNeighborhoods = () => {
-        return this.props.neighborhoods.filter(neighborhood => {
-            return this.props.selectedNeighborhoods.includes(neighborhood.name)
+        return this.props.selectedNeighborhoods.map(selectedNeighborhood => {
+            return this.props.neighborhoods.find(neighborhood => neighborhood.name === selectedNeighborhood)
         })
     }
 

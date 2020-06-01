@@ -34,39 +34,6 @@ class Battle extends React.Component {
         return this.props.battle.battle_fronts.filter(front => front.player_id === this.props.battle.defense_player_id)
     }
 
-    // renderAttackFronts = (sortedAttackFronts, sortedDefenseFronts) => {
-    //     const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
-    //     let i = -1
-    //     return sortedAttackFronts.map(front => {
-    //         i++
-    //         if(i <= 1) {
-    //             return results[i] && results[i] === 'attack' ?
-    //                 <td style={{backgroundColor: 'black', color: 'white'}}>{front.result}</td>
-    //                 :
-    //                 <td>{front.result}</td>
-    //         }  else {
-    //             return <td>{front.result}</td>
-    //         }
-    //     })
-    // }
-
-    // renderDefenseFronts = (sortedAttackFronts, sortedDefenseFronts) => {
-    //     const results = this.createResults(sortedAttackFronts, sortedDefenseFronts)
-    //     console.log(results)
-    //     let i = -1
-    //     return sortedDefenseFronts.map(front => {
-    //         i++
-    //         if(i <= 1) {
-    //             return results[i] && results[i] === 'defense' ?
-    //                 <td style={{backgroundColor: 'black', color: 'white'}}>{front.result}</td>
-    //                 :
-    //                 <td>{front.result}</td>
-    //         }  else {
-    //             return <td>{front.result}</td>
-    //         }
-    //     })
-    // }
-
     renderDie = front => {
         if(front) {
             return <img className='die-img' src={`/dice/${front.result}.jpg`} />
@@ -268,7 +235,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Battle)
-
-
-
-// style={{gridTemplateColumns: `repeat(${this.numFrontsColumns(sortedAttackFronts, sortedDefenseFronts)}, 200px)`}}

@@ -7,15 +7,15 @@ import { selectNeighborhood } from '../../actions/neighborhoods'
 class Map extends React.Component {
 
     handleClick = e => {
-        if(e.target.dataset.name) {
-            this.props.selectNeighborhood(e.target.dataset.name)
+        const name = e.target.dataset.name
+        if(name && !this.props.selectedNeighborhoods.includes(name)) {
+            this.props.selectNeighborhood(name)
         }
     }
 
     determineNeighborhoodFill = name => {
         const neighborhood = this.props.neighborhoods.find(neighborhood => neighborhood.name === name)
         const militium = this.props.game.militia.find(militium => militium.neighborhood_id === neighborhood.id)
-        
         if(this.props.showZoneId && neighborhood.zone.id === this.props.showZoneId) {
             return '#8fffe1'
         } else if(militium) {
@@ -32,27 +32,6 @@ class Map extends React.Component {
     }
 
     determineZoneStroke = name => {
-        // const neighborhood = this.props.neighborhoods.find(neighborhood => neighborhood.name === name)
-        // switch(neighborhood.zone.name) {
-        //     case 'Far North Side':
-        //         return 'red'
-        //     case 'Northwest Side':
-        //         return 'yellow'
-        //     case 'North Side':
-        //         return 'brown'
-        //     case 'Central Chicago':
-        //         return 'blue'
-        //     case 'West Side':
-        //         return 'green'
-        //     case 'Southwest Side':
-        //         return 'purple'
-        //     case 'South Side':
-        //         return 'orange'
-        //     case 'Far Southwest Side':
-        //         return 'turquoise'
-        //     case 'Far Southeast Side':
-        //         return 'gray'
-        // }
         return 'white'
 
     }
@@ -79,7 +58,8 @@ const mapStateToProps = state => {
     return {
         neighborhoods: state.neighborhoods,
         game: state.game,
-        showZoneId: state.showZoneId
+        showZoneId: state.showZoneId,
+        selectedNeighborhoods: state.selectedNeighborhoods
     }
 }
 

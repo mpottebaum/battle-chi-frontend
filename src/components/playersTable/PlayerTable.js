@@ -40,60 +40,6 @@ class PlayerTable extends React.Component {
         }
     }
 
-    // renderPlayerHeads = () => {
-    //     const orderNums = this.generateOrderNums()
-    //     return orderNums.map(orderNum => {
-    //         const player = this.props.game.players.find(player => player.turn_order_num === orderNum)
-    //         if(this.props.game.turn_order_num === orderNum) {
-    //             return <th style={this.getBackgroundStyle(orderNum)}>
-    //                     {player.name}
-    //                     <Spinner animation="grow" size="sm" className='turn-indicator' />
-    //                 </th>
-    //         } else {
-    //             return <th>{player.name}</th>
-    //         }
-    //     })
-    // }
-
-    // renderMilitiaCounts = () => {
-    //     const orderNums = this.generateOrderNums()
-    //     return orderNums.map(orderNum => {
-    //         const player = this.props.game.players.find(player => player.turn_order_num === orderNum)
-    //         const militias = this.props.game.militia.filter(militium => militium.player_id === player.id)
-    //         return <td style={this.getBackgroundStyle(orderNum)}>{militias.length}</td>
-    //     })
-    // }
-
-    // renderNeighborhoodCounts = () => {
-    //     const orderNums = this.generateOrderNums()
-    //     return orderNums.map(orderNum => {
-    //         const player = this.props.game.players.find(player => player.turn_order_num === orderNum)
-    //         const militias = this.props.game.militia.filter(militium => militium.player_id === player.id)
-    //         const neighbhorhoods = {}
-    //         militias.forEach(militium => {
-    //             if(neighbhorhoods[militium.neighborhood_id]) {
-    //                 neighbhorhoods[militium.neighborhood_id] += 1
-    //             } else {
-    //                 neighbhorhoods[militium.neighborhood_id] = 1
-    //             }
-    //         })
-    //         return <td style={this.getBackgroundStyle(orderNum)}>{Object.keys(neighbhorhoods).length}</td>
-    //     })
-    // }
-
-    // renderZoneCounts = () => {
-    //     const orderNums = this.generateOrderNums()
-    //     return orderNums.map(orderNum => {
-    //         const player = this.props.game.players.find(player => player.turn_order_num === orderNum)
-    //         const militias = this.props.game.militia.filter(militium => militium.player_id === player.id)
-    //         const neighborhoodIds = militias.map(militium => militium.neighborhood_id)
-    //         const controlledZones = this.props.zones.filter(zone => {
-    //             return zone.neighborhood_ids.every(id => neighborhoodIds.includes(id))
-    //         })
-    //         return <td style={this.getBackgroundStyle(orderNum)}>{controlledZones.length}</td>
-    //     })
-    // }
-
     renderPlayerHead = player => {
         if(this.props.game.turn_order_num === player.turn_order_num) {
             return <th style={this.getBackgroundStyle(player.turn_order_num)}>
@@ -143,14 +89,6 @@ class PlayerTable extends React.Component {
             </tr>
         })
     }
-
-    // renderCardCounts = () => {
-    //     const orderNums = this.generateOrderNums()
-    //     return orderNums.map(orderNum => {
-    //         const player = this.props.game.players.find(player => player.turn_order_num === orderNum)
-    //         return <td>{player.cards.length}</td>
-    //     })
-    // }
     
     render() {
         return <div className='player-table'>
@@ -161,22 +99,10 @@ class PlayerTable extends React.Component {
                         <th style={this.getTextAlign()}>Neighborhoods</th>
                         <th style={this.getTextAlign()}>Zones</th>
                         <th style={this.getTextAlign()}>Militias</th>
-                        {/* {this.renderPlayerHeads()} */}
                     </tr>
                 </thead>
                 <tbody>
                     {this.renderPlayerRows()}
-                    {/* <tr>
-                        {this.renderMilitiaCounts()}
-                    </tr>
-                    <tr>
-                        <th>Neighborhoods Controlled</th>
-                        {this.renderNeighborhoodCounts()}
-                    </tr>
-                    <tr>
-                        <th>Zones Controlled</th>
-                        {this.renderZoneCounts()}
-                    </tr> */}
                 </tbody>
             </Table>
             <div className='center'>
