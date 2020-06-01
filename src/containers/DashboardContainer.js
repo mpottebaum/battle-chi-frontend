@@ -7,6 +7,7 @@ import Help from '../components/help/Help'
 import Defend from '../components/playerActions/Defend'
 import Battle from '../components/playerActions/Battle'
 import CardMatchNeighborhoods from '../components/cards/CardMatchNeighborhoods'
+import EndGame from '../components/EndGame'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Spinner from 'react-bootstrap/Spinner'
@@ -59,35 +60,43 @@ class DashboardContainer extends React.Component {
           return <CardMatchNeighborhoods />
       }
     }
+
+    renderGameDash = () => {
+      const battle = this.props.game.battles.find(battle => battle.id === this.props.currentBattleId)
+      return this.props.currentBattleId || (this.props.matchNeighborhoodCards.length > 0 && this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num) ?
+              this.renderSpecialActions(battle)
+              :
+              <Tabs>
+                <TabList>
+                  <Tab>Neighborhoods</Tab>
+                  <Tab>Cards{this.renderCardIndicator()}</Tab>
+                  <Tab>Zones</Tab>
+                  <Tab>Help</Tab>
+                </TabList>
+
+                <TabPanel>
+                  <NeighborhoodInfo />
+                </TabPanel>
+                <TabPanel>
+                  <Cards />
+                </TabPanel>
+                <TabPanel>
+                  <ZoneInfo />
+                </TabPanel>
+                <TabPanel>
+                  <Help />
+                </TabPanel>
+              </Tabs>
+    }
     
     render() {
         const battle = this.props.game.battles.find(battle => battle.id === this.props.currentBattleId)
         return <div className='dashboard'>
             {
-                this.props.currentBattleId || (this.props.matchNeighborhoodCards.length > 0 && this.props.currentPlayer.turn_order_num === this.props.game.turn_order_num) ?
-                this.renderSpecialActions(battle)
+                this.props.game.completed ?
+                <EndGame />
                 :
-                <Tabs>
-                  <TabList>
-                    <Tab>Neighborhoods</Tab>
-                    <Tab>Cards{this.renderCardIndicator()}</Tab>
-                    <Tab>Zones</Tab>
-                    <Tab>Help</Tab>
-                  </TabList>
-
-                  <TabPanel>
-                    <NeighborhoodInfo />
-                  </TabPanel>
-                  <TabPanel>
-                    <Cards />
-                  </TabPanel>
-                  <TabPanel>
-                    <ZoneInfo />
-                  </TabPanel>
-                  <TabPanel>
-                    <Help />
-                  </TabPanel>
-                </Tabs>
+                this.renderGameDash()
             }
         </div>
     }
