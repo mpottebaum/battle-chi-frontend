@@ -14,7 +14,7 @@
 const prod = {
   url: {
     API_ROOT: 'https://whispering-crag-66572.herokuapp.com',
-    API_WS_ROOT: 'ws://whispering-crag-66572.herokuapp.com/'
+    API_WS_ROOT: 'wss://whispering-crag-66572.herokuapp.com/'
   }
 }
 
