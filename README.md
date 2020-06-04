@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Battle For Chicago - Front End
 
-## Available Scripts
+![Battle For Chicago demo](https://j.gifs.com/oVBZXz.gif)
 
-In the project directory, you can run:
+Battle For Chicago is a two-player board game based on Risk that uses a map of Chicago's neighborhoods as its game board.
 
-### `yarn start`
+The app provides another way for socially distanced families and friends to spend time together remotely.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+[Live app](https://fathomless-cove-56346.herokuapp.com/)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[API Repo](https://github.com/mpottebaum/battle-chi-backend)
 
-### `yarn test`
+## Installing Battle For Chicago
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To install Battle For Chicago, follow these steps:
 
-### `yarn build`
+1. Clone the [API repo](https://github.com/mpottebaum/battle-chi-backend) and install gems
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+git clone git@github.com:mpottebaum/battle-chi-backend.git
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+cd battle-chi-backend
+bundle
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Clone this repo and install dependencies
 
-### `yarn eject`
+```
+git clone git@github.com:mpottebaum/battle-chi-frontend.git
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+cd battle-chi-frontend
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Using Battle For Chicago
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To use Battle For Chicago, follow these steps:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. From the battle-chi-backend directory, start the API server. Make sure the API server is running on `localhost:3000`.
 
-## Learn More
+```
+rails s
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. From the battle-chi-frontend directory, start the front end server.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm start
+```
 
-### Code Splitting
+The front end server should run on `localhost:3001`, but any port will work. If you open the front end in an incognito/private window or a separate browser, you can establish separate WebSocket connections and play as both players.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Contact
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+If you want to contact me you can reach me at mpottebaum@gmail.com.
